@@ -1,10 +1,21 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
     { name: "Como Funciona", href: "#processo" },
@@ -14,16 +25,18 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 [background-size:100%_1px] [background-repeat:no-repeat] [background-position:bottom]">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-gray-300/20 ${scrolled ? 'bg-white/10 backdrop-blur-md' : 'bg-transparent backdrop-blur-sm'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">H</span>
-            </div>
+          <a href="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/223cbda9-53a4-4e94-a4b7-bcc0b550cf27.png" 
+              alt="HumanAZ Logo" 
+              className="h-10 w-auto"
+            />
             <span className="ml-3 text-white font-bold text-xl">HumanAZ</span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
