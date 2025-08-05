@@ -35,7 +35,7 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
-              <Button size="lg" variant="outline" className="border-slate-400 text-white hover:bg-white/10">
+              <Button size="lg" variant="gradient-outline">
                 <Play className="mr-2 h-5 w-5" />
                 Ver Como Funciona
               </Button>
