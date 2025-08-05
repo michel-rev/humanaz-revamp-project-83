@@ -6,7 +6,7 @@ import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+    <section id="hero" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Background Pattern */}
       <AnimatedDottedBackground opacity={0.4} className="hover:opacity-60" />
       

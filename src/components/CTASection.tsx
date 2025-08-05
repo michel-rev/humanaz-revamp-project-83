@@ -5,7 +5,7 @@ import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 const CTASection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <section id="cta" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Background Elements */}
       <AnimatedDottedBackground opacity={0.4} size={4} spacing={60} className="hover:opacity-60" />
       

@@ -17,7 +17,7 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-900 relative overflow-hidden">
+    <section id="clients" className="py-20 bg-slate-900 relative overflow-hidden">
       <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={90} className="hover:opacity-50" />
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">

@@ -35,7 +35,7 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section id="process" className="py-24 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-purple-50/30" />
       <AnimatedDottedBackground opacity={0.15} color="%23a855f7" size={2} spacing={70} className="hover:opacity-30" />
