@@ -17,7 +17,7 @@ const HeroSection = () => {
               Recrutamento Tech - Retenção, Contexto e Precisão
             </div>
             
-            <h1 className="text-[78px] font-bold leading-tight">
+            <h1 className="text-[78px] font-bold leading-[72px]">
               Conectamos
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
                 {" "}talentos tech{" "}
