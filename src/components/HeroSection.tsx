@@ -1,6 +1,7 @@
 
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AnimatedMetricsSection from "@/components/AnimatedMetricsSection";
 
 const HeroSection = () => {
   return (
@@ -41,21 +42,8 @@ const HeroSection = () => {
               </Button>
             </div>
             
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-700">
-              <div>
-                <div className="text-3xl font-bold text-purple-400">15</div>
-                <div className="text-slate-400">Dias para entrega</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-purple-400">4</div>
-                <div className="text-slate-400">Candidatos qualificados</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-purple-400">95%</div>
-                <div className="text-slate-400">Taxa de aprovação</div>
-              </div>
-            </div>
+            {/* Animated Stats */}
+            <AnimatedMetricsSection />
           </div>
           
           {/* Visual Element */}
