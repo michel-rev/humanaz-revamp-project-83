@@ -52,7 +52,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-[1rem]">
               Começar Agora
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -81,7 +81,7 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-4">
+              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-4 text-[1rem]">
                 Começar Agora
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
