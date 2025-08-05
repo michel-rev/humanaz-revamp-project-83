@@ -30,13 +30,13 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0">
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-[1.1rem] px-8 py-4 h-[1.1rem] group">
                 Começar Agora
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
               
-              <Button size="lg" variant="gradient-outline">
-                <Play className="mr-2 h-5 w-5" />
+              <Button size="lg" variant="gradient-outline" className="text-[1.1rem] px-8 py-4 h-[1.1rem] group">
+                <Play className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 Ver Como Funciona
               </Button>
             </div>
