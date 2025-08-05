@@ -1,5 +1,6 @@
 
 import { ArrowRight, Users, Brain, Target, TrendingUp } from "lucide-react";
+import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 const FlywheelSection = () => {
   const steps = [
@@ -36,7 +37,7 @@ const FlywheelSection = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 opacity-30" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50m-40 0a40 40 0 1 1 80 0a40 40 0 1 1 -80 0' stroke='%23e2e8f0' stroke-width='1' fill='none' stroke-dasharray='5,5'/%3E%3C/svg%3E\")"}} />
+      <AnimatedDottedBackground opacity={0.2} color="%23e2e8f0" size={3} spacing={80} className="hover:opacity-40" />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">

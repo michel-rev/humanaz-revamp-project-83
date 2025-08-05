@@ -1,5 +1,6 @@
 
 import { Building2 } from "lucide-react";
+import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 const ClientsSection = () => {
   const clients = [
@@ -16,7 +17,8 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-900">
+    <section className="py-20 bg-slate-900 relative overflow-hidden">
+      <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={90} className="hover:opacity-50" />
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-sm mb-6">

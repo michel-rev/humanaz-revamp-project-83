@@ -1,5 +1,6 @@
 
 import { CheckCircle, Clock, Users, Zap } from "lucide-react";
+import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 const ProcessSection = () => {
   const processSteps = [
@@ -37,6 +38,7 @@ const ProcessSection = () => {
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-purple-50/30" />
+      <AnimatedDottedBackground opacity={0.15} color="%23a855f7" size={2} spacing={70} className="hover:opacity-30" />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">

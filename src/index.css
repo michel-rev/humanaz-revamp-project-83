@@ -110,6 +110,12 @@ All colors MUST be HSL.
   }
 }
 
+/* Custom animations */
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
 @layer utilities {
   .animate-float {
     animation: float 3s ease-in-out infinite;

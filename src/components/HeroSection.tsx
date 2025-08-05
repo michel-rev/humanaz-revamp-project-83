@@ -2,12 +2,13 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedMetricsSection from "@/components/AnimatedMetricsSection";
+import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-40" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}} />
+      <AnimatedDottedBackground opacity={0.4} className="hover:opacity-60" />
       
       <div className="relative container mx-auto px-4 pt-8 pb-32">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen">
