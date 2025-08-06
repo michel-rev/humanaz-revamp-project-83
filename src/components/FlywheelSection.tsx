@@ -79,7 +79,7 @@ const FlywheelSection = () => {
               return (
                 <div
                   key={index}
-                  className={`relative p-8 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in`}
+                  className={`relative p-8 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in text-center`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   {/* Step Number */}
@@ -88,7 +88,7 @@ const FlywheelSection = () => {
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${step.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${step.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
                     <Icon className="w-full h-full text-white" />
                   </div>
 
