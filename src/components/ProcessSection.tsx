@@ -65,8 +65,6 @@ const ProcessSection = () => {
                   className="relative group animate-fade-in"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  {/* Timeline Dot */}
-                  <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-4 border-gradient-to-r ${step.color} z-10" />
                   
                   {/* Card */}
                   <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
