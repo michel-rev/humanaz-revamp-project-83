@@ -158,19 +158,19 @@ const InteractiveDemo = () => {
       <AnimatedDottedBackground opacity={0.2} color="%23334155" size={2} spacing={100} className="hover:opacity-40" />
       
       <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Nossa <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">Engenharia de Prompt</span> em Ação
           </h2>
-          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4">
             Veja como construímos cenários situacionais de negócios, produtos, tecnologia 
             e pessoas para validar alinhamento cultural e competências técnicas
           </p>
         </div>
 
         {/* Filter Chips */}
-        <div className="flex justify-center mb-12">
-          <div className="flex flex-wrap gap-3 bg-slate-800/30 backdrop-blur-sm rounded-2xl p-2 border border-slate-700/50">
+        <div className="flex justify-center mb-8 sm:mb-12 px-4">
+          <div className="flex flex-wrap gap-2 sm:gap-3 bg-slate-800/30 backdrop-blur-sm rounded-2xl p-2 border border-slate-700/50 max-w-full">
             {[
               { id: 'competencies', label: 'Definição de Competências', icon: Zap },
               { id: 'scenarios', label: 'Cenários Situacionais', icon: Brain },
@@ -181,14 +181,14 @@ const InteractiveDemo = () => {
                 key={id}
                 variant="ghost"
                 onClick={() => setCurrentDemo(id as any)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${
+                className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-xl transition-all duration-300 text-xs sm:text-sm ${
                   currentDemo === id
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25' 
                     : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                 }`}
               >
-                <Icon className="w-4 h-4" />
-                <span className="font-medium">{label}</span>
+                <Icon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span className="font-medium whitespace-nowrap">{label}</span>
               </Button>
             ))}
           </div>
@@ -371,29 +371,29 @@ const InteractiveDemo = () => {
         {currentDemo === 'competencies' && (
           <div className="space-y-8">
             {/* Competency Scenarios Grid */}
-            <div className="grid lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {competencyDefinitions[0].scenarios.map((scenario, idx) => (
                 <Card key={idx} className="bg-slate-800/40 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/60 transition-all duration-300 group">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start gap-3 mb-4">
-                      <div className={`p-3 rounded-xl ${
+                  <CardHeader className="pb-3 sm:pb-4">
+                    <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className={`p-2 sm:p-3 rounded-xl flex-shrink-0 ${
                         idx === 0 ? 'bg-gradient-to-br from-blue-500/20 to-blue-600/20' :
                         idx === 1 ? 'bg-gradient-to-br from-green-500/20 to-green-600/20' :
                         'bg-gradient-to-br from-purple-500/20 to-purple-600/20'
                       }`}>
-                        {idx === 0 ? <Briefcase className="w-6 h-6 text-blue-400" /> :
-                         idx === 1 ? <TrendingUp className="w-6 h-6 text-green-400" /> :
-                         <Target className="w-6 h-6 text-purple-400" />}
+                        {idx === 0 ? <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" /> :
+                         idx === 1 ? <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" /> :
+                         <Target className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />}
                       </div>
-                      <div className="flex-1">
-                        <Badge variant="outline" className={`text-xs mb-2 ${
+                      <div className="flex-1 min-w-0">
+                        <Badge variant="outline" className={`text-xs mb-1 sm:mb-2 ${
                           idx === 0 ? 'border-blue-400/30 text-blue-300 bg-blue-400/10' :
                           idx === 1 ? 'border-green-400/30 text-green-300 bg-green-400/10' :
                           'border-purple-400/30 text-purple-300 bg-purple-400/10'
                         }`}>
                           {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
                         </Badge>
-                        <CardTitle className="text-white text-lg leading-tight group-hover:text-purple-300 transition-colors">
+                        <CardTitle className="text-white text-base sm:text-lg leading-tight group-hover:text-purple-300 transition-colors">
                           {scenario.clientScenario}
                         </CardTitle>
                       </div>
@@ -402,7 +402,7 @@ const InteractiveDemo = () => {
                       {scenario.businessContext}
                     </p>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 sm:space-y-4 pt-0">
                     {scenario.generatedCompetencies.map((comp, compIdx) => (
                       <div key={compIdx} className="space-y-3">
                         <div className="flex items-center gap-2">
@@ -434,37 +434,37 @@ const InteractiveDemo = () => {
             </div>
 
             {/* Results Summary */}
-            <div className="mt-16">
+            <div className="mt-12 sm:mt-16">
               <Card className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-slate-700/50 backdrop-blur-sm">
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-4 gap-8 text-center">
-                    <div className="space-y-2">
-                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
+                    <div className="space-y-1 sm:space-y-2">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
                         12
                       </div>
-                      <p className="text-white font-semibold">Competências Identificadas</p>
-                      <p className="text-slate-400 text-sm">Por cenário contextual</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">Competências Identificadas</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">Por cenário contextual</p>
                     </div>
-                    <div className="space-y-2">
-                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text">
+                    <div className="space-y-1 sm:space-y-2">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text">
                         94%
                       </div>
-                      <p className="text-white font-semibold">Precisão de Match</p>
-                      <p className="text-slate-400 text-sm">Alinhamento cultural</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">Precisão de Match</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">Alinhamento cultural</p>
                     </div>
-                    <div className="space-y-2">
-                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                    <div className="space-y-1 sm:space-y-2">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
                         3
                       </div>
-                      <p className="text-white font-semibold">Cenários Situacionais</p>
-                      <p className="text-slate-400 text-sm">Negócios, produto, tech</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">Cenários Situacionais</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">Negócios, produto, tech</p>
                     </div>
-                    <div className="space-y-2">
-                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">
+                    <div className="space-y-1 sm:space-y-2">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">
                         15
                       </div>
-                      <p className="text-white font-semibold">Dias de Processo</p>
-                      <p className="text-slate-400 text-sm">Da triagem à aprovação</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">Dias de Processo</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">Da triagem à aprovação</p>
                     </div>
                   </div>
                 </CardContent>

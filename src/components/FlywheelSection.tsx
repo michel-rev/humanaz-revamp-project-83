@@ -41,10 +41,10 @@ const FlywheelSection = () => {
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
             Nosso <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Flywheel</span> de Sucesso
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Um processo otimizado que roda em 15 dias corridos, conectando talentos excepcionais às empresas certas através de tecnologia e curadoria humanizada.
           </p>
         </div>
@@ -66,38 +66,38 @@ const FlywheelSection = () => {
           </div>
 
           {/* Steps in circular arrangement */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const positions = [
-                "md:translate-x-0 md:-translate-y-8", // Top left
-                "md:translate-x-0 md:-translate-y-8", // Top right  
-                "md:translate-x-0 md:translate-y-8",  // Bottom left
-                "md:translate-x-0 md:translate-y-8"   // Bottom right
+                "sm:translate-x-0 sm:-translate-y-4 md:-translate-y-8", // Top left
+                "sm:translate-x-0 sm:-translate-y-4 md:-translate-y-8", // Top right  
+                "sm:translate-x-0 sm:translate-y-4 md:translate-y-8",  // Bottom left
+                "sm:translate-x-0 sm:translate-y-4 md:translate-y-8"   // Bottom right
               ];
 
               return (
                 <div
                   key={index}
-                  className={`relative p-6 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in text-center`}
+                  className={`relative p-4 sm:p-6 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in text-center`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   {/* Step Number */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} text-white flex items-center justify-center text-sm font-bold">
+                  <div className={`absolute -top-3 -left-3 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r ${step.color} text-white flex items-center justify-center text-xs sm:text-sm font-bold`}>
                     {index + 1}
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${step.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r ${step.color} p-3 sm:p-4 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
                     <Icon className="w-full h-full text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">
                     {step.title}
                   </h3>
                   
-                  <p className="text-lg text-slate-600 mb-4 font-medium">
+                  <p className="text-base sm:text-lg text-slate-600 mb-3 sm:mb-4 font-medium">
                     {step.description}
                   </p>
                   
