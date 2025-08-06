@@ -44,32 +44,26 @@ const FlywheelSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
             Nosso <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Flywheel</span> de Sucesso
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Um processo otimizado que roda em 15 dias corridos, conectando talentos excepcionais às empresas certas através de tecnologia e curadoria humanizada.
           </p>
-          
-          {/* Hero Circle */}
-          <div className="flex justify-center mb-16">
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
-              {/* Gradient Border */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-purple-500 p-1 animate-pulse">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center shadow-2xl">
-                  <div className="text-center">
-                    <span className="font-bold text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent block">
-                      15
-                    </span>
-                    <span className="font-semibold text-lg sm:text-xl text-slate-600 block mt-2">
-                      Dias
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Flywheel Visual */}
         <div className="relative max-w-6xl mx-auto">
+          {/* Central Hub */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+            <div className="relative w-48 h-48">
+              {/* Gradient Border */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-purple-500 p-1">
+                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                  <span className="font-bold text-4xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+                    15 Dias
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Steps in circular arrangement */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
