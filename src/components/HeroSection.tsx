@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Background Pattern */}
-      <AnimatedDottedBackground opacity={0.4} className="hover:opacity-60" />
+      <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={80} className="hover:opacity-50" />
       
       <div className="relative container mx-auto px-4 pt-8 pb-32">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen">
