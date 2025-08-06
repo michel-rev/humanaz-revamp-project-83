@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className="relative container mx-auto px-4 pt-8 pb-32">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen">
           {/* Content */}
-          <div className="lg:w-1/2 text-white space-y-8 animate-fade-in">
+          <div className="lg:w-1/2 text-white space-y-4 animate-fade-in">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-sm">
               <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
               Recrutamento Tech - Retenção, Contexto e Precisão
