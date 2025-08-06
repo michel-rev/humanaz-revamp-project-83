@@ -105,12 +105,6 @@ const FlywheelSection = () => {
                     {step.details}
                   </p>
 
-                  {/* Arrow for flow */}
-                  {index < 3 && (
-                    <div className="hidden md:block absolute -right-6 top-1/2 transform -translate-y-1/2">
-                      <ArrowRight className="w-6 h-6 text-slate-300" />
-                    </div>
-                  )}
                 </div>
               );
             })}
