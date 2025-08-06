@@ -66,7 +66,7 @@ const FlywheelSection = () => {
           </div>
 
           {/* Steps in circular arrangement */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const positions = [
@@ -79,7 +79,7 @@ const FlywheelSection = () => {
               return (
                 <div
                   key={index}
-                  className={`relative p-8 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in text-center`}
+                  className={`relative p-6 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in text-center`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   {/* Step Number */}
