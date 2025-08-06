@@ -6,7 +6,7 @@ const AnimatedMetricsSection = () => {
   const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 95, duration: 2400 });
 
   return (
-    <div className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-700">
+    <div className="grid grid-cols-3 gap-8 pt-8">
       <div ref={daysRef} className="animate-fade-in">
         <div className="text-[3rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
           {daysCount}
