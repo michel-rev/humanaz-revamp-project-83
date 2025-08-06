@@ -41,10 +41,10 @@ const FlywheelSection = () => {
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">
             Nosso <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Flywheel</span> de Sucesso
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
             Um processo otimizado que roda em 15 dias corridos, conectando talentos excepcionais às empresas certas através de tecnologia e curadoria humanizada.
           </p>
         </div>
@@ -88,15 +88,15 @@ const FlywheelSection = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">
                     {step.title}
                   </h3>
                   
-                  <p className="text-base sm:text-lg text-slate-600 mb-3 sm:mb-4 font-medium">
+                  <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-3 sm:mb-4 font-medium">
                     {step.description}
                   </p>
                   
-                  <p className="text-slate-500 leading-relaxed">
+                  <p className="text-xs sm:text-sm md:text-base text-slate-500 leading-relaxed">
                     {step.details}
                   </p>
 
@@ -108,9 +108,9 @@ const FlywheelSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-24">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+          <div className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-sm sm:text-base lg:text-lg hover:shadow-lg transition-shadow duration-300 cursor-pointer">
             Experimente Nosso Flywheel
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
           </div>
         </div>
       </div>
