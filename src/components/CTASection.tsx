@@ -66,25 +66,25 @@ const CTASection = () => {
           <div className="border-t border-slate-700 pt-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div ref={daysRef} className="animate-fade-in">
-                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {daysCount} Dias
                 </div>
                 <div className="text-slate-400 text-sm">Processo Completo</div>
               </div>
               <div ref={approvalRef} className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {approvalCount}%
                 </div>
                 <div className="text-slate-400 text-sm">Taxa de Aprovação</div>
               </div>
               <div ref={candidatesRef} className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {candidatesCount}
                 </div>
                 <div className="text-slate-400 text-sm">Candidatos Qualificados</div>
               </div>
               <div ref={companiesRef} className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {companiesCount}+
                 </div>
                 <div className="text-slate-400 text-sm">Empresas Parceiras</div>
