@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Play, Zap, Brain, Target, TrendingUp, Users, Briefcase, Code, ChevronRight, CheckCircle } from "lucide-react";
+import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 const InteractiveDemo = () => {
   const [currentDemo, setCurrentDemo] = useState<'scenarios' | 'validation' | 'alignment' | 'competencies'>('competencies');
@@ -152,8 +153,10 @@ const InteractiveDemo = () => {
   }, [businessScenarios.length]);
 
   return (
-    <section id="interactive-demo" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900">
-      <div className="container mx-auto px-4">
+    <section id="interactive-demo" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900 relative overflow-hidden">
+      {/* Background Pattern */}
+      <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={80} className="hover:opacity-50" />
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Nossa <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Engenharia de Prompt</span> em Ação
