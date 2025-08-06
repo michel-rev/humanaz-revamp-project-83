@@ -168,7 +168,7 @@ const InteractiveDemo = () => {
 
         {/* Demo Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="flex bg-slate-800/50 backdrop-blur-sm rounded-lg p-1 border border-slate-700">
+          <div className="flex bg-slate-800/50 backdrop-blur-sm rounded-lg p-1 border border-slate-700 hover:bg-slate-700/30 transition-colors duration-200">
             {[
               { id: 'scenarios', label: 'Cenários Situacionais', icon: Brain },
               { id: 'competencies', label: 'Definição de Competências', icon: Zap },
