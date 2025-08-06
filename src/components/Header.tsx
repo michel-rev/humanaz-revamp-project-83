@@ -67,7 +67,7 @@ const Header = () => {
             className={`md:hidden transition-colors duration-500 h-4 ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
