@@ -254,13 +254,13 @@ const InteractiveDemo = () => {
                 {businessScenarios.map((scenario, idx) => (
                   <Button
                     key={idx}
-                    variant={activeScenario === idx ? "default" : "outline"}
+                    variant="ghost"
                     size="sm"
                     onClick={() => setActiveScenario(idx)}
-                    className={`p-3 h-auto flex flex-col items-center gap-1 ${
+                    className={`p-3 h-auto flex flex-col items-center gap-1 transition-all duration-300 ${
                       activeScenario === idx 
-                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-0' 
-                        : 'border-slate-600 text-slate-300 hover:border-purple-400'
+                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border border-purple-500/30' 
+                        : 'bg-slate-800/50 border border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-purple-400/50'
                     }`}
                   >
                     {React.createElement(scenario.icon, { className: "w-4 h-4" })}
