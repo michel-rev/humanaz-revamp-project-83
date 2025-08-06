@@ -159,10 +159,10 @@ const InteractiveDemo = () => {
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Nossa <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">Engenharia de Prompt</span> em Ação
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4">
             Veja como construímos cenários situacionais de negócios, produtos, tecnologia 
             e pessoas para validar alinhamento cultural e competências técnicas
           </p>
