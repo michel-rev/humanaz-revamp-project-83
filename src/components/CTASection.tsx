@@ -69,7 +69,7 @@ const CTASection = () => {
                 <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {daysCount} Dias
                 </div>
-                <div className="text-slate-400 text-sm">Processo Completo</div>
+                <div className="text-white text-sm">Processo Completo</div>
               </div>
               <div ref={approvalRef} className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
