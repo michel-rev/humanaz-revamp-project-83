@@ -57,7 +57,7 @@ const FlywheelSection = () => {
               {/* Gradient Border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-purple-500 p-1">
                 <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                  <span className="font-bold text-5xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="font-bold text-4xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
                     15 Dias
                   </span>
                 </div>
