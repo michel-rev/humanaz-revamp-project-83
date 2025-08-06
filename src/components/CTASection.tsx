@@ -2,8 +2,13 @@
 import { ArrowRight, Calendar, MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
+import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 const CTASection = () => {
+  const { count: daysCount, elementRef: daysRef } = useCounterAnimation({ target: 15, duration: 2000 });
+  const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 95, duration: 2200 });
+  const { count: candidatesCount, elementRef: candidatesRef } = useCounterAnimation({ target: 4, duration: 2400 });
+  const { count: companiesCount, elementRef: companiesRef } = useCounterAnimation({ target: 10, duration: 2600 });
   return (
     <section id="cta" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Background Elements */}
@@ -60,20 +65,28 @@ const CTASection = () => {
           {/* Trust Indicators */}
           <div className="border-t border-slate-700 pt-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-2xl font-bold text-purple-400 mb-1">15 Dias</div>
+              <div ref={daysRef} className="animate-fade-in">
+                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                  {daysCount} Dias
+                </div>
                 <div className="text-slate-400 text-sm">Processo Completo</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-400 mb-1">95%</div>
+              <div ref={approvalRef} className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                  {approvalCount}%
+                </div>
                 <div className="text-slate-400 text-sm">Taxa de Aprovação</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-400 mb-1">4</div>
+              <div ref={candidatesRef} className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                  {candidatesCount}
+                </div>
                 <div className="text-slate-400 text-sm">Candidatos Qualificados</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-400 mb-1">10+</div>
+              <div ref={companiesRef} className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
+                  {companiesCount}+
+                </div>
                 <div className="text-slate-400 text-sm">Empresas Parceiras</div>
               </div>
             </div>
