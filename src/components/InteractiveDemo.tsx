@@ -153,9 +153,9 @@ const InteractiveDemo = () => {
   }, [businessScenarios.length]);
 
   return (
-    <section id="interactive-demo" className="py-24 bg-gradient-to-br from-slate-900 via-blue-900/70 to-slate-900 relative overflow-hidden">
+    <section id="interactive-demo" className="py-24 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 relative overflow-hidden">
       {/* Background Pattern */}
-      <AnimatedDottedBackground opacity={0.2} color="%23334155" size={2} spacing={100} className="hover:opacity-40" />
+      <AnimatedDottedBackground opacity={0.08} color="%23334155" size={2} spacing={80} className="hover:opacity-15" />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12 sm:mb-16">
