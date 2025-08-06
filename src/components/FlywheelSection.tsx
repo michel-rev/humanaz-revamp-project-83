@@ -53,8 +53,15 @@ const FlywheelSection = () => {
         <div className="relative max-w-6xl mx-auto">
           {/* Central Hub */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white font-bold text-lg shadow-2xl">
-              15 Dias
+            <div className="relative w-32 h-32">
+              {/* Animated Gradient Border */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-purple-500 animate-spin-slow p-1">
+                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                  <span className="font-bold text-lg bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent animate-pulse">
+                    15 Dias
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
