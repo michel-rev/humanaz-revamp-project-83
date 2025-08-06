@@ -153,40 +153,42 @@ const InteractiveDemo = () => {
   }, [businessScenarios.length]);
 
   return (
-    <section id="interactive-demo" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900 relative overflow-hidden">
+    <section id="interactive-demo" className="py-24 bg-gradient-to-br from-slate-900 via-blue-900/70 to-slate-900 relative overflow-hidden">
       {/* Background Pattern */}
-      <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={80} className="hover:opacity-50" />
+      <AnimatedDottedBackground opacity={0.2} color="%23334155" size={2} spacing={100} className="hover:opacity-40" />
+      
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Nossa <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Engenharia de Prompt</span> em Ação
+          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Nossa <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">Engenharia de Prompt</span> em Ação
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Veja como construímos cenários situacionais de negócios, produtos, tecnologia e pessoas para validar alinhamento cultural e competências técnicas
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Veja como construímos cenários situacionais de negócios, produtos, tecnologia 
+            e pessoas para validar alinhamento cultural e competências técnicas
           </p>
         </div>
 
-        {/* Demo Navigation */}
+        {/* Filter Chips */}
         <div className="flex justify-center mb-12">
-          <div className="flex bg-slate-800/50 backdrop-blur-sm rounded-lg p-1 border border-slate-700 hover:bg-slate-700/30 transition-colors duration-200">
+          <div className="flex flex-wrap gap-3 bg-slate-800/30 backdrop-blur-sm rounded-2xl p-2 border border-slate-700/50">
             {[
-              { id: 'scenarios', label: 'Cenários Situacionais', icon: Brain },
               { id: 'competencies', label: 'Definição de Competências', icon: Zap },
-              { id: 'validation', label: 'Validação em Tempo Real', icon: TrendingUp },
+              { id: 'scenarios', label: 'Cenários Situacionais', icon: Brain },
+              { id: 'validation', label: 'Validação Tempo Real', icon: TrendingUp },
               { id: 'alignment', label: 'Alinhamento Cultural', icon: Target }
             ].map(({ id, label, icon: Icon }) => (
               <Button
                 key={id}
-                variant={currentDemo === id ? "default" : "ghost"}
+                variant="ghost"
                 onClick={() => setCurrentDemo(id as any)}
-                className={`flex items-center gap-2 ${
-                  currentDemo === id 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' 
-                    : 'text-slate-300 hover:text-white'
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${
+                  currentDemo === id
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25' 
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                 }`}
               >
                 <Icon className="w-4 h-4" />
-                {label}
+                <span className="font-medium">{label}</span>
               </Button>
             ))}
           </div>
@@ -368,103 +370,106 @@ const InteractiveDemo = () => {
         {/* Competency Definition Demo */}
         {currentDemo === 'competencies' && (
           <div className="space-y-8">
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-purple-400" />
-                  Cenários de Competência
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-8">
-                {competencyDefinitions[0].scenarios.map((scenario, idx) => (
-                  <div key={idx} className="border-b border-slate-700 last:border-b-0 pb-6 last:pb-0">
-                    <div className="grid lg:grid-cols-2 gap-6">
-                      <div className="space-y-4">
-                        <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
-                          <h4 className="text-white font-semibold mb-2">{scenario.clientScenario}</h4>
-                          <p className="text-slate-300 text-sm leading-relaxed">
-                            {scenario.businessContext}
+            {/* Competency Scenarios Grid */}
+            <div className="grid lg:grid-cols-3 gap-6">
+              {competencyDefinitions[0].scenarios.map((scenario, idx) => (
+                <Card key={idx} className="bg-slate-800/40 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/60 transition-all duration-300 group">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className={`p-3 rounded-xl ${
+                        idx === 0 ? 'bg-gradient-to-br from-blue-500/20 to-blue-600/20' :
+                        idx === 1 ? 'bg-gradient-to-br from-green-500/20 to-green-600/20' :
+                        'bg-gradient-to-br from-purple-500/20 to-purple-600/20'
+                      }`}>
+                        {idx === 0 ? <Briefcase className="w-6 h-6 text-blue-400" /> :
+                         idx === 1 ? <TrendingUp className="w-6 h-6 text-green-400" /> :
+                         <Target className="w-6 h-6 text-purple-400" />}
+                      </div>
+                      <div className="flex-1">
+                        <Badge variant="outline" className={`text-xs mb-2 ${
+                          idx === 0 ? 'border-blue-400/30 text-blue-300 bg-blue-400/10' :
+                          idx === 1 ? 'border-green-400/30 text-green-300 bg-green-400/10' :
+                          'border-purple-400/30 text-purple-300 bg-purple-400/10'
+                        }`}>
+                          {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
+                        </Badge>
+                        <CardTitle className="text-white text-lg leading-tight group-hover:text-purple-300 transition-colors">
+                          {scenario.clientScenario}
+                        </CardTitle>
+                      </div>
+                    </div>
+                    <p className="text-slate-300 text-sm leading-relaxed">
+                      {scenario.businessContext}
+                    </p>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {scenario.generatedCompetencies.map((comp, compIdx) => (
+                      <div key={compIdx} className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <Badge variant="secondary" className={`text-xs font-medium ${
+                            comp.category === 'Técnica' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
+                            comp.category === 'Decisão' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
+                            'bg-purple-500/20 text-purple-300 border-purple-500/30'
+                          }`}>
+                            {comp.category}
+                          </Badge>
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {comp.competencies.map((competency, competencyIdx) => (
+                            <span key={competencyIdx} className="inline-block text-xs px-2 py-1 bg-slate-700/50 text-slate-300 rounded border border-slate-600/50">
+                              {competency}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="bg-slate-900/50 rounded-lg p-3 border border-slate-600/30">
+                          <p className="text-slate-300 text-sm italic leading-relaxed">
+                            "{comp.prompt}"
                           </p>
                         </div>
                       </div>
-                      
-                      <div className="space-y-4">
-                        {scenario.generatedCompetencies.map((comp, compIdx) => (
-                          <div key={compIdx} className="space-y-2">
-                            <Badge 
-                              variant="secondary" 
-                              className={`${
-                                comp.category === 'Técnica' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
-                                comp.category === 'Decisão' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
-                                'bg-green-500/20 text-green-300 border-green-500/30'
-                              }`}
-                            >
-                              {comp.category}
-                            </Badge>
-                            
-                            <div className="bg-slate-900/50 rounded-lg p-3 border border-slate-600">
-                              <div className="flex flex-wrap gap-1 mb-2">
-                                {comp.competencies.map((skill, skillIdx) => (
-                                  <Badge key={skillIdx} variant="outline" className="text-xs border-slate-600 text-slate-300">
-                                    {skill}
-                                  </Badge>
-                                ))}
-                              </div>
-                              <p className="text-slate-300 text-sm italic">"{comp.prompt}"</p>
-                            </div>
-                          </div>
-                        ))}
+                    ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Results Summary */}
+            <div className="mt-16">
+              <Card className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-slate-700/50 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className="grid md:grid-cols-4 gap-8 text-center">
+                    <div className="space-y-2">
+                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
+                        12
                       </div>
+                      <p className="text-white font-semibold">Competências Identificadas</p>
+                      <p className="text-slate-400 text-sm">Por cenário contextual</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text">
+                        94%
+                      </div>
+                      <p className="text-white font-semibold">Precisão de Match</p>
+                      <p className="text-slate-400 text-sm">Alinhamento cultural</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                        3
+                      </div>
+                      <p className="text-white font-semibold">Cenários Situacionais</p>
+                      <p className="text-slate-400 text-sm">Negócios, produto, tech</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">
+                        15
+                      </div>
+                      <p className="text-white font-semibold">Dias de Processo</p>
+                      <p className="text-slate-400 text-sm">Da triagem à aprovação</p>
                     </div>
                   </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            {/* Results Section */}
-            <Card className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-purple-500/30 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  Resultado da Engenharia de Prompt
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-400 mb-2">12</div>
-                    <p className="text-slate-300 text-sm">Competências Identificadas</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-400 mb-2">3</div>
-                    <p className="text-slate-300 text-sm">Categorias Mapeadas</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-2">94%</div>
-                    <p className="text-slate-300 text-sm">Precisão na Seleção</p>
-                  </div>
-                </div>
-
-                <div className="border-t border-slate-600 pt-6">
-                  <h4 className="text-white font-semibold mb-4">Prompts Customizados Gerados:</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
-                      <h5 className="text-orange-300 font-medium mb-2">Validação Técnica</h5>
-                      <p className="text-slate-300 text-sm">"Como você dimensionaria uma arquitetura para processar 100M transações/mês..."</p>
-                    </div>
-                    <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
-                      <h5 className="text-blue-300 font-medium mb-2">Análise de Decisões</h5>
-                      <p className="text-slate-300 text-sm">"Descreva uma situação onde você teve que escolher entre disponibilidade e consistência..."</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-center gap-2 text-green-400">
-                  <CheckCircle className="w-5 h-5" />
-                  <span className="font-medium">Prompts Prontos para Validação de Candidatos</span>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         )}
 
