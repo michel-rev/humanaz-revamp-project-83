@@ -35,16 +35,16 @@ const FlywheelSection = () => {
   ];
 
   return (
-    <section id="flywheel" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 relative overflow-hidden">
+    <section id="flywheel" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Background Elements */}
-      <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={2} spacing={60} className="hover:opacity-50" />
+      <AnimatedDottedBackground opacity={0.2} color="%23e2e8f0" size={3} spacing={80} className="hover:opacity-40" />
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Nosso <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Flywheel</span> de Sucesso
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Nosso <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Flywheel</span> de Sucesso
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Um processo otimizado que roda em 15 dias corridos, conectando talentos excepcionais às empresas certas através de tecnologia e curadoria humanizada.
           </p>
         </div>
