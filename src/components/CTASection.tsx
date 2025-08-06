@@ -23,15 +23,15 @@ const CTASection = () => {
           </p>
 
           {/* Main CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-[1.1rem] px-8 py-4 h-[1rem] group">
-              <Calendar className="mr-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-16">
+            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8">
+              <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Agendar Demonstração
-              <ArrowRight className="ml-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
             
-            <Button size="lg" variant="outline" className="border-2 border-purple-400 text-purple-300 hover:bg-purple-400/10 text-[1.1rem] px-8 py-4 h-[1rem] group">
-              <MessageSquare className="mr-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+            <Button size="lg" variant="gradient-outline" className="text-base sm:text-lg px-6 sm:px-8">
+              <MessageSquare className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Falar com Especialista
             </Button>
           </div>
