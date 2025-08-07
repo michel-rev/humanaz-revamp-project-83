@@ -59,15 +59,10 @@ const PricingSection = () => {
       
       <div className="container mx-auto px-4 relative">
         {/* Section Header */}
-        <div className="flex items-center justify-center lg:justify-start mb-16">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 p-3">
-              <Box className="w-full h-full text-white" />
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Investimento
-            </h2>
-          </div>
+        <div className="flex items-center justify-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Investimento
+          </h2>
         </div>
 
         {/* Pricing Cards */}
