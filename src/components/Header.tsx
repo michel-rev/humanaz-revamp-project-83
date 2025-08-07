@@ -40,6 +40,7 @@ const Header = () => {
     { name: "Como Funciona", href: "#processo" },
     { name: "Oportunidade", href: "#clientes" },
     { name: "Empresa", href: "#sobre", hasDropdown: true },
+    { name: "Blog", href: "#blog" },
     { name: "Contato", href: "#contato" }
   ];
 
