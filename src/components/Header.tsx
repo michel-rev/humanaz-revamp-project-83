@@ -111,7 +111,7 @@ const Header = () => {
                             <div className="flex items-start gap-4">
                               <IconComponent className="h-5 w-5 text-gray-500 mt-0.5 flex-shrink-0" />
                               <div className="flex-1">
-                                <div className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                                <div className="font-bold text-gray-900 group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-400 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
                                   {dropdownItem.title}
                                 </div>
                                 <div className="text-sm text-gray-500 mt-1">
@@ -187,7 +187,7 @@ const Header = () => {
                               <div className="flex items-start gap-3">
                                 <IconComponent className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
                                 <div className="flex-1">
-                                  <div className={`font-bold group-hover:text-blue-600 transition-colors duration-200 ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}>
+                                  <div className={`font-bold group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-400 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200 ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}>
                                     {dropdownItem.title}
                                   </div>
                                   <div className="text-sm text-gray-400 mt-1">
