@@ -297,40 +297,24 @@ const InteractiveDemo = () => {
         {currentDemo === 'competencies' && <div className="space-y-8">
             {/* Competency Scenarios Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {competencyDefinitions[0].scenarios.map((scenario, idx) => <Card key={idx} className="bg-slate-800/40 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/60 transition-all duration-300 group px-[23px]">
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
-                      <div className={`p-2 sm:p-3 rounded-xl flex-shrink-0 ${idx === 0 ? 'bg-gradient-to-br from-blue-500/20 to-blue-600/20' : idx === 1 ? 'bg-gradient-to-br from-green-500/20 to-green-600/20' : 'bg-gradient-to-br from-purple-500/20 to-purple-600/20'}`}>
-                        {idx === 0 ? <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" /> : idx === 1 ? <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" /> : <Target className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <Badge variant="outline" className={`text-xs mb-1 sm:mb-2 ${idx === 0 ? 'border-blue-400/30 text-blue-300 bg-blue-400/10' : idx === 1 ? 'border-green-400/30 text-green-300 bg-green-400/10' : 'border-purple-400/30 text-purple-300 bg-purple-400/10'}`}>
-                          {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
-                        </Badge>
-                        <CardTitle className="text-white text-base sm:text-lg leading-tight group-hover:text-purple-300 transition-colors">
-                          {scenario.clientScenario}
-                        </CardTitle>
-                      </div>
+              {competencyDefinitions[0].scenarios.map((scenario, idx) => <Card key={idx} className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 group p-8 rounded-3xl">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className={`p-4 rounded-2xl flex-shrink-0 ${idx === 0 ? 'bg-blue-50' : idx === 1 ? 'bg-green-50' : 'bg-purple-50'}`}>
+                      {idx === 0 ? <Briefcase className="w-8 h-8 text-blue-600" /> : idx === 1 ? <TrendingUp className="w-8 h-8 text-green-600" /> : <Target className="w-8 h-8 text-purple-600" />}
                     </div>
-                    <p className="text-slate-300 text-sm leading-relaxed">
-                      {scenario.businessContext}
-                    </p>
-                  </CardHeader>
-                  <CardContent className="space-y-3 sm:space-y-4 pt-0">
-                    {scenario.generatedCompetencies.map((comp, compIdx) => <div key={compIdx} className="space-y-3">
-                        <div className="flex items-center gap-2">
-                          <Badge variant="secondary" className={`text-xs font-medium ${comp.category === 'Técnica' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' : comp.category === 'Decisão' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' : 'bg-purple-500/20 text-purple-300 border-purple-500/30'}`}>
-                            {comp.category}
-                          </Badge>
-                        </div>
-                        
-                        <div className="bg-slate-900/50 rounded-lg p-3 border border-slate-600/30">
-                          <p className="text-slate-300 text-sm italic leading-relaxed">
-                            "{comp.prompt}"
-                          </p>
-                        </div>
-                      </div>)}
-                  </CardContent>
+                    <div className="flex-1">
+                      <Badge variant="outline" className={`text-sm font-semibold mb-4 px-3 py-1 ${idx === 0 ? 'border-blue-200 text-blue-700 bg-blue-50' : idx === 1 ? 'border-green-200 text-green-700 bg-green-50' : 'border-purple-200 text-purple-700 bg-purple-50'}`}>
+                        {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
+                      </Badge>
+                      <h3 className="text-gray-900 text-xl font-bold leading-tight mb-4">
+                        {scenario.clientScenario}
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    {scenario.businessContext}
+                  </p>
                 </Card>)}
             </div>
 
