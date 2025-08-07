@@ -299,14 +299,14 @@ const InteractiveDemo = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {competencyDefinitions[0].scenarios.map((scenario, idx) => <Card key={idx} className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300 group p-8 rounded-xl">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`p-3 rounded-lg flex-shrink-0 bg-gray-50`}>
-                      {idx === 0 ? <Briefcase className="w-6 h-6 text-gray-700" /> : idx === 1 ? <TrendingUp className="w-6 h-6 text-gray-700" /> : <Target className="w-6 h-6 text-gray-700" />}
+                    <div className={`p-3 rounded-lg flex-shrink-0 ${idx === 0 ? 'bg-blue-50' : idx === 1 ? 'bg-green-50' : 'bg-purple-50'}`}>
+                      {idx === 0 ? <Briefcase className="w-6 h-6 text-blue-600" /> : idx === 1 ? <TrendingUp className="w-6 h-6 text-green-600" /> : <Target className="w-6 h-6 text-purple-600" />}
                     </div>
                     <div className="flex-1">
-                      <Badge variant="outline" className="text-sm font-medium mb-4 px-3 py-1 border-gray-300 text-gray-700 bg-white rounded-lg">
+                      <Badge variant="outline" className={`text-sm font-medium mb-4 px-3 py-1 rounded-lg ${idx === 0 ? 'border-blue-200 text-blue-700 bg-blue-50' : idx === 1 ? 'border-green-200 text-green-700 bg-green-50' : 'border-purple-200 text-purple-700 bg-purple-50'}`}>
                         {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
                       </Badge>
-                      <h3 className="text-gray-900 text-xl font-bold leading-tight mb-4">
+                      <h3 className={`text-xl font-bold leading-tight mb-4 ${idx === 0 ? 'text-blue-900' : idx === 1 ? 'text-green-900' : 'text-purple-900'}`}>
                         {scenario.clientScenario}
                       </h3>
                     </div>
@@ -324,21 +324,21 @@ const InteractiveDemo = () => {
                 <CardContent className="p-4 sm:p-6 lg:p-8">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
                     <div className="space-y-1 sm:space-y-2">
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600">
                         12
                       </div>
                       <p className="text-gray-900 font-semibold text-sm sm:text-base">Competências Identificadas</p>
                       <p className="text-gray-600 text-xs sm:text-sm">Por cenário contextual</p>
                     </div>
                     <div className="space-y-1 sm:space-y-2">
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-600">
                         94%
                       </div>
                       <p className="text-gray-900 font-semibold text-sm sm:text-base">Precisão de Match</p>
                       <p className="text-gray-600 text-xs sm:text-sm">Alinhamento cultural</p>
                     </div>
                     <div className="space-y-1 sm:space-y-2">
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-600">
                         3
                       </div>
                       <p className="text-gray-900 font-semibold text-sm sm:text-base">Cenários Situacionais</p>
