@@ -60,7 +60,7 @@ const PricingSection = () => {
       <div className="container mx-auto px-4 relative">
         {/* Section Header */}
         <div className="flex items-center justify-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white">
             Investimento
           </h2>
         </div>
