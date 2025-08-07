@@ -51,7 +51,13 @@ const ClientsSection = () => {
         {/* Clients Infinite Loop Animation */}
         <div className="space-y-8">
           {/* First row - moving right */}
-          <div className="overflow-hidden">
+          <div className="relative overflow-hidden">
+            {/* Left fade gradient */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            
+            {/* Right fade gradient */}
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            
             <div className="flex gap-8 animate-[scroll-right_20s_linear_infinite]">
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <div key={`right-${index}`} className="flex-shrink-0 group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 w-48">
@@ -71,7 +77,13 @@ const ClientsSection = () => {
           </div>
 
           {/* Second row - moving left */}
-          <div className="overflow-hidden">
+          <div className="relative overflow-hidden">
+            {/* Left fade gradient */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            
+            {/* Right fade gradient */}
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            
             <div className="flex gap-8 animate-[scroll-left_25s_linear_infinite]">
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <div key={`left-${index}`} className="flex-shrink-0 group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 w-48">
