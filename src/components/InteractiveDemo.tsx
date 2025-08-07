@@ -373,7 +373,7 @@ const InteractiveDemo = () => {
             {/* Competency Scenarios Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {competencyDefinitions[0].scenarios.map((scenario, idx) => (
-                <Card key={idx} className="bg-slate-800/40 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/60 transition-all duration-300 group">
+                <Card key={idx} className="bg-card text-card-foreground border-border shadow-sm hover:shadow-md transition-all duration-300 group">
                   <CardHeader className="pb-3 sm:pb-4">
                     <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
                       <div className={`p-2 sm:p-3 rounded-xl flex-shrink-0 ${
@@ -393,16 +393,16 @@ const InteractiveDemo = () => {
                         }`}>
                           {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
                         </Badge>
-                        <CardTitle className="text-white text-base sm:text-lg leading-tight group-hover:text-purple-300 transition-colors">
+                        <CardTitle className="text-foreground text-base sm:text-xl font-semibold leading-tight group-hover:text-primary transition-colors">
                           {scenario.clientScenario}
                         </CardTitle>
                       </div>
                     </div>
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                       {scenario.businessContext}
                     </p>
                   </CardHeader>
-                  <CardContent className="space-y-3 sm:space-y-4 pt-0">
+                  <CardContent className="space-y-4 sm:space-y-5 pt-0">
                     {scenario.generatedCompetencies.map((comp, compIdx) => (
                       <div key={compIdx} className="space-y-3">
                         <div className="flex items-center gap-2">
@@ -414,15 +414,15 @@ const InteractiveDemo = () => {
                             {comp.category}
                           </Badge>
                         </div>
-                        <div className="flex flex-wrap gap-1">
+                        <div className="flex flex-wrap gap-2">
                           {comp.competencies.map((competency, competencyIdx) => (
-                            <span key={competencyIdx} className="inline-block text-xs px-2 py-1 bg-slate-700/50 text-slate-300 rounded border border-slate-600/50">
+                            <span key={competencyIdx} className="inline-block text-[11px] sm:text-xs px-2.5 py-1 bg-muted text-muted-foreground rounded-md border border-border">
                               {competency}
                             </span>
                           ))}
                         </div>
-                        <div className="bg-slate-900/50 rounded-lg p-3 border border-slate-600/30">
-                          <p className="text-slate-300 text-sm italic leading-relaxed">
+                        <div className="bg-muted/60 rounded-lg p-3 sm:p-4 border border-border">
+                          <p className="text-foreground/80 text-sm sm:text-base italic leading-relaxed">
                             "{comp.prompt}"
                           </p>
                         </div>
