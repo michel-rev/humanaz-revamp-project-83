@@ -142,7 +142,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded-lg border-0 transition-colors duration-300">
+            <Button className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:from-purple-700 hover:via-pink-700 hover:to-purple-700 text-white font-semibold px-6 py-2 rounded-lg border-0 transition-all duration-300 animate-pulse hover:animate-none bg-[length:200%_100%] hover:bg-[length:100%_100%]">
               Começar Agora
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
