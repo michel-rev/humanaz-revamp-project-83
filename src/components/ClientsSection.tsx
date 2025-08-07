@@ -1,5 +1,6 @@
 
 import { Building2 } from "lucide-react";
+import { useState, useEffect } from "react";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
 // Import all logos
@@ -15,6 +16,27 @@ import qitechLogo from "@/assets/logos/qitech-logo.png";
 import tivitaLogo from "@/assets/logos/tivita-logo.png";
 
 const ClientsSection = () => {
+  const [offsetRight, setOffsetRight] = useState(0);
+  const [offsetLeft, setOffsetLeft] = useState(0);
+
+  useEffect(() => {
+    const animateCarousel = () => {
+      setOffsetRight(prev => {
+        const newOffset = prev - 1;
+        // Reset position when one complete set has passed
+        return newOffset <= -100 ? 0 : newOffset;
+      });
+      
+      setOffsetLeft(prev => {
+        const newOffset = prev + 0.8;
+        // Reset position when one complete set has passed
+        return newOffset >= 100 ? 0 : newOffset;
+      });
+    };
+
+    const interval = setInterval(animateCarousel, 50);
+    return () => clearInterval(interval);
+  }, []);
 
   const clients = [
     { name: "Neon Pagamentos", logo: neonLogo },
@@ -51,8 +73,19 @@ const ClientsSection = () => {
         {/* Clients Infinite Loop Animation */}
         <div className="space-y-8">
           {/* First row - moving right */}
-          <div className="overflow-hidden">
-            <div className="flex gap-8 animate-[scroll-right_20s_linear_infinite]">
+          <div className="relative overflow-hidden">
+            {/* Gradient overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            
+            <div 
+              className="flex gap-8 transition-none"
+              style={{ 
+                transform: `translateX(${offsetRight}%)`,
+                width: '300%' // Triple width to accommodate seamless loop
+              }}
+            >
+              {/* Triple the logos for seamless infinite scroll */}
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <div key={`right-${index}`} className="flex-shrink-0 group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 w-48">
                   <div className="flex items-center justify-center h-24">
@@ -71,8 +104,19 @@ const ClientsSection = () => {
           </div>
 
           {/* Second row - moving left */}
-          <div className="overflow-hidden">
-            <div className="flex gap-8 animate-[scroll-left_25s_linear_infinite]">
+          <div className="relative overflow-hidden">
+            {/* Gradient overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            
+            <div 
+              className="flex gap-8 transition-none"
+              style={{ 
+                transform: `translateX(${offsetLeft}%)`,
+                width: '300%' // Triple width to accommodate seamless loop
+              }}
+            >
+              {/* Triple the logos for seamless infinite scroll */}
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <div key={`left-${index}`} className="flex-shrink-0 group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 w-48">
                   <div className="flex items-center justify-center h-24">
