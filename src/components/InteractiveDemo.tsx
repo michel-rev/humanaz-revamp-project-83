@@ -159,7 +159,7 @@ const InteractiveDemo = () => {
             icon: Icon
           }) => <Button key={id} variant="ghost" onClick={() => setCurrentDemo(id as any)} className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm ${currentDemo === id ? 'bg-purple-600 text-white' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}>
                 <Icon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span className="font-medium whitespace-nowrap">{label}</span>
+                <span className="font-medium whitespace-nowrap text-base">{label}</span>
               </Button>)}
           </div>
         </div>
