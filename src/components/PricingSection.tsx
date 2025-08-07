@@ -95,25 +95,25 @@ const PricingSection = () => {
                   </div>
                 )}
                 
-                <CardContent className="p-6">
+                <CardContent className="p-8 md:p-10">
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4 mb-6 mx-auto">
                     <Icon className="w-full h-full text-white" />
                   </div>
                   
                   {/* Plan Name */}
-                  <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">
+                  <h3 className="text-2xl font-bold text-gray-900 text-center mb-3">
                     {plan.name}
                   </h3>
                   
                   {/* Price */}
-                  <div className="text-center mb-4">
-                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                    <span className="text-gray-600 text-lg">{plan.period}</span>
+                  <div className="text-center mb-5">
+                    <span className="text-3xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{plan.price}</span>
+                    <span className="block md:inline text-gray-500 text-sm md:text-base ml-0 md:ml-2 align-baseline">{plan.period}</span>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-gray-600 text-center mb-8 leading-relaxed">
+                  <p className="text-gray-700 text-center mb-8 leading-relaxed text-base md:text-lg">
                     {plan.description}
                   </p>
                   
@@ -126,7 +126,7 @@ const PricingSection = () => {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className="text-gray-600 text-base leading-relaxed">
                           {feature}
                         </p>
                       </div>
@@ -135,11 +135,11 @@ const PricingSection = () => {
                   
                   {/* CTA Button */}
                   <button 
-                    className={`w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 ${
-                      plan.popular
+                    className={`${`w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wide text-base md:text-lg transition-all duration-300`} 
+                      ${plan.popular
                         ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
-                        : 'bg-gray-900 text-white hover:bg-gray-800'
-                    }`}
+                        : 'bg-gray-900 text-white hover:bg-gray-800'}
+                    `}
                   >
                     {plan.buttonText}
                   </button>
@@ -151,7 +151,7 @@ const PricingSection = () => {
 
         {/* Bottom Note */}
         <div className="text-center mt-16">
-          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+          <p className="text-slate-400 text-base md:text-lg max-w-3xl mx-auto">
             Valores por profissional contratado. Inclui todo o processo de atração, seleção e validação cultural. 
             <span className="text-purple-400 font-semibold"> Garantia de 90 dias sem custo adicional.</span>
           </p>
