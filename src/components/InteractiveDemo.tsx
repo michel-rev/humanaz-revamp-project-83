@@ -136,7 +136,7 @@ const InteractiveDemo = () => {
 
         {/* Filter Chips */}
         <div className="flex justify-center mb-8 sm:mb-12 px-4">
-          <div className="flex flex-wrap gap-2 sm:gap-3 bg-slate-800/30 backdrop-blur-sm rounded-2xl p-2 border border-slate-700/50 max-w-full">
+          <div className="flex flex-wrap gap-2 sm:gap-3 bg-white rounded-lg p-2 border border-gray-200 max-w-full">
             {[{
             id: 'competencies',
             label: 'Definição de Competências',
@@ -157,7 +157,7 @@ const InteractiveDemo = () => {
             id,
             label,
             icon: Icon
-          }) => <Button key={id} variant="ghost" onClick={() => setCurrentDemo(id as any)} className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-xl transition-all duration-300 text-xs sm:text-sm ${currentDemo === id ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25' : 'text-slate-300 hover:text-white hover:bg-slate-700/50'}`}>
+          }) => <Button key={id} variant="ghost" onClick={() => setCurrentDemo(id as any)} className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm ${currentDemo === id ? 'bg-purple-600 text-white' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}>
                 <Icon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                 <span className="font-medium whitespace-nowrap">{label}</span>
               </Button>)}
@@ -297,13 +297,13 @@ const InteractiveDemo = () => {
         {currentDemo === 'competencies' && <div className="space-y-8">
             {/* Competency Scenarios Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {competencyDefinitions[0].scenarios.map((scenario, idx) => <Card key={idx} className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 group p-8 rounded-3xl">
+              {competencyDefinitions[0].scenarios.map((scenario, idx) => <Card key={idx} className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300 group p-8 rounded-xl">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`p-4 rounded-2xl flex-shrink-0 ${idx === 0 ? 'bg-blue-50' : idx === 1 ? 'bg-green-50' : 'bg-purple-50'}`}>
-                      {idx === 0 ? <Briefcase className="w-8 h-8 text-blue-600" /> : idx === 1 ? <TrendingUp className="w-8 h-8 text-green-600" /> : <Target className="w-8 h-8 text-purple-600" />}
+                    <div className={`p-3 rounded-lg flex-shrink-0 bg-gray-50`}>
+                      {idx === 0 ? <Briefcase className="w-6 h-6 text-gray-700" /> : idx === 1 ? <TrendingUp className="w-6 h-6 text-gray-700" /> : <Target className="w-6 h-6 text-gray-700" />}
                     </div>
                     <div className="flex-1">
-                      <Badge variant="outline" className={`text-sm font-semibold mb-4 px-3 py-1 ${idx === 0 ? 'border-blue-200 text-blue-700 bg-blue-50' : idx === 1 ? 'border-green-200 text-green-700 bg-green-50' : 'border-purple-200 text-purple-700 bg-purple-50'}`}>
+                      <Badge variant="outline" className="text-sm font-medium mb-4 px-3 py-1 border-gray-300 text-gray-700 bg-white rounded-lg">
                         {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
                       </Badge>
                       <h3 className="text-gray-900 text-xl font-bold leading-tight mb-4">
@@ -320,34 +320,36 @@ const InteractiveDemo = () => {
 
             {/* Results Summary */}
             <div className="mt-12 sm:mt-16">
-              <Card className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-slate-700/50 backdrop-blur-sm">
+              <Card className="bg-white border border-gray-200 shadow-sm">
                 <CardContent className="p-4 sm:p-6 lg:p-8">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
                     <div className="space-y-1 sm:space-y-2">
-                      
-                      <p className="text-white font-semibold text-sm sm:text-base">Competências Identificadas</p>
-                      <p className="text-slate-400 text-xs sm:text-sm">Por cenário contextual</p>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                        12
+                      </div>
+                      <p className="text-gray-900 font-semibold text-sm sm:text-base">Competências Identificadas</p>
+                      <p className="text-gray-600 text-xs sm:text-sm">Por cenário contextual</p>
                     </div>
                     <div className="space-y-1 sm:space-y-2">
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600">
                         94%
                       </div>
-                      <p className="text-white font-semibold text-sm sm:text-base">Precisão de Match</p>
-                      <p className="text-slate-400 text-xs sm:text-sm">Alinhamento cultural</p>
+                      <p className="text-gray-900 font-semibold text-sm sm:text-base">Precisão de Match</p>
+                      <p className="text-gray-600 text-xs sm:text-sm">Alinhamento cultural</p>
                     </div>
                     <div className="space-y-1 sm:space-y-2">
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600">
                         3
                       </div>
-                      <p className="text-white font-semibold text-sm sm:text-base">Cenários Situacionais</p>
-                      <p className="text-slate-400 text-xs sm:text-sm">Negócios, produto, tech</p>
+                      <p className="text-gray-900 font-semibold text-sm sm:text-base">Cenários Situacionais</p>
+                      <p className="text-gray-600 text-xs sm:text-sm">Negócios, produto, tech</p>
                     </div>
                     <div className="space-y-1 sm:space-y-2">
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600">
                         15
                       </div>
-                      <p className="text-white font-semibold text-sm sm:text-base">Dias de Processo</p>
-                      <p className="text-slate-400 text-xs sm:text-sm">Da triagem à aprovação</p>
+                      <p className="text-gray-900 font-semibold text-sm sm:text-base">Dias de Processo</p>
+                      <p className="text-gray-600 text-xs sm:text-sm">Da triagem à aprovação</p>
                     </div>
                   </div>
                 </CardContent>

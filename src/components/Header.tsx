@@ -72,7 +72,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${isDarkBackground ? 'border-gray-300/20 bg-white/10 backdrop-blur-md' : 'border-gray-800/20 bg-white/90 backdrop-blur-md shadow-lg'}`}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -80,7 +80,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/223cbda9-53a4-4e94-a4b7-bcc0b550cf27.png" 
               alt="HumanAZ Logo" 
-              className={`h-10 w-auto transition-all duration-500 ${isDarkBackground ? 'filter-none' : 'brightness-0'}`}
+              className="h-10 w-auto brightness-0"
             />
           </a>
 
@@ -91,28 +91,29 @@ const Header = () => {
                 <div key={item.name} className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent flex items-center gap-1 ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                    className="relative font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300 flex items-center gap-1 group"
                   >
                     {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   
                   {/* Dropdown Menu */}
                   {isDropdownOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg z-50 py-2">
+                    <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg border border-gray-200 shadow-sm z-50 py-2">
                       {empresaDropdownItems.map((dropdownItem, index) => {
                         const IconComponent = dropdownItem.icon;
                         return (
                           <a
                             key={index}
                             href={dropdownItem.href}
-                            className="block px-6 py-4 hover:bg-[#f4f6fa] transition-colors duration-200 group"
+                            className="block px-6 py-4 hover:bg-gray-50 transition-colors duration-200 group"
                             onClick={() => setIsDropdownOpen(false)}
                           >
                             <div className="flex items-start gap-4">
                               <IconComponent className="h-5 w-5 text-gray-500 mt-0.5 flex-shrink-0" />
                               <div className="flex-1">
-                                <div className="font-bold text-gray-900 group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-400 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
+                                <div className="font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-200">
                                   {dropdownItem.title}
                                 </div>
                                 <div className="text-sm text-gray-500 mt-1">
@@ -130,9 +131,10 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-purple-400 after:via-pink-400 after:to-purple-600 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                  className="relative font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300 group"
                 >
                   {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               )
             ))}
@@ -140,7 +142,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-[1rem]">
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded-lg border-0 transition-colors duration-300">
               Começar Agora
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -148,7 +150,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden transition-colors duration-500 flex items-center justify-center ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+            className="md:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 flex items-center justify-center hover:bg-gray-100 p-2 rounded-lg"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -157,16 +159,17 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className={`md:hidden py-4 border-t transition-colors duration-500 ${isDarkBackground ? 'border-purple-400/20' : 'border-gray-800/20'}`}>
+          <div className="md:hidden py-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 item.hasDropdown ? (
                   <div key={item.name}>
                     <button
                       onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-                      className={`w-full text-left relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent flex items-center justify-between ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                      className="w-full text-left font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300 flex items-center justify-between group"
                     >
                       {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
                       <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
                     
@@ -179,7 +182,7 @@ const Header = () => {
                             <a
                               key={index}
                               href={dropdownItem.href}
-                              className="block py-2 hover:bg-[#f4f6fa] rounded transition-colors duration-200 group"
+                              className="block py-2 hover:bg-gray-50 rounded-lg transition-colors duration-200 group"
                               onClick={() => {
                                 setIsMenuOpen(false);
                                 setIsMobileDropdownOpen(false);
@@ -188,7 +191,7 @@ const Header = () => {
                               <div className="flex items-start gap-3">
                                 <IconComponent className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
                                 <div className="flex-1">
-                                  <div className={`font-bold group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-400 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200 ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}>
+                                  <div className="font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-200">
                                     {dropdownItem.title}
                                   </div>
                                   <div className="text-sm text-gray-400 mt-1">
@@ -206,14 +209,15 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-purple-400 after:via-pink-400 after:to-purple-600 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                    className="relative font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300 group"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 )
               ))}
-              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-4 text-[1rem]">
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white mt-4 font-semibold px-6 py-2 rounded-lg border-0 transition-colors duration-300">
                 Começar Agora
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
