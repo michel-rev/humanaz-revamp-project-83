@@ -95,7 +95,7 @@ const PricingSection = () => {
                   </div>
                 )}
                 
-                <CardContent className="p-8">
+                <CardContent className="p-6">
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4 mb-6 mx-auto">
                     <Icon className="w-full h-full text-white" />
