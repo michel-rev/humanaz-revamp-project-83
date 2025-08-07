@@ -73,17 +73,17 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {pricingPlans.map((plan, index) => {
             const Icon = plan.icon;
             
             return (
               <Card
                 key={index}
-                className={`bg-white border rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative ${
+                className={`bg-white border-2 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative ${
                   plan.popular 
-                    ? 'border-2 border-gradient-to-r from-purple-500 to-pink-500 ring-2 ring-purple-500/20' 
-                    : 'border-gray-200'
+                    ? 'border-purple-500/30 ring-2 ring-purple-500/20 hover:border-purple-500/50' 
+                    : 'border-gray-200 hover:border-purple-500/30'
                 }`}
               >
                 {/* Popular Badge */}
@@ -95,38 +95,38 @@ const PricingSection = () => {
                   </div>
                 )}
                 
-                <CardContent className="p-8">
+                <CardContent className="p-6 sm:p-8">
                   {/* Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4 mb-6 mx-auto">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 p-3 mb-4 mx-auto">
                     <Icon className="w-full h-full text-white" />
                   </div>
                   
                   {/* Plan Name */}
-                  <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">
+                  <h3 className="text-xl font-bold text-gray-900 text-center mb-3">
                     {plan.name}
                   </h3>
                   
                   {/* Price */}
-                  <div className="text-center mb-4">
-                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                    <span className="text-gray-600 text-lg">{plan.period}</span>
+                  <div className="text-center mb-6">
+                    <div className="text-3xl sm:text-4xl font-bold text-gray-900">{plan.price}</div>
+                    <div className="text-gray-600 text-sm">{plan.period}</div>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-gray-600 text-center mb-8 leading-relaxed">
+                  <p className="text-gray-600 text-center mb-6 text-sm leading-relaxed">
                     {plan.description}
                   </p>
                   
                   {/* Features List */}
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-8">
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-3">
-                        <div className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className="text-gray-700 text-sm leading-relaxed">
                           {feature}
                         </p>
                       </div>
@@ -135,10 +135,10 @@ const PricingSection = () => {
                   
                   {/* CTA Button */}
                   <button 
-                    className={`w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                    className={`w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
-                        : 'bg-gray-900 text-white hover:bg-gray-800'
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-lg'
+                        : 'bg-gray-900 text-white hover:bg-gray-800 shadow-md hover:shadow-lg'
                     }`}
                   >
                     {plan.buttonText}
