@@ -7,7 +7,7 @@ const PricingSection = () => {
       icon: User,
       name: "Básico",
       price: "R$ 16.486",
-      period: "/contratação",
+      period: "por profissional",
       description: "Ideal para empresas que buscam talentos específicos",
       features: [
         "1 profissional selecionado",
@@ -25,7 +25,7 @@ const PricingSection = () => {
       icon: Users,
       name: "Profissional",
       price: "R$ 14.106",
-      period: "/contratação",
+      period: "por profissional",
       description: "Perfeito para times em crescimento e múltiplas vagas",
       features: [
         "4+ profissionais selecionados",
@@ -43,7 +43,7 @@ const PricingSection = () => {
       icon: Calendar,
       name: "Enterprise",
       price: "R$ 11.726",
-      period: "/contratação",
+      period: "por profissional",
       description: "Solução completa para grandes operações de recrutamento",
       features: [
         "6+ profissionais selecionados",
