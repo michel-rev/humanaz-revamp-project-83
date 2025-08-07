@@ -371,65 +371,88 @@ const InteractiveDemo = () => {
         {currentDemo === 'competencies' && (
           <div className="space-y-8">
             {/* Competency Scenarios Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {competencyDefinitions[0].scenarios.map((scenario, idx) => (
-                <Card key={idx} className="bg-card text-card-foreground border-border shadow-sm hover:shadow-md transition-all duration-300 group">
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
-                      <div className={`p-2 sm:p-3 rounded-xl flex-shrink-0 ${
-                        idx === 0 ? 'bg-gradient-to-br from-blue-500/20 to-blue-600/20' :
-                        idx === 1 ? 'bg-gradient-to-br from-green-500/20 to-green-600/20' :
-                        'bg-gradient-to-br from-purple-500/20 to-purple-600/20'
-                      }`}>
-                        {idx === 0 ? <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" /> :
-                         idx === 1 ? <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" /> :
-                         <Target className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <Badge variant="outline" className={`text-xs mb-1 sm:mb-2 ${
-                          idx === 0 ? 'border-blue-400/30 text-blue-300 bg-blue-400/10' :
-                          idx === 1 ? 'border-green-400/30 text-green-300 bg-green-400/10' :
-                          'border-purple-400/30 text-purple-300 bg-purple-400/10'
+                <div key={idx} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 lg:p-10 group relative">
+                  {/* Header Section */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className={`p-2 rounded-xl ${
+                          idx === 0 ? 'bg-blue-100' :
+                          idx === 1 ? 'bg-green-100' :
+                          'bg-purple-100'
                         }`}>
-                          {idx === 0 ? 'Fintech B2B' : idx === 1 ? 'E-commerce' : 'Healthtech'}
+                          {idx === 0 ? <Briefcase className="w-5 h-5 text-blue-600" /> :
+                           idx === 1 ? <TrendingUp className="w-5 h-5 text-green-600" /> :
+                           <Target className="w-5 h-5 text-purple-600" />}
+                        </div>
+                        <Badge className={`font-bold text-xs px-3 py-1.5 rounded-full ${
+                          idx === 0 ? 'bg-blue-100 text-blue-700 border-blue-200' :
+                          idx === 1 ? 'bg-green-100 text-green-700 border-green-200' :
+                          'bg-purple-100 text-purple-700 border-purple-200'
+                        }`}>
+                          {idx === 0 ? 'FINTECH B2B' : idx === 1 ? 'E-COMMERCE' : 'HEALTHTECH'}
                         </Badge>
-                        <CardTitle className="text-foreground text-base sm:text-xl font-semibold leading-tight group-hover:text-primary transition-colors">
-                          {scenario.clientScenario}
-                        </CardTitle>
                       </div>
+                      <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-4 leading-tight">
+                        {scenario.clientScenario}
+                      </h3>
                     </div>
-                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                    <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-purple-500 transition-colors flex-shrink-0 ml-3" />
+                  </div>
+
+                  {/* Business Context */}
+                  <div className="bg-slate-50 rounded-2xl p-6 mb-8 border border-slate-100">
+                    <p className="text-slate-700 text-base leading-relaxed font-medium">
                       {scenario.businessContext}
                     </p>
-                  </CardHeader>
-                  <CardContent className="space-y-4 sm:space-y-5 pt-0">
+                  </div>
+
+                  {/* Competencies */}
+                  <div className="space-y-6">
                     {scenario.generatedCompetencies.map((comp, compIdx) => (
-                      <div key={compIdx} className="space-y-3">
+                      <div key={compIdx} className="space-y-4">
+                        {/* Category Badge */}
                         <div className="flex items-center gap-2">
-                          <Badge variant="secondary" className={`text-xs font-medium ${
-                            comp.category === 'Técnica' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
-                            comp.category === 'Decisão' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
-                            'bg-purple-500/20 text-purple-300 border-purple-500/30'
+                          <Badge className={`font-bold text-xs px-3 py-1.5 rounded-full ${
+                            comp.category === 'Técnica' 
+                              ? 'bg-orange-100 text-orange-700 border-orange-200' 
+                              : comp.category === 'Decisão'
+                              ? 'bg-blue-100 text-blue-700 border-blue-200'
+                              : 'bg-green-100 text-green-700 border-green-200'
                           }`}>
                             {comp.category}
                           </Badge>
                         </div>
-                        <div className="flex flex-wrap gap-2">
-                          {comp.competencies.map((competency, competencyIdx) => (
-                            <span key={competencyIdx} className="inline-block text-[11px] sm:text-xs px-2.5 py-1 bg-muted text-muted-foreground rounded-md border border-border">
-                              {competency}
-                            </span>
-                          ))}
+                        
+                        {/* Competencies List */}
+                        <div className="space-y-3">
+                          <p className="text-sm font-bold text-slate-600 uppercase tracking-wide">Competências:</p>
+                          <div className="flex flex-wrap gap-2">
+                            {comp.competencies.map((competency, competencyIdx) => (
+                              <span key={competencyIdx} className="bg-purple-50 text-purple-800 text-sm font-medium px-3 py-2 rounded-full border border-purple-100">
+                                {competency}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                        <div className="bg-muted/60 rounded-lg p-3 sm:p-4 border border-border">
-                          <p className="text-foreground/80 text-sm sm:text-base italic leading-relaxed">
-                            "{comp.prompt}"
+
+                        {/* Prompt Example */}
+                        <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 relative">
+                          <div className="absolute top-3 right-3">
+                            <div className="w-2 h-2 rounded-full bg-slate-300"></div>
+                          </div>
+                          <p className="text-slate-700 text-sm leading-relaxed italic pr-6">
+                            <span className="text-2xl text-slate-400 leading-none mr-1">"</span>
+                            {comp.prompt}
+                            <span className="text-2xl text-slate-400 leading-none ml-1">"</span>
                           </p>
                         </div>
                       </div>
                     ))}
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
 
