@@ -22,19 +22,19 @@ const ClientsSection = () => {
   useEffect(() => {
     const animateCarousel = () => {
       setOffsetRight(prev => {
-        const newOffset = prev - 1;
+        const newOffset = prev - 0.3; // Velocidade mais suave
         // Reset position when one complete set has passed
         return newOffset <= -100 ? 0 : newOffset;
       });
       
       setOffsetLeft(prev => {
-        const newOffset = prev + 0.8;
+        const newOffset = prev + 0.25; // Velocidade ligeiramente diferente e mais suave
         // Reset position when one complete set has passed
         return newOffset >= 100 ? 0 : newOffset;
       });
     };
 
-    const interval = setInterval(animateCarousel, 50);
+    const interval = setInterval(animateCarousel, 60); // Intervalo um pouco maior para suavidade
     return () => clearInterval(interval);
   }, []);
 
