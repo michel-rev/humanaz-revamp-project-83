@@ -1,9 +1,6 @@
 
-import { Building2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Building2 } from "lucide-react";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
 
 // Import all logos
 import neonLogo from "@/assets/logos/neon-logo.svg";
@@ -18,9 +15,6 @@ import qitechLogo from "@/assets/logos/qitech-logo.png";
 import tivitaLogo from "@/assets/logos/tivita-logo.png";
 
 const ClientsSection = () => {
-  const plugin = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
 
   const clients = [
     { name: "Neon Pagamentos", logo: neonLogo },
@@ -54,50 +48,47 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        {/* Clients Carousel */}
-        <div className="relative">
-          <Carousel
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {/* Duplicate clients for infinite scroll effect */}
-              {[...clients, ...clients].map((client, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
-                  <div className="group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 animate-fade-in">
-                    <div className="flex items-center justify-center h-24">
-                      <img
-                        src={client.logo}
-                        alt={`${client.name} logo`}
-                        className="max-w-full max-h-full object-contain filter brightness-90 hover:brightness-110 transition-all duration-300 group-hover:scale-110"
-                        style={{ 
-                          filter: "brightness(0.9) contrast(1.1)",
-                        }}
-                      />
-                    </div>
+        {/* Clients Infinite Loop Animation */}
+        <div className="space-y-8">
+          {/* First row - moving right */}
+          <div className="overflow-hidden">
+            <div className="flex gap-8 animate-[scroll-right_20s_linear_infinite]">
+              {[...clients, ...clients, ...clients].map((client, index) => (
+                <div key={`right-${index}`} className="flex-shrink-0 group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 w-48">
+                  <div className="flex items-center justify-center h-24">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-full object-contain filter brightness-90 hover:brightness-110 transition-all duration-300 group-hover:scale-110"
+                      style={{ 
+                        filter: "brightness(0.9) contrast(1.1)",
+                      }}
+                    />
                   </div>
-                </CarouselItem>
+                </div>
               ))}
-            </CarouselContent>
-            
-            {/* Custom navigation arrows */}
-            <div className="absolute -left-12 top-1/2 -translate-y-1/2 hidden lg:block">
-              <CarouselPrevious className="bg-slate-800/80 border-slate-600 hover:bg-slate-700 hover:border-purple-400/50 text-white">
-                <ChevronLeft className="h-4 w-4" />
-              </CarouselPrevious>
             </div>
-            <div className="absolute -right-12 top-1/2 -translate-y-1/2 hidden lg:block">
-              <CarouselNext className="bg-slate-800/80 border-slate-600 hover:bg-slate-700 hover:border-purple-400/50 text-white">
-                <ChevronRight className="h-4 w-4" />
-              </CarouselNext>
+          </div>
+
+          {/* Second row - moving left */}
+          <div className="overflow-hidden">
+            <div className="flex gap-8 animate-[scroll-left_25s_linear_infinite]">
+              {[...clients, ...clients, ...clients].map((client, index) => (
+                <div key={`left-${index}`} className="flex-shrink-0 group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 w-48">
+                  <div className="flex items-center justify-center h-24">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-full object-contain filter brightness-90 hover:brightness-110 transition-all duration-300 group-hover:scale-110"
+                      style={{ 
+                        filter: "brightness(0.9) contrast(1.1)",
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          </Carousel>
+          </div>
         </div>
 
         {/* Stats */}

@@ -87,50 +87,68 @@ export default {
 					}
 				},
 				'fade-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(20px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
+				'0%': {
+					opacity: '0',
+					transform: 'translateY(20px)'
 				},
-				'float': {
-					'0%, 100%': {
-						transform: 'translateY(0px)'
-					},
-					'50%': {
-						transform: 'translateY(-10px)'
-					}
-				},
-				'gradient-x': {
-					'0%, 100%': {
-						'background-size': '200% 200%',
-						'background-position': 'left center'
-					},
-					'50%': {
-						'background-size': '200% 200%',
-						'background-position': 'right center'
-					}
-				},
-				'spin-slow': {
-					'0%': {
-						transform: 'rotate(0deg)'
-					},
-					'100%': {
-						transform: 'rotate(360deg)'
-					}
+				'100%': {
+					opacity: '1',
+					transform: 'translateY(0)'
 				}
 			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'float': 'float 3s ease-in-out infinite',
-				'gradient-x': 'gradient-x 4s ease-in-out infinite',
-				'spin-slow': 'spin-slow 8s linear infinite'
+			'float': {
+				'0%, 100%': {
+					transform: 'translateY(0px)'
+				},
+				'50%': {
+					transform: 'translateY(-10px)'
+				}
+			},
+			'gradient-x': {
+				'0%, 100%': {
+					'background-size': '200% 200%',
+					'background-position': 'left center'
+				},
+				'50%': {
+					'background-size': '200% 200%',
+					'background-position': 'right center'
+				}
+			},
+			'spin-slow': {
+				'0%': {
+					transform: 'rotate(0deg)'
+				},
+				'100%': {
+					transform: 'rotate(360deg)'
+				}
+			},
+			'scroll-right': {
+				'0%': {
+					transform: 'translateX(-100%)'
+				},
+				'100%': {
+					transform: 'translateX(0%)'
+				}
+			},
+			'scroll-left': {
+				'0%': {
+					transform: 'translateX(0%)'
+				},
+				'100%': {
+					transform: 'translateX(-100%)'
+				}
 			}
+			},
+		animation: {
+			'accordion-down': 'accordion-down 0.2s ease-out',
+			'accordion-up': 'accordion-up 0.2s ease-out',
+			'fade-in': 'fade-in 0.6s ease-out',
+			'float': 'float 3s ease-in-out infinite',
+			'gradient-x': 'gradient-x 4s ease-in-out infinite',
+			'spin-slow': 'spin-slow 8s linear infinite',
+			'scroll-right': 'scroll-right 20s linear infinite',
+			'scroll-left': 'scroll-left 25s linear infinite'
+		}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
