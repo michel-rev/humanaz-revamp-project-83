@@ -1,19 +1,38 @@
 
-import { Building2 } from "lucide-react";
+import { Building2, ChevronLeft, ChevronRight } from "lucide-react";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
+
+// Import all logos
+import neonLogo from "@/assets/logos/neon-logo.svg";
+import supersimLogo from "@/assets/logos/supersim-logo.png";
+import nuviaLogo from "@/assets/logos/nuvia-logo.png";
+import klaviLogo from "@/assets/logos/klavi-logo.png";
+import zigfunLogo from "@/assets/logos/zigfun-logo.png";
+import celcoinLogo from "@/assets/logos/celcoin-logo.png";
+import starkbankLogo from "@/assets/logos/starkbank-logo.png";
+import asaasLogo from "@/assets/logos/asaas-logo.png";
+import qitechLogo from "@/assets/logos/qitech-logo.png";
+import tivitaLogo from "@/assets/logos/tivita-logo.png";
 
 const ClientsSection = () => {
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   const clients = [
-    { name: "Neon Pagamentos", logo: "🏦" },
-    { name: "SuperSim", logo: "📱" },
-    { name: "Nuvia", logo: "💎" },
-    { name: "Klavi", logo: "🎹" },
-    { name: "ZigFun", logo: "⚡" },
-    { name: "Celcoin", logo: "💰" },
-    { name: "StarkBank", logo: "🏛️" },
-    { name: "Asaas", logo: "💳" },
-    { name: "QITech", logo: "🚀" },
-    { name: "Tivita", logo: "📊" }
+    { name: "Neon Pagamentos", logo: neonLogo },
+    { name: "SuperSim", logo: supersimLogo },
+    { name: "Nuvia", logo: nuviaLogo },
+    { name: "Klavi", logo: klaviLogo },
+    { name: "ZigFun", logo: zigfunLogo },
+    { name: "Celcoin", logo: celcoinLogo },
+    { name: "StarkBank", logo: starkbankLogo },
+    { name: "Asaas", logo: asaasLogo },
+    { name: "QITech", logo: qitechLogo },
+    { name: "Tivita", logo: tivitaLogo }
   ];
 
   return (
@@ -35,24 +54,50 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        {/* Clients Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="text-center">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                  {client.logo}
-                </div>
-                <div className="text-white font-semibold text-sm group-hover:text-purple-300 transition-colors duration-300">
-                  {client.name}
-                </div>
-              </div>
+        {/* Clients Carousel */}
+        <div className="relative">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {/* Duplicate clients for infinite scroll effect */}
+              {[...clients, ...clients].map((client, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
+                  <div className="group p-6 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-800 hover:shadow-2xl hover:shadow-purple-500/20 animate-fade-in">
+                    <div className="flex items-center justify-center h-24">
+                      <img
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        className="max-w-full max-h-full object-contain filter brightness-90 hover:brightness-110 transition-all duration-300 group-hover:scale-110"
+                        style={{ 
+                          filter: "brightness(0.9) contrast(1.1)",
+                        }}
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            {/* Custom navigation arrows */}
+            <div className="absolute -left-12 top-1/2 -translate-y-1/2 hidden lg:block">
+              <CarouselPrevious className="bg-slate-800/80 border-slate-600 hover:bg-slate-700 hover:border-purple-400/50 text-white">
+                <ChevronLeft className="h-4 w-4" />
+              </CarouselPrevious>
             </div>
-          ))}
+            <div className="absolute -right-12 top-1/2 -translate-y-1/2 hidden lg:block">
+              <CarouselNext className="bg-slate-800/80 border-slate-600 hover:bg-slate-700 hover:border-purple-400/50 text-white">
+                <ChevronRight className="h-4 w-4" />
+              </CarouselNext>
+            </div>
+          </Carousel>
         </div>
 
         {/* Stats */}
