@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import FlywheelSection from "@/components/FlywheelSection";
 import InteractiveDemo from "@/components/InteractiveDemo";
 import ProcessSection from "@/components/ProcessSection";
+import PricingSection from "@/components/PricingSection";
 import ClientsSection from "@/components/ClientsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -16,6 +17,7 @@ const Index = () => {
       <FlywheelSection />
       <InteractiveDemo />
       <ProcessSection />
+      <PricingSection />
       <ClientsSection />
       <CTASection />
       <Footer />
