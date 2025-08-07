@@ -1,13 +1,16 @@
 
-import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ArrowRight, Building2, Users, Award, MapPin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useActiveSection } from "@/hooks/useActiveSection";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const activeSection = useActiveSection();
+  const dropdownRef = useRef<HTMLDivElement>(null);
   
   const isDarkBackground = activeSection.isDark;
 
@@ -21,11 +24,50 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const navigation = [
     { name: "Como Funciona", href: "#processo" },
     { name: "Oportunidade", href: "#clientes" },
-    { name: "Empresa", href: "#sobre" },
+    { name: "Empresa", href: "#sobre", hasDropdown: true },
     { name: "Contato", href: "#contato" }
+  ];
+
+  const empresaDropdownItems = [
+    {
+      icon: Building2,
+      title: "Sobre Nós",
+      description: "Nossa história e missão",
+      href: "#sobre"
+    },
+    {
+      icon: Users,
+      title: "Nossa Equipe",
+      description: "Conheça os especialistas",
+      href: "#equipe"
+    },
+    {
+      icon: Award,
+      title: "Certificações",
+      description: "Reconhecimentos e prêmios",
+      href: "#certificacoes"
+    },
+    {
+      icon: MapPin,
+      title: "Localização",
+      description: "Onde estamos localizados",
+      href: "#localizacao"
+    }
   ];
 
   return (
@@ -44,13 +86,54 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-12 mx-12">
             {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-purple-400 after:via-pink-400 after:to-purple-600 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
-              >
-                {item.name}
-              </a>
+              item.hasDropdown ? (
+                <div key={item.name} className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent flex items-center gap-1 ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                  >
+                    {item.name}
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {/* Dropdown Menu */}
+                  {isDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg z-50 py-2">
+                      {empresaDropdownItems.map((dropdownItem, index) => {
+                        const IconComponent = dropdownItem.icon;
+                        return (
+                          <a
+                            key={index}
+                            href={dropdownItem.href}
+                            className="block px-6 py-4 hover:bg-[#f4f6fa] transition-colors duration-200 group"
+                            onClick={() => setIsDropdownOpen(false)}
+                          >
+                            <div className="flex items-start gap-4">
+                              <IconComponent className="h-5 w-5 text-gray-500 mt-0.5 flex-shrink-0" />
+                              <div className="flex-1">
+                                <div className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                                  {dropdownItem.title}
+                                </div>
+                                <div className="text-sm text-gray-500 mt-1">
+                                  {dropdownItem.description}
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-purple-400 after:via-pink-400 after:to-purple-600 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
           </nav>
 
@@ -76,14 +159,58 @@ const Header = () => {
           <div className={`md:hidden py-4 border-t transition-colors duration-500 ${isDarkBackground ? 'border-purple-400/20' : 'border-gray-800/20'}`}>
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-purple-400 after:via-pink-400 after:to-purple-600 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+                item.hasDropdown ? (
+                  <div key={item.name}>
+                    <button
+                      onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                      className={`w-full text-left relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent flex items-center justify-between ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                    >
+                      {item.name}
+                      <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {/* Mobile Dropdown Items */}
+                    {isMobileDropdownOpen && (
+                      <div className="mt-2 ml-4 space-y-3">
+                        {empresaDropdownItems.map((dropdownItem, index) => {
+                          const IconComponent = dropdownItem.icon;
+                          return (
+                            <a
+                              key={index}
+                              href={dropdownItem.href}
+                              className="block py-2 hover:bg-[#f4f6fa] rounded transition-colors duration-200 group"
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setIsMobileDropdownOpen(false);
+                              }}
+                            >
+                              <div className="flex items-start gap-3">
+                                <IconComponent className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                                <div className="flex-1">
+                                  <div className={`font-bold group-hover:text-blue-600 transition-colors duration-200 ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}>
+                                    {dropdownItem.title}
+                                  </div>
+                                  <div className="text-sm text-gray-400 mt-1">
+                                    {dropdownItem.description}
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`relative font-medium transition-all duration-500 hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-to-r after:from-purple-400 after:via-pink-400 after:to-purple-600 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isDarkBackground ? 'text-white' : 'text-gray-900'}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
               <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white mt-4 text-[1rem]">
                 Começar Agora
