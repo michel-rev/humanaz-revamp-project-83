@@ -1,5 +1,6 @@
 import { User, Users, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const PricingSection = () => {
   const pricingPlans = [
@@ -134,15 +135,23 @@ const PricingSection = () => {
                   </div>
                   
                   {/* CTA Button */}
-                  <button 
-                    className={`${`w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wide text-base md:text-lg transition-all duration-300`} 
-                      ${plan.popular
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
-                        : 'bg-gray-900 text-white hover:bg-gray-800'}
-                    `}
+                  <Link 
+                    to={
+                      plan.name === "Básico" ? "/form-basico" :
+                      plan.name === "Profissional" ? "/form-profissional" :
+                      "/form-enterprise"
+                    }
                   >
-                    {plan.buttonText}
-                  </button>
+                    <button 
+                      className={`${`w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wide text-base md:text-lg transition-all duration-300`} 
+                        ${plan.popular
+                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
+                          : 'bg-gray-900 text-white hover:bg-gray-800'}
+                      `}
+                    >
+                      {plan.buttonText}
+                    </button>
+                  </Link>
                 </CardContent>
               </Card>
             );
