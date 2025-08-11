@@ -32,8 +32,8 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="#investimento">
-                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8">
+              <a href="#investimento" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8">
                   Começar Agora
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
