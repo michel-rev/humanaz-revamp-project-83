@@ -29,16 +29,20 @@ const CTASection = () => {
 
           {/* Main CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-16">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8">
-              <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Agendar Demonstração
-              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-            </Button>
+            <a href="#investimento">
+              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8">
+                <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                Agendar Demonstração
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+              </Button>
+            </a>
             
-            <Button size="lg" variant="gradient-outline" className="text-base sm:text-lg px-6 sm:px-8">
-              <MessageSquare className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Falar com Especialista
-            </Button>
+            <a href="#investimento">
+              <Button size="lg" variant="gradient-outline" className="text-base sm:text-lg px-6 sm:px-8">
+                <MessageSquare className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                Falar com Especialista
+              </Button>
+            </a>
           </div>
 
           {/* Contact Options */}

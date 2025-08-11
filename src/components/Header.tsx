@@ -142,10 +142,12 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded-lg border-0 transition-colors duration-300">
-              Começar Agora
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <a href="#investimento">
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded-lg border-0 transition-colors duration-300">
+                Começar Agora
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -217,10 +219,12 @@ const Header = () => {
                   </a>
                 )
               ))}
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white mt-4 font-semibold px-6 py-2 rounded-lg border-0 transition-colors duration-300">
-                Começar Agora
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="#investimento">
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white mt-4 font-semibold px-6 py-2 rounded-lg border-0 transition-colors duration-300">
+                  Começar Agora
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
             </nav>
           </div>
         )}
