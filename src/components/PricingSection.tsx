@@ -1,26 +1,7 @@
-import { useState } from "react";
 import { User, Users, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import FormBasicoModal from "./FormBasicoModal";
-import FormProfissionalModal from "./FormProfissionalModal";
-import FormEnterpriseModal from "./FormEnterpriseModal";
-import AgendamentoModal from "./AgendamentoModal";
-import ObrigadoModal from "./ObrigadoModal";
 
 const PricingSection = () => {
-  const [basicModalOpen, setBasicModalOpen] = useState(false);
-  const [professionalModalOpen, setProfessionalModalOpen] = useState(false);
-  const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
-  const [agendamentoModalOpen, setAgendamentoModalOpen] = useState(false);
-  const [obrigadoModalOpen, setObrigadoModalOpen] = useState(false);
-
-  const handleFormSuccess = () => {
-    setAgendamentoModalOpen(true);
-  };
-
-  const handleAgendamentoSuccess = () => {
-    setObrigadoModalOpen(true);
-  };
 
   const pricingPlans = [
     {
@@ -154,20 +135,17 @@ const PricingSection = () => {
                   </div>
                   
                   {/* CTA Button */}
-                  <button 
-                    onClick={() => {
-                      if (plan.name === "Básico") setBasicModalOpen(true);
-                      else if (plan.name === "Profissional") setProfessionalModalOpen(true);
-                      else setEnterpriseModalOpen(true);
-                    }}
-                    className={`${`w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wide text-base md:text-lg transition-all duration-300`} 
-                      ${plan.popular
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
-                        : 'bg-gray-900 text-white hover:bg-gray-800'}
-                    `}
-                  >
-                    {plan.buttonText}
-                  </button>
+                  <a href="/agendamento">
+                    <button 
+                      className={`${`w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wide text-base md:text-lg transition-all duration-300`} 
+                        ${plan.popular
+                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
+                          : 'bg-gray-900 text-white hover:bg-gray-800'}
+                      `}
+                    >
+                      {plan.buttonText}
+                    </button>
+                  </a>
                 </CardContent>
               </Card>
             );
@@ -183,31 +161,6 @@ const PricingSection = () => {
         </div>
       </div>
 
-      {/* Modals */}
-      <FormBasicoModal 
-        open={basicModalOpen} 
-        onOpenChange={setBasicModalOpen}
-        onSuccess={handleFormSuccess}
-      />
-      <FormProfissionalModal 
-        open={professionalModalOpen} 
-        onOpenChange={setProfessionalModalOpen}
-        onSuccess={handleFormSuccess}
-      />
-      <FormEnterpriseModal 
-        open={enterpriseModalOpen} 
-        onOpenChange={setEnterpriseModalOpen}
-        onSuccess={handleFormSuccess}
-      />
-      <AgendamentoModal 
-        open={agendamentoModalOpen} 
-        onOpenChange={setAgendamentoModalOpen}
-        onSuccess={handleAgendamentoSuccess}
-      />
-      <ObrigadoModal 
-        open={obrigadoModalOpen} 
-        onOpenChange={setObrigadoModalOpen}
-      />
     </section>
   );
 };
