@@ -65,8 +65,7 @@ const Obrigado = () => {
             <div className="flex justify-center pt-6">
               <Link to="/">
                 <Button 
-                  variant="outline" 
-                  className="flex items-center gap-2 px-8 py-3 text-base"
+                  className="flex items-center gap-2 px-8 py-3 text-base bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Voltar ao site

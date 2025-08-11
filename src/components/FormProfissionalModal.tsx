@@ -32,7 +32,7 @@ const FormProfissionalModal = ({ open, onOpenChange, onSuccess }: FormProfission
       if (response.ok) {
         toast.success("Informações enviadas com sucesso!");
         onOpenChange(false);
-        onSuccess();
+        window.location.href = '/agendamento';
       } else {
         toast.error("Erro ao enviar informações. Tente novamente.");
       }

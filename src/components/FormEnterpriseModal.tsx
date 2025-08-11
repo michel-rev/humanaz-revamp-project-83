@@ -32,7 +32,7 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
       if (response.ok) {
         toast.success("Informações enviadas com sucesso!");
         onOpenChange(false);
-        onSuccess();
+        window.location.href = '/agendamento';
       } else {
         toast.error("Erro ao enviar informações. Tente novamente.");
       }
