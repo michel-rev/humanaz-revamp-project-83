@@ -9,10 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">H</span>
-              </div>
-              <span className="ml-3 text-white font-bold text-xl">HumanAZ</span>
+              <img 
+                src="/lovable-uploads/223cbda9-53a4-4e94-a4b7-bcc0b550cf27.png" 
+                alt="HumanAZ Logo" 
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
             
             <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
