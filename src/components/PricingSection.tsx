@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { User, Users, Calendar } from "lucide-react";
+import { User, Users, Building2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import FormBasicoModal from "@/components/FormBasicoModal";
 import FormProfissionalModal from "@/components/FormProfissionalModal";
@@ -53,7 +53,7 @@ const PricingSection = () => {
       popular: true
     },
     {
-      icon: Calendar,
+      icon: Building2,
       name: "Enterprise",
       price: "R$ 11.726",
       period: "por profissional",
