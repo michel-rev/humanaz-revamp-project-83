@@ -1,7 +1,19 @@
+import { useState } from "react";
 import { User, Users, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import FormBasicoModal from "@/components/FormBasicoModal";
+import FormProfissionalModal from "@/components/FormProfissionalModal";
+import FormEnterpriseModal from "@/components/FormEnterpriseModal";
 
 const PricingSection = () => {
+  const [basicModalOpen, setBasicModalOpen] = useState(false);
+  const [professionalModalOpen, setProfessionalModalOpen] = useState(false);
+  const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
+
+  const handleModalSuccess = () => {
+    // Redireciona para a página de agendamento após sucesso no formulário
+    window.location.href = '/agendamento';
+  };
 
   const pricingPlans = [
     {
@@ -135,17 +147,24 @@ const PricingSection = () => {
                   </div>
                   
                   {/* CTA Button */}
-                  <a href="/agendamento">
-                    <button 
-                      className={`${`w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wide text-base md:text-lg transition-all duration-300`} 
-                        ${plan.popular
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
-                          : 'bg-gray-900 text-white hover:bg-gray-800'}
-                      `}
-                    >
-                      {plan.buttonText}
-                    </button>
-                  </a>
+                  <button 
+                    onClick={() => {
+                      if (plan.name === 'Básico') {
+                        setBasicModalOpen(true);
+                      } else if (plan.name === 'Profissional') {
+                        setProfessionalModalOpen(true);
+                      } else if (plan.name === 'Enterprise') {
+                        setEnterpriseModalOpen(true);
+                      }
+                    }}
+                    className={`w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wide text-base md:text-lg transition-all duration-300 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
+                        : 'bg-gray-900 text-white hover:bg-gray-800'
+                    }`}
+                  >
+                    {plan.buttonText}
+                  </button>
                 </CardContent>
               </Card>
             );
@@ -161,6 +180,22 @@ const PricingSection = () => {
         </div>
       </div>
 
+      {/* Modals */}
+      <FormBasicoModal 
+        open={basicModalOpen} 
+        onOpenChange={setBasicModalOpen}
+        onSuccess={handleModalSuccess}
+      />
+      <FormProfissionalModal 
+        open={professionalModalOpen} 
+        onOpenChange={setProfessionalModalOpen}
+        onSuccess={handleModalSuccess}
+      />
+      <FormEnterpriseModal 
+        open={enterpriseModalOpen} 
+        onOpenChange={setEnterpriseModalOpen}
+        onSuccess={handleModalSuccess}
+      />
     </section>
   );
 };

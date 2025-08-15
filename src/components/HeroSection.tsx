@@ -1,10 +1,18 @@
 
+import { useState } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedMetricsSection from "@/components/AnimatedMetricsSection";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
+import FormBasicoModal from "@/components/FormBasicoModal";
 
 const HeroSection = () => {
+  const [basicModalOpen, setBasicModalOpen] = useState(false);
+
+  const handleModalSuccess = () => {
+    // Redireciona para a página de agendamento após sucesso no formulário
+    window.location.href = '/agendamento';
+  };
   return (
     <section id="hero" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Background Pattern */}
@@ -58,12 +66,14 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="#investimento" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8">
-                  Começar Agora
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </Button>
-              </a>
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8"
+                onClick={() => setBasicModalOpen(true)}
+              >
+                Começar Agora
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+              </Button>
               
               <Button size="lg" variant="gradient-outline" className="text-base sm:text-lg px-6 sm:px-8">
                 <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -76,6 +86,13 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <FormBasicoModal 
+        open={basicModalOpen} 
+        onOpenChange={setBasicModalOpen}
+        onSuccess={handleModalSuccess}
+      />
     </section>
   );
 };
