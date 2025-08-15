@@ -100,9 +100,9 @@ const ProcessSection = () => {
             <p className="text-purple-100 mb-6 max-w-md">
               Vamos personalizar um fluxo de recrutamento que se adapte perfeitamente às suas necessidades.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-purple-50 transition-colors duration-300">
+            <a href="#investimento" className="bg-white text-purple-600 px-8 py-3 rounded-xl font-semibold hover:bg-purple-50 transition-colors duration-300">
               Iniciar Processo
-            </button>
+            </a>
           </div>
         </div>
       </div>
