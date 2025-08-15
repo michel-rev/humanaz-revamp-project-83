@@ -108,10 +108,10 @@ const FlywheelSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-24">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+          <a href="#investimento" className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg hover:shadow-lg transition-shadow duration-300 cursor-pointer">
             Experimente Nosso Flywheel
             <ArrowRight className="ml-2 h-5 w-5" />
-          </div>
+          </a>
         </div>
       </div>
     </section>
