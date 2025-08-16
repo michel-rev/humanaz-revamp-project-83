@@ -3,7 +3,7 @@ import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 const AnimatedMetricsSection = () => {
   const { count: daysCount, elementRef: daysRef } = useCounterAnimation({ target: 15, duration: 2000 });
   const { count: candidatesCount, elementRef: candidatesRef } = useCounterAnimation({ target: 4, duration: 2200 });
-  const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 95, duration: 2400 });
+  const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 97, duration: 2400 });
 
   return (
     <div className="grid grid-cols-3 gap-8 pt-8">
