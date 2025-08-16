@@ -50,18 +50,17 @@ const HeroSection = () => {
           <div className="lg:w-1/2 text-white space-y-4 animate-fade-in order-2 lg:order-1">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-sm">
               <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
-              Engenharia de Prompt & IA - Transformando Subjetividade em Parâmetros
+              Recrutamento Tech Especializado
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-[78px]">
-              Transformamos
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
-                {" "}subjetividade{" "}
+                4 desenvolvedores
               </span>
-              em parâmetros
+              {" "}qualificados em 15 dias
             </h1>
             
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">Através de engenharia de prompt e IA, absorvemos cenários reais de <strong className="text-white">negócios, produtos, tecnologia e pessoas</strong> - entregando assertividade e agilidade às contratações tech em 15 dias.</p>
+            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">Conectamos talentos tech às empresas certas através de IA e curadoria humanizada. <strong className="text-white">97% de aprovação</strong> com profissionais alinhados à sua cultura e necessidades técnicas.</p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a href="#investimento">
