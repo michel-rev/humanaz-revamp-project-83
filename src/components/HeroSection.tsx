@@ -58,7 +58,10 @@ const HeroSection = () => {
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
                 time de tecnologia
               </span>
-              {" "}em 15 dias corridos. Aumente sua taxa de retenção.{" "}
+              {" "}em 15 dias corridos.
+              <br />
+              Aumente sua taxa de retenção.
+              <br />
               <span className="text-green-400 font-extrabold">
                 Ou seu dinheiro de volta.
               </span>
