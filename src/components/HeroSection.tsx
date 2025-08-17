@@ -22,7 +22,7 @@ const HeroSection = () => {
               {/* Floating Cards */}
               <div className="absolute inset-0">
                 <div className="absolute top-0 right-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 md:h-32 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl backdrop-blur-sm border border-purple-400/30 p-3 sm:p-4 animate-float">
-                  <div className="text-purple-300 text-xs sm:text-sm">Neon Pagamentos</div>
+                  <div className="text-purple-300 text-xs sm:text-sm">Globo</div>
                   <div className="text-white font-semibold text-sm sm:text-base">Senior Frontend Developer</div>
                   <div className="text-slate-400 text-xs mt-1 sm:mt-2">Match: 98%</div>
                 </div>
@@ -30,7 +30,7 @@ const HeroSection = () => {
                 <div className="absolute top-16 sm:top-20 left-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 md:h-32 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl backdrop-blur-sm border border-blue-400/30 p-3 sm:p-4 animate-float" style={{
                 animationDelay: '1s'
               }}>
-                  <div className="text-blue-300 text-xs sm:text-sm">Stark Bank</div>
+                  <div className="text-blue-300 text-xs sm:text-sm">BitCapital</div>
                   <div className="text-white font-semibold text-sm sm:text-base">DevOps Engineer</div>
                   <div className="text-slate-400 text-xs mt-1 sm:mt-2">Match: 96%</div>
                 </div>
@@ -38,7 +38,7 @@ const HeroSection = () => {
                 <div className="absolute bottom-0 right-4 sm:right-8 w-48 sm:w-56 md:w-64 h-24 sm:h-28 md:h-32 bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-xl backdrop-blur-sm border border-green-400/30 p-3 sm:p-4 animate-float" style={{
                 animationDelay: '2s'
               }}>
-                  <div className="text-green-300 text-xs sm:text-sm">Asaas</div>
+                  <div className="text-green-300 text-xs sm:text-sm">Juno</div>
                   <div className="text-white font-semibold text-sm sm:text-base">Full Stack Developer</div>
                   <div className="text-slate-400 text-xs mt-1 sm:mt-2">Match: 94%</div>
                 </div>

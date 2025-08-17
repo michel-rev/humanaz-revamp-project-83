@@ -2,31 +2,19 @@
 import { Building2 } from "lucide-react";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 
-// Import all logos
-import neonLogo from "@/assets/logos/neon-logo.svg";
-import supersimLogo from "@/assets/logos/supersim-logo.png";
-import nuviaLogo from "@/assets/logos/nuvia-logo.png";
-import klaviLogo from "@/assets/logos/klavi-logo.png";
-import zigfunLogo from "@/assets/logos/zigfun-logo.png";
-import celcoinLogo from "@/assets/logos/celcoin-logo.png";
-import starkbankLogo from "@/assets/logos/starkbank-logo.png";
-import asaasLogo from "@/assets/logos/asaas-logo.png";
-import qitechLogo from "@/assets/logos/qitech-logo.png";
-import tivitaLogo from "@/assets/logos/tivita-logo.png";
-
 const ClientsSection = () => {
 
   const clients = [
-    { name: "Neon Pagamentos", logo: neonLogo },
-    { name: "SuperSim", logo: supersimLogo },
-    { name: "Nuvia", logo: nuviaLogo },
-    { name: "Klavi", logo: klaviLogo },
-    { name: "ZigFun", logo: zigfunLogo },
-    { name: "Celcoin", logo: celcoinLogo },
-    { name: "StarkBank", logo: starkbankLogo },
-    { name: "Asaas", logo: asaasLogo },
-    { name: "QITech", logo: qitechLogo },
-    { name: "Tivita", logo: tivitaLogo }
+    { name: "12 Minutos", logo: "/lovable-uploads/761e1da5-7c3d-4713-a8f3-88038dcae126.png" },
+    { name: "Americanas Delivery", logo: "/lovable-uploads/0e3c140d-c7f5-4ece-8f7c-d9e629ab41d6.png" },
+    { name: "BitCapital", logo: "/lovable-uploads/ced4ec51-aa5b-4abf-88e4-eaea0f969104.png" },
+    { name: "Bom Para Crédito", logo: "/lovable-uploads/f3e1518e-77e1-4ff1-96e0-57b4e9285eff.png" },
+    { name: "Faire", logo: "/lovable-uploads/ab7d7a61-ce09-4f11-bcb4-337910547149.png" },
+    { name: "Get.info", logo: "/lovable-uploads/b1960061-9f3a-421f-a4e0-ed7e8b6638a6.png" },
+    { name: "Globo", logo: "/lovable-uploads/17f3f46e-df6a-4963-a0f5-7bf6b8f43eeb.png" },
+    { name: "Info4", logo: "/lovable-uploads/79bd1d2e-19c3-4225-b01a-8c408fc86ea0.png" },
+    { name: "Involves", logo: "/lovable-uploads/7b2dc6a6-5a29-4cd9-ac4e-5b6347672e4f.png" },
+    { name: "Juno", logo: "/lovable-uploads/1cd0b3bc-2777-4dd0-b3e4-3018394004cc.png" }
   ];
 
   return (
