@@ -53,7 +53,7 @@ const HeroSection = () => {
               Recrutamento Tech Especializado
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-[78px]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
               Seu{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
                 time de tecnologia
