@@ -29,7 +29,7 @@ const FlywheelSection = () => {
       icon: TrendingUp,
       title: "Valor Agregado",
       description: "Redução de custos de preenchimento e aumento da retenção",
-      details: "Entregamos 4 profissionais qualificados que se alinham perfeitamente à cultura e competências da vaga, maximizando ROI.",
+      details: "O candidato se sente atraído pelo desafio, não pela vaga. A comunicação assertiva alinha perspectivas e contribuição.",
       color: "from-orange-500 to-red-500"
     }
   ];
