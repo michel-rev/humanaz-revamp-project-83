@@ -7,7 +7,7 @@ const FlywheelSection = () => {
     {
       icon: Users,
       title: "Quem Somos",
-      description: "Startup de recrutamento tech especializada em fintechs e startups de alta performance",
+      description: "Startup de recrutamento tech especializada em crescimento de times de tecnologia, dados e produto",
       details: "Trabalhamos com Neon, SuperSim, Nuvia, Klavi, ZigFun, Celcoin, StarkBank, Asaas, QITech, Tivita e outras empresas líderes do mercado.",
       color: "from-purple-500 to-pink-500"
     },
