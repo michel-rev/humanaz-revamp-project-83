@@ -54,11 +54,11 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-[78px]">
-              Contrate seu{" "}
+              Seu{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
                 time de tecnologia
               </span>
-              {" "}com a HumanAZ em 15 dias. Aumente sua taxa de retenção.{" "}
+              {" "}em 15 dias corridos. Aumente sua taxa de retenção.{" "}
               <span className="text-green-400 font-extrabold">
                 Ou seu dinheiro de volta.
               </span>
