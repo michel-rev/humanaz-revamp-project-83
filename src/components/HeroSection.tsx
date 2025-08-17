@@ -64,7 +64,7 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">Engenharia de prompt, IA e curadoria humanizada para atrair, alinhar e reter <strong className="text-white">engenheiros de software</strong> com cultura e competências da sua empresa.</p>
+            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">Engenharia de prompt, IA e curadoria humanizada para atrair, alinhar e reter <strong className="text-white">times de tecnologia</strong> com cultura e competências da sua empresa.</p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a href="#investimento">
