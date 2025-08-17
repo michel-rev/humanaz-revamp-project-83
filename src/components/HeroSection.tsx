@@ -54,13 +54,17 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-[78px]">
+              Contrate seu{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
-                4 desenvolvedores
+                time de tecnologia
               </span>
-              {" "}qualificados em 15 dias
+              {" "}com a HumanAZ em 15 dias. Aumente sua taxa de retenção.{" "}
+              <span className="text-green-400 font-extrabold">
+                Ou seu dinheiro de volta.
+              </span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">Conectamos talentos tech às empresas certas através de IA e curadoria humanizada. <strong className="text-white">97% de aprovação</strong> com profissionais alinhados à sua cultura e necessidades técnicas.</p>
+            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">Engenharia de prompt, IA e curadoria humanizada para atrair, alinhar e reter <strong className="text-white">engenheiros de software</strong> com cultura e competências da sua empresa.</p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a href="#investimento">
