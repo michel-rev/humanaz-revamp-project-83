@@ -167,38 +167,38 @@ const InteractiveDemo = () => {
         {/* Scenarios Demo */}
         {currentDemo === 'scenarios' && <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+              <Card className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
-                    <Zap className="w-5 h-5 text-purple-400" />
+                  <CardTitle className="text-gray-900 flex items-center gap-2">
+                    <Zap className="w-5 h-5 text-purple-600" />
                     Cenário Ativo
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg bg-gradient-to-r ${activeScenario === 0 ? 'from-blue-600/20 to-blue-500/20' : activeScenario === 1 ? 'from-green-600/20 to-green-500/20' : activeScenario === 2 ? 'from-orange-600/20 to-orange-500/20' : 'from-purple-600/20 to-purple-500/20'}`}>
+                    <div className={`p-2 rounded-lg ${activeScenario === 0 ? 'bg-blue-50' : activeScenario === 1 ? 'bg-green-50' : activeScenario === 2 ? 'bg-orange-50' : 'bg-purple-50'}`}>
                       {React.createElement(businessScenarios[activeScenario].icon, {
-                    className: `w-6 h-6 ${activeScenario === 0 ? 'text-blue-400' : activeScenario === 1 ? 'text-green-400' : activeScenario === 2 ? 'text-orange-400' : 'text-purple-400'}`
+                    className: `w-6 h-6 ${activeScenario === 0 ? 'text-blue-600' : activeScenario === 1 ? 'text-green-600' : activeScenario === 2 ? 'text-orange-600' : 'text-purple-600'}`
                   })}
                     </div>
                     <div>
-                      <Badge variant="outline" className="text-xs border-slate-600 text-slate-300 mb-1">
+                      <Badge variant="outline" className="text-xs border-gray-300 text-gray-600 mb-1">
                         {businessScenarios[activeScenario].category}
                       </Badge>
-                      <h3 className="text-white font-semibold">{businessScenarios[activeScenario].title}</h3>
+                      <h3 className="text-gray-900 font-semibold">{businessScenarios[activeScenario].title}</h3>
                     </div>
                   </div>
 
-                  <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
-                    <p className="text-slate-300 leading-relaxed">
+                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <p className="text-gray-700 leading-relaxed">
                       {businessScenarios[activeScenario].prompt}
                     </p>
                   </div>
 
                   <div className="space-y-2">
-                    <p className="text-sm font-medium text-slate-400">Competências Avaliadas:</p>
+                    <p className="text-sm font-medium text-gray-600">Competências Avaliadas:</p>
                     <div className="flex flex-wrap gap-2">
-                      {businessScenarios[activeScenario].evaluation.map((competence, idx) => <Badge key={idx} variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-500/30">
+                      {businessScenarios[activeScenario].evaluation.map((competence, idx) => <Badge key={idx} variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
                           {competence}
                         </Badge>)}
                     </div>
@@ -208,7 +208,7 @@ const InteractiveDemo = () => {
 
               {/* Scenario Navigation */}
               <div className="grid grid-cols-4 gap-2">
-                {businessScenarios.map((scenario, idx) => <Button key={idx} variant="ghost" size="sm" onClick={() => setActiveScenario(idx)} className={`p-3 h-auto flex flex-col items-center gap-1 transition-all duration-300 ${activeScenario === idx ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border border-purple-500/30' : 'bg-slate-800/50 border border-slate-700 text-slate-300 hover:bg-slate-700/50 hover:border-purple-400/50'}`}>
+                {businessScenarios.map((scenario, idx) => <Button key={idx} variant="ghost" size="sm" onClick={() => setActiveScenario(idx)} className={`p-3 h-auto flex flex-col items-center gap-1 transition-all duration-300 ${activeScenario === idx ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' : 'bg-gray-50 border border-gray-200 text-gray-600 hover:bg-gray-100 hover:border-purple-300'}`}>
                     {React.createElement(scenario.icon, {
                 className: "w-4 h-4"
               })}
@@ -217,16 +217,16 @@ const InteractiveDemo = () => {
               </div>
             </div>
 
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            <Card className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
+                <CardTitle className="text-gray-900 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
                   Análise do Candidato
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
-                  <p className="text-slate-300 leading-relaxed">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <p className="text-gray-700 leading-relaxed">
                     {businessScenarios[activeScenario].response}
                   </p>
                 </div>
@@ -234,29 +234,29 @@ const InteractiveDemo = () => {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-white font-medium">Fit Cultural</span>
-                      <span className="text-purple-400 font-bold">{businessScenarios[activeScenario].cultural_fit}%</span>
+                      <span className="text-gray-900 font-medium">Fit Cultural</span>
+                      <span className="text-purple-600 font-bold">{businessScenarios[activeScenario].cultural_fit}%</span>
                     </div>
-                    <div className="w-full h-3 bg-slate-700 rounded-full overflow-hidden">
+                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-1000" style={{
                     width: `${businessScenarios[activeScenario].cultural_fit}%`
                   }} />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700">
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-green-400">A+</div>
-                      <p className="text-xs text-slate-400">Competência Técnica</p>
+                      <div className="text-2xl font-bold text-green-600">A+</div>
+                      <p className="text-xs text-gray-500">Competência Técnica</p>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-400">94%</div>
-                      <p className="text-xs text-slate-400">Match Cultural</p>
+                      <div className="text-2xl font-bold text-blue-600">94%</div>
+                      <p className="text-xs text-gray-500">Match Cultural</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-green-400">
+                <div className="flex items-center gap-2 text-green-600">
                   <CheckCircle className="w-5 h-5" />
                   <span className="text-sm font-medium">Candidato Aprovado para Próxima Fase</span>
                 </div>
@@ -266,26 +266,26 @@ const InteractiveDemo = () => {
 
         {/* Validation Demo */}
         {currentDemo === 'validation' && <div className="grid md:grid-cols-3 gap-6">
-            {validationMetrics.map((metric, idx) => <Card key={idx} className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            {validationMetrics.map((metric, idx) => <Card key={idx} className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
-                    <div className={`text-4xl font-bold mb-2 ${idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-purple-400' : 'text-green-400'}`}>
+                    <div className={`text-4xl font-bold mb-2 ${idx === 0 ? 'text-blue-600' : idx === 1 ? 'text-purple-600' : 'text-green-600'}`}>
                       {metric.score}%
                     </div>
-                    <h3 className="text-white font-semibold text-lg">{metric.name}</h3>
-                    <p className="text-slate-400 text-sm">{metric.description}</p>
+                    <h3 className="text-gray-900 font-semibold text-lg">{metric.name}</h3>
+                    <p className="text-gray-600 text-sm">{metric.description}</p>
                   </div>
 
-                  <div className="w-full h-2 bg-slate-700 rounded-full overflow-hidden mb-4">
+                  <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-4">
                     <div className={`h-full transition-all duration-1000 ${idx === 0 ? 'bg-gradient-to-r from-blue-500 to-blue-400' : idx === 1 ? 'bg-gradient-to-r from-purple-500 to-purple-400' : 'bg-gradient-to-r from-green-500 to-green-400'}`} style={{
                 width: `${metric.score}%`
               }} />
                   </div>
 
                   <div className="space-y-2">
-                    <p className="text-sm font-medium text-slate-400">Indicadores:</p>
-                    {metric.indicators.map((indicator, indicatorIdx) => <div key={indicatorIdx} className="flex items-center gap-2 text-slate-300">
-                        <div className={`w-1.5 h-1.5 rounded-full ${idx === 0 ? 'bg-blue-400' : idx === 1 ? 'bg-purple-400' : 'bg-green-400'}`} />
+                    <p className="text-sm font-medium text-gray-600">Indicadores:</p>
+                    {metric.indicators.map((indicator, indicatorIdx) => <div key={indicatorIdx} className="flex items-center gap-2 text-gray-700">
+                        <div className={`w-1.5 h-1.5 rounded-full ${idx === 0 ? 'bg-blue-600' : idx === 1 ? 'bg-purple-600' : 'bg-green-600'}`} />
                         <span className="text-sm">{indicator}</span>
                       </div>)}
                   </div>
@@ -359,9 +359,9 @@ const InteractiveDemo = () => {
 
         {/* Alignment Demo */}
         {currentDemo === 'alignment' && <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            <Card className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-white">Processo de Alinhamento</CardTitle>
+                <CardTitle className="text-gray-900">Processo de Alinhamento</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {[{
@@ -385,46 +385,46 @@ const InteractiveDemo = () => {
               description: "Geramos score combinado de fit cultural + capacidade produtiva",
               status: "pending"
             }].map((item, idx) => <div key={idx} className="flex items-start gap-4">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${item.status === 'completed' ? 'bg-green-500 text-white' : item.status === 'active' ? 'bg-purple-500 text-white animate-pulse' : 'bg-slate-600 text-slate-400'}`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${item.status === 'completed' ? 'bg-green-500 text-white' : item.status === 'active' ? 'bg-purple-500 text-white animate-pulse' : 'bg-gray-300 text-gray-600'}`}>
                       {item.status === 'completed' ? '✓' : item.step}
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-medium">{item.title}</h4>
-                      <p className="text-slate-400 text-sm">{item.description}</p>
+                      <h4 className="text-gray-900 font-medium">{item.title}</h4>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
                     </div>
                   </div>)}
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            <Card className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-white">Resultado do Alinhamento</CardTitle>
+                <CardTitle className="text-gray-900">Resultado do Alinhamento</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="text-center">
                   <div className="text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
                     96%
                   </div>
-                  <p className="text-white font-semibold text-lg">Score de Alinhamento</p>
-                  <p className="text-slate-400">Cultura + Competências</p>
+                  <p className="text-gray-900 font-semibold text-lg">Score de Alinhamento</p>
+                  <p className="text-gray-600">Cultura + Competências</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-slate-900/50 rounded-lg border border-slate-600">
-                    <div className="text-2xl font-bold text-purple-400 mb-1">94%</div>
-                    <p className="text-slate-300 text-sm">Fit Cultural</p>
+                  <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <div className="text-2xl font-bold text-purple-600 mb-1">94%</div>
+                    <p className="text-gray-700 text-sm">Fit Cultural</p>
                   </div>
-                  <div className="text-center p-4 bg-slate-900/50 rounded-lg border border-slate-600">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">98%</div>
-                    <p className="text-slate-300 text-sm">Capacidade Técnica</p>
+                  <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <div className="text-2xl font-bold text-blue-600 mb-1">98%</div>
+                    <p className="text-gray-700 text-sm">Capacidade Técnica</p>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <p className="text-slate-400 text-sm font-medium">Principais Indicadores:</p>
+                  <p className="text-gray-600 text-sm font-medium">Principais Indicadores:</p>
                   {["Forte alinhamento com valores de inovação", "Excelente capacidade de colaboração", "Mentalidade data-driven comprovada", "Experiência técnica sólida em fintech"].map((indicator, idx) => <div key={idx} className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span className="text-slate-300 text-sm">{indicator}</span>
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <span className="text-gray-700 text-sm">{indicator}</span>
                     </div>)}
                 </div>
 
