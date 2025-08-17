@@ -60,8 +60,6 @@ const HeroSection = () => {
               </span>
               {" "}em 15 dias corridos.
               <br />
-              Aumente sua taxa de retenção.
-              <br />
               <span className="text-green-400 font-extrabold">
                 Ou seu dinheiro de volta.
               </span>
