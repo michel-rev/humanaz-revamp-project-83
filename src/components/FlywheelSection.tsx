@@ -22,7 +22,7 @@ const FlywheelSection = () => {
       icon: Target,
       title: "Como Fazemos",
       description: "Flywheel de 15 dias com IA, prompt engineering e curadoria humanizada",
-      details: "Combinamos tecnologia avançada com expertise humana para verificar alinhamento cultural e técnico através de dados e parâmetros precisos.",
+      details: "Cruzamos cenários reais de negócios, produto, tecnologia e pessoas às vivências e experiências do profissional, validando sua contribuição ao negócio. Indo muito além da vaga.",
       color: "from-green-500 to-blue-500"
     },
     {
