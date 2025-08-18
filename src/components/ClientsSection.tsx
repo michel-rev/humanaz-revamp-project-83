@@ -17,7 +17,15 @@ const ClientsSection = () => {
     { name: "Parceiro 10", logo: "/lovable-uploads/cd83697e-55af-4d04-9705-e774e5f395e0.png" },
     { name: "Parceiro 11", logo: "/lovable-uploads/4b25fd16-a63e-454d-a9d8-de4b9d40791e.png" },
     { name: "Parceiro 12", logo: "/lovable-uploads/bd64466a-5c59-4fff-bbbc-ea17a0d6a6b3.png" },
-    { name: "Parceiro 13", logo: "/lovable-uploads/7a4bba2f-8938-40ec-9c86-c473f67deae2.png" }
+    { name: "Parceiro 13", logo: "/lovable-uploads/7a4bba2f-8938-40ec-9c86-c473f67deae2.png" },
+    { name: "Parceiro 14", logo: "/lovable-uploads/45d74ef2-a3d7-4980-82ba-e7dfa74d8141.png" },
+    { name: "Parceiro 15", logo: "/lovable-uploads/6089b568-bd6b-48b4-ba55-e05c0fe0bbba.png" },
+    { name: "Parceiro 16", logo: "/lovable-uploads/b9e73dc1-0e63-4efd-9e47-0f09f52ed2b2.png" },
+    { name: "Parceiro 17", logo: "/lovable-uploads/f23916b3-d3a7-49b9-a82e-98c8f9273344.png" },
+    { name: "Parceiro 18", logo: "/lovable-uploads/d950348a-db0c-47a6-828f-9cf2744b16a6.png" },
+    { name: "Parceiro 19", logo: "/lovable-uploads/6cb1b962-ae40-477c-8f75-f6d982fd62ac.png" },
+    { name: "Parceiro 20", logo: "/lovable-uploads/bae90704-3161-4dd1-bef6-783530f1c86b.png" },
+    { name: "Parceiro 21", logo: "/lovable-uploads/a45e5db0-5d80-40b5-a352-ea1a8a292419.png" }
   ];
 
   return (
@@ -97,7 +105,7 @@ const ClientsSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-slate-700">
           <div className="text-center">
-            <div className="text-4xl font-bold text-purple-400 mb-2">13+</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2">21+</div>
             <div className="text-slate-400">Empresas Parceiras</div>
           </div>
           <div className="text-center">
