@@ -523,7 +523,7 @@ const InteractiveDemo = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-3 gap-6">
               {[{
                 title: "Cenário de Crise - Atitude sob Pressão",
                 situation: "Sistema crítico down em Black Friday, 5M usuários afetados",
