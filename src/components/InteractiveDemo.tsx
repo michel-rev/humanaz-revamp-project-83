@@ -514,81 +514,245 @@ const InteractiveDemo = () => {
             </div>
           </div>}
 
-        {/* Alignment Demo */}
-        {currentDemo === 'alignment' && <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-gray-900">Processo de Alinhamento</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {[{
-              step: "1",
-              title: "Prompt Engineering",
-              description: "Criamos cenários específicos baseados na cultura da empresa",
-              status: "completed"
-            }, {
-              step: "2",
-              title: "Análise Cultural",
-              description: "IA analisa respostas e mapeia traços culturais do candidato",
-              status: "completed"
-            }, {
-              step: "3",
-              title: "Validação Técnica",
-              description: "Competências são validadas através de cenários reais",
-              status: "active"
-            }, {
-              step: "4",
-              title: "Score Final",
-              description: "Geramos score combinado de fit cultural + capacidade produtiva",
-              status: "pending"
-            }].map((item, idx) => <div key={idx} className="flex items-start gap-4">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${item.status === 'completed' ? 'bg-green-500 text-white' : item.status === 'active' ? 'bg-purple-500 text-white animate-pulse' : 'bg-gray-300 text-gray-600'}`}>
-                      {item.status === 'completed' ? '✓' : item.step}
+        {/* Cultural Deep Dive Demo */}
+        {currentDemo === 'alignment' && <div className="space-y-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Cultural Deep Dive Analysis</h3>
+              <p className="text-slate-300 max-w-3xl mx-auto">
+                Validação cultural através de atitudes demonstradas em cenários reais de negócios, produto e tecnologia
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {[{
+                title: "Cenário de Crise - Atitude sob Pressão",
+                situation: "Sistema crítico down em Black Friday, 5M usuários afetados",
+                result: "Recovery em 4h vs. 8h estimadas | Zero data loss | War room coordenado",
+                interpretation: [
+                  "Análise rápida de impacto vs. investigação completa: Priorizou triage baseado em severidade",
+                  "Definiu war room imediato com incident commander dedicado",
+                  "Comunicação transparente com stakeholders sem gerar pânico desnecessário"
+                ],
+                engagement: [
+                  "Definiu responsabilidades claras por squad e componente crítico",
+                  "Updates regulares para C-level com timeline realista",
+                  "Manteve equipe focada com objetivos mensuráveis por hora"
+                ],
+                resolution: [
+                  "Recovery paralelo priorizando restore vs. investigação detalhada",
+                  "Documentou timeline de decisões para post-mortem blameless",
+                  "Liderou comunicação externa com transparência total"
+                ],
+                attitudes: ["Ownership completo", "Liderança sob pressão", "Comunicação transparente"],
+                values: ["Responsabilidade", "Transparência", "Foco no cliente"],
+                practices: ["Incident command system", "Blameless post-mortem", "War room coordination"],
+                proactivity: "Criou runbooks preventivos e processo de crisis management pós-incidente"
+              }, {
+                title: "Cenário de Produto - Atitude Colaborativa",
+                situation: "Feature complexa com deadline apertado, PM e Dev discordando de abordagem",
+                result: "MVP entregue no prazo | +40% adoption rate | Framework de decisão criado",
+                interpretation: [
+                  "Balanceou viabilidade técnica vs. necessidade urgente de negócio",
+                  "Mapeou trade-offs de cada abordagem com métricas concretas",
+                  "Propôs experimento A/B para validar hipóteses conflitantes"
+                ],
+                engagement: [
+                  "Facilitou discussão técnica usando linguagem de negócio",
+                  "Criou matriz de priorização compartilhada entre teams",
+                  "Estabeleceu checkpoints de validação com critérios objetivos"
+                ],
+                resolution: [
+                  "Implementou solução incremental mantendo valor de negócio",
+                  "Criou documentação técnica acessível para time de produto",
+                  "Definiu métricas de sucesso alinhadas entre engenharia e produto"
+                ],
+                attitudes: ["Colaboração cross-functional", "Mentalidade data-driven", "Facilitação técnica"],
+                values: ["Colaboração", "Data-driven decisions", "Customer-centric"],
+                practices: ["A/B testing", "Incremental delivery", "Cross-team alignment"],
+                proactivity: "Propôs framework de decisão para resolver futuros conflitos produto-tech"
+              }, {
+                title: "Cenário de Crescimento - Atitude de Mentoria",
+                situation: "Equipe crescendo 300% em 6 meses, juniores perdidos, seniors sobrecarregados",
+                result: "Time produtivo em 2 semanas | Knowledge gaps eliminados | Cultura de mentoria",
+                interpretation: [
+                  "Identificou bottleneck em knowledge transfer vs. processo vs. ferramentas",
+                  "Mapeou competências da equipe e gaps críticos de conhecimento",
+                  "Antecipou scaling challenges antes de impactar delivery"
+                ],
+                engagement: [
+                  "Criou programa estruturado de buddy system para onboarding",
+                  "Estabeleceu code review sessions educativas vs. apenas approval",
+                  "Implementou office hours técnicos para mentoria assíncrona"
+                ],
+                resolution: [
+                  "Documentation-driven development para eliminar dependências",
+                  "Tech talks internas sobre architectural decisions e context",
+                  "Knowledge sharing channel para dúvidas e best practices"
+                ],
+                attitudes: ["Liderança técnica", "Investimento em pessoas", "Visão de longo prazo"],
+                values: ["Growth mindset", "Knowledge sharing", "People development"],
+                practices: ["Buddy system", "Documentation-driven", "Continuous learning"],
+                proactivity: "Criou programa de technical leadership development para próximos seniors"
+              }].map((caseStudy, idx) => (
+                <Card key={idx} className="bg-white border border-gray-200">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-xl font-bold text-gray-900">{caseStudy.title}</h3>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setExpandedCase(expandedCase === idx ? null : idx)}
+                        className="text-purple-600 hover:text-purple-700"
+                      >
+                        <ChevronRight className={`w-4 h-4 transition-transform ${expandedCase === idx ? 'rotate-90' : ''}`} />
+                      </Button>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-gray-900 font-medium">{item.title}</h4>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
+
+                    <div className="space-y-4">
+                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h4 className="font-semibold text-gray-900 mb-2">Situação</h4>
+                        <p className="text-gray-700">{caseStudy.situation}</p>
+                      </div>
+
+                      <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <h4 className="font-semibold text-green-900 mb-2">Resultado</h4>
+                        <p className="text-green-800 font-medium">{caseStudy.result}</p>
+                      </div>
                     </div>
-                  </div>)}
-              </CardContent>
-            </Card>
 
-            <Card className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-gray-900">Resultado do Alinhamento</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="text-center">
-                  <div className="text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
-                    96%
+                    {/* Expandable Content */}
+                    {expandedCase === idx && (
+                      <div className="mt-6 space-y-6 border-t border-gray-200 pt-6">
+                        {/* Level 1: How they approached */}
+                        <div className="space-y-4">
+                          <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">Nível 1</Badge>
+                            Como Interpretou e Definiu
+                          </h4>
+                          <div className="grid md:grid-cols-2 gap-6">
+                            <div>
+                              <h5 className="font-medium text-gray-900 mb-2">Interpretação da Situação</h5>
+                              <div className="space-y-2">
+                                {caseStudy.interpretation.map((item, i) => (
+                                  <div key={i} className="flex items-start gap-2">
+                                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
+                                    <p className="text-gray-700 text-sm">{item}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                              <h5 className="font-medium text-gray-900 mb-2">Como Engajou e Resolveu</h5>
+                              <div className="space-y-2">
+                                {caseStudy.engagement.slice(0,2).map((item, i) => (
+                                  <div key={i} className="flex items-start gap-2">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                                    <p className="text-gray-700 text-sm">{item}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Level 2: Attitudes and Values */}
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                              <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">Nível 2</Badge>
+                              Atitudes Demonstradas
+                            </h4>
+                            <div className="space-y-2">
+                              {caseStudy.attitudes.map((attitude, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0" />
+                                  <p className="text-gray-700">{attitude}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-3">Valores Evidenciados</h4>
+                            <div className="space-y-2">
+                              {caseStudy.values.map((value, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                                  <p className="text-gray-700">{value}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Level 3: Practices and Proactivity */}
+                        <div className="space-y-4">
+                          <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-200">Nível 3</Badge>
+                            Boas Práticas e Proatividade
+                          </h4>
+                          <div className="bg-white p-4 rounded-lg border border-gray-200">
+                            <h5 className="font-medium text-gray-900 mb-2">Boas Práticas Aplicadas</h5>
+                            <div className="flex flex-wrap gap-2">
+                              {caseStudy.practices.map((practice, i) => (
+                                <Badge key={i} variant="secondary" className="bg-blue-100 text-blue-700">
+                                  {practice}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                            <h5 className="font-medium text-orange-900 mb-2">Proatividade Demonstrada</h5>
+                            <p className="text-orange-800">{caseStudy.proactivity}</p>
+                          </div>
+                        </div>
+
+                        {/* Cultural Evidence */}
+                        <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                          <h4 className="text-lg font-semibold text-green-900 mb-2">Evidência Cultural</h4>
+                          <p className="text-green-800">
+                            Demonstrou consistência comportamental alinhada com valores organizacionais de {caseStudy.values.join(", ").toLowerCase()}, 
+                            evidenciando fit cultural através de atitudes práticas em cenários de alta pressão.
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Cultural Validation Summary */}
+            <Card className="bg-white border border-gray-200">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Validação Cultural Final</h3>
+                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <div className="flex items-center gap-2 text-green-600 mb-3">
+                    <CheckCircle className="w-5 h-5" />
+                    <span className="font-medium">Cultural Fit Aprovado</span>
                   </div>
-                  <p className="text-gray-900 font-semibold text-lg">Score de Alinhamento</p>
-                  <p className="text-gray-600">Cultura + Competências</p>
+                  <p className="text-green-800 leading-relaxed">
+                    <strong>Atitudes consistentes com cultura de ownership, colaboração e growth mindset</strong>, 
+                    evidenciadas em múltiplos cenários de alta pressão. Demonstrou capacidade de liderança técnica, 
+                    comunicação transparente e investimento no desenvolvimento de pessoas, alinhando-se perfeitamente 
+                    com valores organizacionais de responsabilidade, transparência e foco no cliente.
+                  </p>
                 </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">94%</div>
-                    <p className="text-gray-700 text-sm">Fit Cultural</p>
+                
+                <div className="grid grid-cols-3 gap-4 mt-6">
+                  <div className="text-center p-4 bg-blue-50 rounded-lg">
+                    <div className="text-2xl font-bold text-blue-600 mb-1">3/3</div>
+                    <p className="text-blue-700 text-sm font-medium">Cenários Validados</p>
                   </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">98%</div>
-                    <p className="text-gray-700 text-sm">Capacidade Técnica</p>
+                  <div className="text-center p-4 bg-purple-50 rounded-lg">
+                    <div className="text-2xl font-bold text-purple-600 mb-1">9+</div>
+                    <p className="text-purple-700 text-sm font-medium">Atitudes Evidenciadas</p>
+                  </div>
+                  <div className="text-center p-4 bg-green-50 rounded-lg">
+                    <div className="text-2xl font-bold text-green-600 mb-1">100%</div>
+                    <p className="text-green-700 text-sm font-medium">Alinhamento Cultural</p>
                   </div>
                 </div>
-
-                <div className="space-y-3">
-                  <p className="text-gray-600 text-sm font-medium">Principais Indicadores:</p>
-                  {["Forte alinhamento com valores de inovação", "Excelente capacidade de colaboração", "Mentalidade data-driven comprovada", "Experiência técnica sólida em fintech"].map((indicator, idx) => <div key={idx} className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span className="text-gray-700 text-sm">{indicator}</span>
-                    </div>)}
-                </div>
-
-                <Button className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Candidato Aprovado
-                </Button>
               </CardContent>
             </Card>
           </div>}
