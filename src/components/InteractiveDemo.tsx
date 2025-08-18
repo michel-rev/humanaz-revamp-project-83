@@ -46,21 +46,83 @@ const InteractiveDemo = () => {
     response: "Outage crítico afetando 2M usuários. Dilemas enfrentados: (1) Rollback total perdendo 6h de dados; (2) Fix incremental arriscado; (3) Recovery paralelo com squads dedicados. Escolhi opção 3: coordenei war room, updates C-level a cada 30min, e recovery em paralelo. Resultado: 4h vs. 8h estimadas, zero perda de dados.",
     cultural_fit: 98
   }];
-  const validationMetrics = [{
-    name: "Capacidade Produtiva",
-    description: "Competências técnicas e entrega",
-    score: 94,
-    indicators: ["Problem solving", "Code quality", "Delivery speed", "Technical communication"]
+  const [expandedCase, setExpandedCase] = useState<number | null>(null);
+  
+  const deepDiveCases = [{
+    title: "Performance Crítica",
+    situation: "Sistema de 50M transações/dia com latência crescente afetando SLA",
+    result: "Latência P99 reduzida de 300ms → 30ms | Throughput aumentado de 15k → 35k TPS",
+    tradeoffs: [
+      "Escala horizontal (custos vs. velocidade): Optou por otimização primeiro",
+      "Database sharding (complexidade vs. impacto): Implementou particionamento temporal",
+      "Cache distribuído (consistência vs. performance): Redis Cluster com eventual consistency"
+    ],
+    obstacles: [
+      "Lock contention em transações críticas: Resolvido com query optimization",
+      "Memory leaks em conexões idle: Implementou connection pooling robusto",
+      "Query N+1 em relatórios: Migrou para batch processing assíncrono"
+    ],
+    technologies: [
+      "Redis Cluster: Cache distribuído para reduzir latência de consultas",
+      "PostgreSQL particionado: Divisão temporal para otimizar queries históricas",
+      "Kafka: Processamento assíncrono para operações não-críticas"
+    ],
+    foundations: [
+      "CAP Theorem: Priorizou disponibilidade e partição tolerante",
+      "Circuit Breaker Pattern: Isolamento de falhas em serviços críticos",
+      "Eventual Consistency: Aceitou inconsistência temporária para performance"
+    ],
+    businessImpact: "Sistema suportou Black Friday com 3x volume normal sem degradação"
   }, {
-    name: "Alinhamento Cultural",
-    description: "Fit com valores e práticas da empresa",
-    score: 96,
-    indicators: ["Colaboração", "Inovação", "Adaptabilidade", "Growth mindset"]
+    title: "Arquitetura Resiliente", 
+    situation: "Outage crítico afetando 2M usuários com cascading failures",
+    result: "Recovery em 4h vs. 8h estimadas | Zero data loss | Processo replicável",
+    tradeoffs: [
+      "Rollback total vs. fix incremental: Escolheu recovery paralelo",
+      "Comunicação stakeholders vs. foco técnico: Definiu incident commander",
+      "Speed vs. thoroughness: Priorizou restore com post-mortem detalhado"
+    ],
+    obstacles: [
+      "Database corruption: 3 shards específicos com dados inconsistentes",
+      "Cascading failures: Microserviços dependentes falhando em sequência",
+      "Read replica lag: Inconsistência entre master e replicas"
+    ],
+    technologies: [
+      "War room setup: Coordenação centralizada com Slack + Zoom",
+      "Parallel recovery: Squads dedicados por componente crítico",
+      "Grafana + Prometheus: Monitoring real-time do processo de recovery"
+    ],
+    foundations: [
+      "Chaos Engineering: Testes prévios de resistência facilitaram diagnóstico",
+      "Bulkhead Pattern: Isolamento impediu falha total do sistema",
+      "Graceful Degradation: Funcionalidades não-críticas desabilitadas"
+    ],
+    businessImpact: "Manteve confiança do mercado e evitou perda de R$ 5M em transações"
   }, {
-    name: "Potencial de Retenção",
-    description: "Probabilidade de permanência longo prazo",
-    score: 89,
-    indicators: ["Career alignment", "Company values fit", "Team dynamics", "Growth opportunities"]
+    title: "Crescimento Exponencial",
+    situation: "Fintech crescendo 300% em 6 meses, arquitetura não escalava",
+    result: "Suportou crescimento 10x | Zero downtime na migração | Time produtivo",
+    tradeoffs: [
+      "Rewrite vs. refactoring: Escolheu modular monolith com microserviços estratégicos",
+      "Cloud-native vs. hybrid: Migração incremental para reduzir riscos",
+      "Speed vs. quality: Implementou feature flags para releases graduais"
+    ],
+    obstacles: [
+      "Database hot spots: Tabelas de transações sobrecarregadas",
+      "File upload bottlenecks: Documentos KYC causando timeouts",
+      "API rate limiting: Limites inadequados para crescimento"
+    ],
+    technologies: [
+      "Database sharding: Consistent hashing por customer_id",
+      "CDN + S3: Assets estáticos e documentos com edge caching",
+      "API Gateway: Rate limiting dinâmico baseado em customer tier"
+    ],
+    foundations: [
+      "Domain-Driven Design: Separação clara de bounded contexts",
+      "CQRS: Read/write separation para otimizar consultas",
+      "Event Sourcing: Auditoria completa e reprocessamento de eventos"
+    ],
+    businessImpact: "Habilitou IPO da empresa ao demonstrar capacidade de escala"
   }];
   const competencyDefinitions = [{
     title: "Cenários de Competência",
@@ -264,33 +326,128 @@ const InteractiveDemo = () => {
             </Card>
           </div>}
 
-        {/* Validation Demo */}
-        {currentDemo === 'validation' && <div className="grid md:grid-cols-3 gap-6">
-            {validationMetrics.map((metric, idx) => <Card key={idx} className="bg-white border border-gray-200 hover:shadow-md transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="text-center mb-6">
-                    <div className={`text-4xl font-bold mb-2 ${idx === 0 ? 'text-blue-600' : idx === 1 ? 'text-purple-600' : 'text-green-600'}`}>
-                      {metric.score}%
+        {/* Deep Dive Validation Demo */}
+        {currentDemo === 'validation' && <div className="space-y-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Validação Real: <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Como Fez</span>
+              </h3>
+              <p className="text-slate-300">
+                Cruzamento entre desafios de negócio do cliente e vivências práticas do profissional
+              </p>
+            </div>
+            
+            <div className="grid gap-8">
+              {deepDiveCases.map((caseStudy, idx) => (
+                <Card key={idx} className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  <CardContent className="p-0">
+                    {/* Header - Always Visible */}
+                    <div 
+                      className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                      onClick={() => setExpandedCase(expandedCase === idx ? null : idx)}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <div className={`p-3 rounded-lg ${idx === 0 ? 'bg-blue-50' : idx === 1 ? 'bg-red-50' : 'bg-green-50'}`}>
+                            {idx === 0 ? <Zap className="w-6 h-6 text-blue-600" /> : 
+                             idx === 1 ? <Target className="w-6 h-6 text-red-600" /> : 
+                             <TrendingUp className="w-6 h-6 text-green-600" />}
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900">{caseStudy.title}</h3>
+                            <p className="text-gray-600">{caseStudy.situation}</p>
+                          </div>
+                        </div>
+                        <ChevronRight className={`w-5 h-5 text-gray-400 transition-transform ${expandedCase === idx ? 'rotate-90' : ''}`} />
+                      </div>
+                      
+                      {/* Result Preview */}
+                      <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                        <p className="text-gray-900 font-medium">{caseStudy.result}</p>
+                      </div>
                     </div>
-                    <h3 className="text-gray-900 font-semibold text-lg">{metric.name}</h3>
-                    <p className="text-gray-600 text-sm">{metric.description}</p>
-                  </div>
 
-                  <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-4">
-                    <div className={`h-full transition-all duration-1000 ${idx === 0 ? 'bg-gradient-to-r from-blue-500 to-blue-400' : idx === 1 ? 'bg-gradient-to-r from-purple-500 to-purple-400' : 'bg-gradient-to-r from-green-500 to-green-400'}`} style={{
-                width: `${metric.score}%`
-              }} />
-                  </div>
+                    {/* Expanded Content */}
+                    {expandedCase === idx && (
+                      <div className="border-t border-gray-200 bg-gray-50">
+                        <div className="p-6 space-y-6">
+                          {/* Level 2: Trade-offs & Process */}
+                          <div>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">Nível 2</Badge>
+                              Trade-offs Analisados
+                            </h4>
+                            <div className="space-y-2">
+                              {caseStudy.tradeoffs.map((tradeoff, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
+                                  <p className="text-gray-700">{tradeoff}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
 
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium text-gray-600">Indicadores:</p>
-                    {metric.indicators.map((indicator, indicatorIdx) => <div key={indicatorIdx} className="flex items-center gap-2 text-gray-700">
-                        <div className={`w-1.5 h-1.5 rounded-full ${idx === 0 ? 'bg-blue-600' : idx === 1 ? 'bg-purple-600' : 'bg-green-600'}`} />
-                        <span className="text-sm">{indicator}</span>
-                      </div>)}
-                  </div>
-                </CardContent>
-              </Card>)}
+                          {/* Obstacles */}
+                          <div>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-3">Obstáculos Enfrentados</h4>
+                            <div className="space-y-2">
+                              {caseStudy.obstacles.map((obstacle, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
+                                  <p className="text-gray-700">{obstacle}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Level 3: Technical Foundations */}
+                          <div className="grid md:grid-cols-2 gap-6">
+                            <div>
+                              <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                                <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">Nível 3</Badge>
+                                Tecnologias Aplicadas
+                              </h4>
+                              <div className="space-y-2">
+                                {caseStudy.technologies.map((tech, i) => (
+                                  <div key={i} className="flex items-start gap-2">
+                                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0" />
+                                    <p className="text-gray-700">{tech}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div>
+                              <h4 className="text-lg font-semibold text-gray-900 mb-3">Fundamentos Técnicos</h4>
+                              <div className="space-y-2">
+                                {caseStudy.foundations.map((foundation, i) => (
+                                  <div key={i} className="flex items-start gap-2">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                                    <p className="text-gray-700">{foundation}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Business Impact */}
+                          <div className="bg-white p-4 rounded-lg border border-gray-200">
+                            <h4 className="text-lg font-semibold text-gray-900 mb-2">Impacto no Negócio</h4>
+                            <p className="text-gray-700 font-medium">{caseStudy.businessImpact}</p>
+                          </div>
+
+                          {/* Validation Status */}
+                          <div className="flex items-center gap-2 text-green-600 bg-green-50 p-3 rounded-lg">
+                            <CheckCircle className="w-5 h-5" />
+                            <span className="font-medium">Experiência comprovada em cenários similares com resultados mensuráveis</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>}
 
         {/* Competency Definition Demo */}
