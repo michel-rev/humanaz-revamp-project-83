@@ -41,7 +41,12 @@ const CTASection = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8"
-              onClick={() => setBasicModalOpen(true)}
+              onClick={() => {
+                const investimentoSection = document.getElementById('investimento');
+                if (investimentoSection) {
+                  investimentoSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Agendar Demonstração
