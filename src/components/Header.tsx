@@ -26,7 +26,7 @@ const Header = () => {
     { name: "Como Funciona", href: "#processo" },
     { name: "Oportunidade", href: "#clientes" },
     { name: "Blog", href: "#blog" },
-    { name: "Contato", href: "#contato" }
+    { name: "Contato", href: "/contato" }
   ];
 
   return (
