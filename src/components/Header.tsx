@@ -25,7 +25,6 @@ const Header = () => {
     { name: "Flywheel", href: "/#flywheel" },
     { name: "Como Funciona", href: "#processo" },
     { name: "Oportunidade", href: "#clientes" },
-    { name: "Investimento", href: "#investimento" },
     { name: "Blog", href: "/blog" },
     { name: "Contato", href: "/contato" }
   ];
