@@ -22,6 +22,7 @@ const Header = () => {
   }, []);
 
   const navigation = [
+    { name: "Flywheel", href: "#flywheel" },
     { name: "Como Funciona", href: "#processo" },
     { name: "Oportunidade", href: "#clientes" },
     { name: "Blog", href: "#blog" },
