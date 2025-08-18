@@ -9,7 +9,7 @@ const sectionConfigs: SectionConfig[] = [
   { id: 'hero', isDark: true },
   { id: 'flywheel', isDark: false },
   { id: 'interactive-demo', isDark: true },
-  { id: 'process', isDark: false },
+  { id: 'processo', isDark: false },
   { id: 'clients', isDark: true },
   { id: 'cta', isDark: true },
 ];
