@@ -337,7 +337,7 @@ const InteractiveDemo = () => {
               </p>
             </div>
             
-            <div className="grid gap-8">
+            <div className="grid grid-cols-2 gap-8">
               {deepDiveCases.map((caseStudy, idx) => (
                 <Card key={idx} className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 overflow-hidden">
                   <CardContent className="p-0">
