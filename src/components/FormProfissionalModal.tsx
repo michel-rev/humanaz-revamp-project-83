@@ -64,32 +64,35 @@ const FormProfissionalModal = ({ open, onOpenChange, onSuccess }: FormProfission
         <form onSubmit={handleSubmit} className="space-y-6">
           <input type="hidden" name="plano" value="Profissional" />
           
-          <div className="space-y-2">
-            <Label htmlFor="nome" className="text-gray-700 font-medium">
-              Nome completo *
-            </Label>
-            <Input
-              id="nome"
-              name="nome"
-              type="text"
-              required
-              className="h-12"
-              placeholder="Seu nome completo"
-            />
-          </div>
+          {/* Nome e Telefone na mesma linha */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="nome" className="text-gray-700 font-medium">
+                Nome completo *
+              </Label>
+              <Input
+                id="nome"
+                name="nome"
+                type="text"
+                required
+                className="h-12"
+                placeholder="Seu nome completo"
+              />
+            </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="telefone" className="text-gray-700 font-medium">
-              Telefone *
-            </Label>
-            <Input
-              id="telefone"
-              name="telefone"
-              type="tel"
-              required
-              className="h-12"
-              placeholder="(11) 99999-9999"
-            />
+            <div className="space-y-2">
+              <Label htmlFor="telefone" className="text-gray-700 font-medium">
+                Telefone *
+              </Label>
+              <Input
+                id="telefone"
+                name="telefone"
+                type="tel"
+                required
+                className="h-12"
+                placeholder="(11) 99999-9999"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -106,40 +109,43 @@ const FormProfissionalModal = ({ open, onOpenChange, onSuccess }: FormProfission
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="empresa" className="text-gray-700 font-medium">
-              Nome da empresa *
-            </Label>
-            <Input
-              id="empresa"
-              name="empresa"
-              type="text"
-              required
-              className="h-12"
-              placeholder="Nome da sua empresa"
-            />
-          </div>
+          {/* Empresa e Setor na mesma linha */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="empresa" className="text-gray-700 font-medium">
+                Nome da empresa *
+              </Label>
+              <Input
+                id="empresa"
+                name="empresa"
+                type="text"
+                required
+                className="h-12"
+                placeholder="Nome da sua empresa"
+              />
+            </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="setor" className="text-gray-700 font-medium">
-              Setor da empresa *
-            </Label>
-            <Select name="setor" required>
-              <SelectTrigger className="h-12">
-                <SelectValue placeholder="Selecione o setor" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Fintech">Fintech</SelectItem>
-                <SelectItem value="SaaS">SaaS</SelectItem>
-                <SelectItem value="Software House">Software House</SelectItem>
-                <SelectItem value="Health Tech">Health Tech</SelectItem>
-                <SelectItem value="Agrotech">Agrotech</SelectItem>
-                <SelectItem value="IoT">IoT</SelectItem>
-                <SelectItem value="Cybersecurity">Cybersecurity</SelectItem>
-                <SelectItem value="EdTech">EdTech</SelectItem>
-                <SelectItem value="Outras">Outras</SelectItem>
-              </SelectContent>
-            </Select>
+            <div className="space-y-2">
+              <Label htmlFor="setor" className="text-gray-700 font-medium">
+                Setor da empresa *
+              </Label>
+              <Select name="setor" required>
+                <SelectTrigger className="h-12">
+                  <SelectValue placeholder="Selecione o setor" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Fintech">Fintech</SelectItem>
+                  <SelectItem value="SaaS">SaaS</SelectItem>
+                  <SelectItem value="Software House">Software House</SelectItem>
+                  <SelectItem value="Health Tech">Health Tech</SelectItem>
+                  <SelectItem value="Agrotech">Agrotech</SelectItem>
+                  <SelectItem value="IoT">IoT</SelectItem>
+                  <SelectItem value="Cybersecurity">Cybersecurity</SelectItem>
+                  <SelectItem value="EdTech">EdTech</SelectItem>
+                  <SelectItem value="Outras">Outras</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           <div className="space-y-2">
