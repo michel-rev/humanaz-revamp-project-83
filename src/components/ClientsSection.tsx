@@ -14,7 +14,10 @@ const ClientsSection = () => {
     { name: "Parceiro 7", logo: "/lovable-uploads/ed56b1e0-22c9-450c-a22d-dd6c24a82c73.png" },
     { name: "Parceiro 8", logo: "/lovable-uploads/b65297a8-f883-4478-bb39-ad95e968c779.png" },
     { name: "Parceiro 9", logo: "/lovable-uploads/2cd9bbdd-9b53-4d30-968c-9ceaf5c13905.png" },
-    { name: "Parceiro 10", logo: "/lovable-uploads/cd83697e-55af-4d04-9705-e774e5f395e0.png" }
+    { name: "Parceiro 10", logo: "/lovable-uploads/cd83697e-55af-4d04-9705-e774e5f395e0.png" },
+    { name: "Parceiro 11", logo: "/lovable-uploads/4b25fd16-a63e-454d-a9d8-de4b9d40791e.png" },
+    { name: "Parceiro 12", logo: "/lovable-uploads/bd64466a-5c59-4fff-bbbc-ea17a0d6a6b3.png" },
+    { name: "Parceiro 13", logo: "/lovable-uploads/7a4bba2f-8938-40ec-9c86-c473f67deae2.png" }
   ];
 
   return (
@@ -94,7 +97,7 @@ const ClientsSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-slate-700">
           <div className="text-center">
-            <div className="text-4xl font-bold text-purple-400 mb-2">10+</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2">13+</div>
             <div className="text-slate-400">Empresas Parceiras</div>
           </div>
           <div className="text-center">
