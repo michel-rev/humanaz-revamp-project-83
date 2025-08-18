@@ -36,20 +36,20 @@ const Contato = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-purple-900/30">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50/30">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Vamos Trabalhar <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Juntos</span>
+            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Vamos Trabalhar <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Juntos</span>
             </h1>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Vamos trabalhar juntos para criar uma conexão de propósitos, que contribua para o crescimento do seu negócio, e que represente sua marca e atraia profissionais qualificados?
             </p>
-            <p className="text-lg text-purple-400 font-semibold mt-6">
+            <p className="text-lg text-purple-600 font-semibold mt-6">
               Lembre-se: Tudo é conectado, mas poucas são por conexão de propósitos!
             </p>
           </div>
@@ -63,19 +63,19 @@ const Contato = () => {
             
             {/* Company Information */}
             <div className="space-y-8">
-              <Card className="border-0 shadow-xl bg-slate-800/90 backdrop-blur-sm">
+              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-white flex items-center gap-3">
+                  <CardTitle className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <Building className="h-8 w-8 text-purple-600" />
                     Informações da Empresa
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
-                    <h3 className="font-bold text-lg text-white mb-2">
+                    <h3 className="font-bold text-lg text-slate-900 mb-2">
                       Haz Inteligencia Em Capital Humano Eireli
                     </h3>
-                    <p className="text-slate-300 flex items-center gap-2">
+                    <p className="text-slate-600 flex items-center gap-2">
                       <Building className="h-4 w-4" />
                       CNPJ: 30.633.157/0001-15
                     </p>
@@ -84,9 +84,9 @@ const Contato = () => {
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-purple-600 mt-1" />
                     <div>
-                      <p className="font-semibold text-white">Localização</p>
-                      <p className="text-slate-300">Rio de Janeiro</p>
-                      <p className="text-slate-300">Bairro: Barra Da Tijuca</p>
+                      <p className="font-semibold text-slate-900">Localização</p>
+                      <p className="text-slate-600">Rio de Janeiro</p>
+                      <p className="text-slate-600">Bairro: Barra Da Tijuca</p>
                     </div>
                   </div>
                 </CardContent>
@@ -113,12 +113,12 @@ const Contato = () => {
             </div>
 
             {/* Contact Form */}
-            <Card className="border-0 shadow-xl bg-slate-800/90 backdrop-blur-sm">
+            <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-white">
+                <CardTitle className="text-2xl font-bold text-slate-900">
                   Entre em Contato
                 </CardTitle>
-                <p className="text-slate-300">
+                <p className="text-slate-600">
                   Preencha o formulário abaixo e entraremos em contato em breve.
                 </p>
               </CardHeader>
