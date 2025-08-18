@@ -5,16 +5,16 @@ import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 const ClientsSection = () => {
 
   const clients = [
-    { name: "12 Minutos", logo: "/lovable-uploads/761e1da5-7c3d-4713-a8f3-88038dcae126.png" },
-    { name: "Americanas Delivery", logo: "/lovable-uploads/0e3c140d-c7f5-4ece-8f7c-d9e629ab41d6.png" },
-    { name: "BitCapital", logo: "/lovable-uploads/ced4ec51-aa5b-4abf-88e4-eaea0f969104.png" },
-    { name: "Bom Para Crédito", logo: "/lovable-uploads/f3e1518e-77e1-4ff1-96e0-57b4e9285eff.png" },
-    { name: "Faire", logo: "/lovable-uploads/ab7d7a61-ce09-4f11-bcb4-337910547149.png" },
-    { name: "Get.info", logo: "/lovable-uploads/b1960061-9f3a-421f-a4e0-ed7e8b6638a6.png" },
-    { name: "Globo", logo: "/lovable-uploads/17f3f46e-df6a-4963-a0f5-7bf6b8f43eeb.png" },
-    { name: "Info4", logo: "/lovable-uploads/79bd1d2e-19c3-4225-b01a-8c408fc86ea0.png" },
-    { name: "Involves", logo: "/lovable-uploads/7b2dc6a6-5a29-4cd9-ac4e-5b6347672e4f.png" },
-    { name: "Juno", logo: "/lovable-uploads/1cd0b3bc-2777-4dd0-b3e4-3018394004cc.png" }
+    { name: "Parceiro 1", logo: "/lovable-uploads/bf08bbb3-71ef-422a-9b7a-284d46696b7b.png" },
+    { name: "Parceiro 2", logo: "/lovable-uploads/ea0d4845-0c02-41b4-82cc-961d720f19c9.png" },
+    { name: "Parceiro 3", logo: "/lovable-uploads/c214c201-c292-47ad-be06-fae231a17ebf.png" },
+    { name: "Parceiro 4", logo: "/lovable-uploads/ed6a6a6d-9131-41d0-96f4-9af0ed67736a.png" },
+    { name: "Parceiro 5", logo: "/lovable-uploads/1ca6efa9-3c24-4bd7-ba87-c9c5cb76d832.png" },
+    { name: "Parceiro 6", logo: "/lovable-uploads/6e13cf7c-9c7b-4c9f-8bd8-3b96824d359a.png" },
+    { name: "Parceiro 7", logo: "/lovable-uploads/ed56b1e0-22c9-450c-a22d-dd6c24a82c73.png" },
+    { name: "Parceiro 8", logo: "/lovable-uploads/b65297a8-f883-4478-bb39-ad95e968c779.png" },
+    { name: "Parceiro 9", logo: "/lovable-uploads/2cd9bbdd-9b53-4d30-968c-9ceaf5c13905.png" },
+    { name: "Parceiro 10", logo: "/lovable-uploads/cd83697e-55af-4d04-9705-e774e5f395e0.png" }
   ];
 
   return (
