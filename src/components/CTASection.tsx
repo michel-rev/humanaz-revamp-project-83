@@ -57,7 +57,12 @@ const CTASection = () => {
               size="lg" 
               variant="gradient-outline" 
               className="text-base sm:text-lg px-6 sm:px-8"
-              onClick={() => setBasicModalOpen(true)}
+              onClick={() => {
+                const investimentoSection = document.getElementById('investimento');
+                if (investimentoSection) {
+                  investimentoSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               <MessageSquare className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Falar com Especialista
