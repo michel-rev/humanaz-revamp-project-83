@@ -337,7 +337,7 @@ const InteractiveDemo = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-8">
+            <div className="space-y-6">
               {deepDiveCases.map((caseStudy, idx) => (
                 <Card key={idx} className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 overflow-hidden">
                   <CardContent className="p-0">
@@ -523,7 +523,7 @@ const InteractiveDemo = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="space-y-6">
               {[{
                 title: "Cenário de Crise - Atitude sob Pressão",
                 situation: "Sistema crítico down em Black Friday, 5M usuários afetados",
