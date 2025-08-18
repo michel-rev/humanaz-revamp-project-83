@@ -93,19 +93,19 @@ const CTASection = () => {
                 <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {approvalCount}%
                 </div>
-                <div className="text-slate-400 text-sm">Taxa de Aprovação</div>
+                <div className="text-white text-sm">Taxa de Aprovação</div>
               </div>
               <div ref={candidatesRef} className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {candidatesCount}
                 </div>
-                <div className="text-slate-400 text-sm">Candidatos Qualificados</div>
+                <div className="text-white text-sm">Candidatos Qualificados</div>
               </div>
               <div ref={companiesRef} className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
                   {companiesCount}+
                 </div>
-                <div className="text-slate-400 text-sm">Empresas Parceiras</div>
+                <div className="text-white text-sm">Empresas Parceiras</div>
               </div>
             </div>
           </div>
