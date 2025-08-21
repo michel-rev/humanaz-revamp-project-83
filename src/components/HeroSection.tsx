@@ -68,7 +68,7 @@ const HeroSection = () => {
             <div className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl space-y-2">
               <p>• Contexto e precisão na contratação do seu time de tecnologia.</p>
               <p>• Profissional e empresa alinhados em cultura e competências com o negócio.</p>
-              <p>• Reduzimos custo de preenchimento de vagas e aumentamos a retenção do time de engenharia de software.</p>
+              <p>• Reduzimos custo de preenchimento de vagas e aumentamos a retenção entre profissional e empresa.</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
