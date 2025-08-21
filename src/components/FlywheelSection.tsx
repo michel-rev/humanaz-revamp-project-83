@@ -4,7 +4,7 @@ const FlywheelSection = () => {
   const steps = [{
     icon: Users,
     title: "Quem Somos",
-    description: "Startup de recrutamento tech especializada em crescimento de times de tecnologia, dados e produto",
+    description: "Startup de recrutamento tech especializada em crescimento de times de tecnologia.",
     details: "Neon Pagamentos, SuperSim, Nuvia, Klavi, ZigFun, NFE.io, StarkBank, Asaas, QITech, BeeVale, SmartPay e outras empresas líderes do mercado.",
     color: "from-purple-500 to-pink-500"
   }, {
