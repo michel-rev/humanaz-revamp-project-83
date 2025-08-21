@@ -50,56 +50,87 @@ const FlywheelSection = () => {
         </div>
 
         {/* Flywheel Visual */}
-        <div className="relative max-w-6xl mx-auto">
-          {/* Central Hub */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="relative w-48 h-48">
-              {/* Gradient Border */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-purple-500 p-1">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                  <span className="font-bold text-4xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                    15 Dias
-                  </span>
+        <div className="relative max-w-5xl mx-auto">
+          {/* Circular container */}
+          <div className="relative w-full h-[800px] sm:h-[900px] lg:h-[1000px]">
+            {/* Central Hub */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48">
+                {/* Gradient Border */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-purple-500 p-1">
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                    <span className="font-bold text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+                      15 Dias
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Steps in circular arrangement */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {/* Connecting lines */}
+            <div className="absolute inset-0">
+              <svg className="w-full h-full" viewBox="0 0 400 400">
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="180"
+                  fill="none"
+                  stroke="url(#gradient)"
+                  strokeWidth="2"
+                  strokeDasharray="8,8"
+                  opacity="0.3"
+                />
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#a855f7" />
+                    <stop offset="25%" stopColor="#ec4899" />
+                    <stop offset="50%" stopColor="#3b82f6" />
+                    <stop offset="75%" stopColor="#10b981" />
+                    <stop offset="100%" stopColor="#f59e0b" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            {/* Steps in circular arrangement */}
             {steps.map((step, index) => {
               const Icon = step.icon;
+              // Position cards in a circle: top, right, bottom, left
               const positions = [
-                "sm:translate-x-0 sm:-translate-y-4 md:-translate-y-8", // Top left
-                "sm:translate-x-0 sm:-translate-y-4 md:-translate-y-8", // Top right  
-                "sm:translate-x-0 sm:translate-y-4 md:translate-y-8",  // Bottom left
-                "sm:translate-x-0 sm:translate-y-4 md:translate-y-8"   // Bottom right
+                { top: '5%', left: '50%', transform: 'translateX(-50%)' }, // Top
+                { top: '50%', right: '5%', transform: 'translateY(-50%)' }, // Right
+                { bottom: '5%', left: '50%', transform: 'translateX(-50%)' }, // Bottom
+                { top: '50%', left: '5%', transform: 'translateY(-50%)' } // Left
               ];
 
               return (
                 <div
                   key={index}
-                  className={`relative p-4 sm:p-6 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in text-center`}
-                  style={{ animationDelay: `${index * 200}ms` }}
+                  className="absolute w-64 sm:w-72 lg:w-80 animate-fade-in"
+                  style={{
+                    ...positions[index],
+                    animationDelay: `${index * 200}ms`
+                  }}
                 >
-                  {/* Icon */}
-                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r ${step.color} p-3 sm:p-4 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                    <Icon className="w-full h-full text-white" />
+                  <div className="relative p-4 sm:p-6 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group text-center">
+                    {/* Icon */}
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r ${step.color} p-3 sm:p-4 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
+                      <Icon className="w-full h-full text-white" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">
+                      {step.title}
+                    </h3>
+                    
+                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 mb-3 sm:mb-4 font-medium">
+                      {step.description}
+                    </p>
+                    
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                      {step.details}
+                    </p>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">
-                    {step.title}
-                  </h3>
-                  
-                  <p className="text-base sm:text-lg text-slate-600 mb-3 sm:mb-4 font-medium">
-                    {step.description}
-                  </p>
-                  
-                  <p className="text-slate-500 leading-relaxed">
-                    {step.details}
-                  </p>
-
                 </div>
               );
             })}
