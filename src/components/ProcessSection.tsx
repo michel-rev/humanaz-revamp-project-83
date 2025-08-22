@@ -6,7 +6,7 @@ const ProcessSection = () => {
   const processSteps = [
     {
       icon: Clock,
-      title: "Briefing Inicial",
+      title: "Onboarding do perfil a ser recrutado",
       description: "Entendemos sua cultura, necessidades técnicas e expectativas",
       duration: "Dia 1-2",
       color: "from-blue-500 to-purple-500"
