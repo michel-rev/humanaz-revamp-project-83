@@ -137,6 +137,14 @@ export default {
 				'100%': {
 					transform: 'translateX(-100%)'
 				}
+			},
+			'marquee': {
+				'0%': {
+					transform: 'translateX(0%)'
+				},
+				'100%': {
+					transform: 'translateX(-100%)'
+				}
 			}
 			},
 		animation: {
@@ -147,7 +155,8 @@ export default {
 			'gradient-x': 'gradient-x 4s ease-in-out infinite',
 			'spin-slow': 'spin-slow 8s linear infinite',
 			'scroll-right': 'scroll-right 20s linear infinite',
-			'scroll-left': 'scroll-left 25s linear infinite'
+			'scroll-left': 'scroll-left 25s linear infinite',
+			'marquee': 'marquee 28s linear infinite'
 		}
 		}
 	},
