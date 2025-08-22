@@ -11,7 +11,7 @@ const AnimatedMetricsSection = () => {
         <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
           {daysCount} DIAS
         </div>
-        <div className="text-white">para entrega</div>
+        <div className="text-white">Corridos para entrega</div>
       </div>
       <div ref={candidatesRef} className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
         <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
