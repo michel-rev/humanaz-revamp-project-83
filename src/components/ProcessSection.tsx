@@ -29,7 +29,7 @@ const ProcessSection = () => {
       icon: CheckCircle,
       title: "Apresentação Final",
       description: "Entregamos 4 profissionais perfeitamente alinhados à sua vaga",
-      duration: "Dia 13-15",
+      duration: "até 15 dias corridos",
       color: "from-green-500 to-blue-500"
     }
   ];
