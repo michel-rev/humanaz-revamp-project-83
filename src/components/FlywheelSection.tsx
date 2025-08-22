@@ -23,6 +23,11 @@ const FlywheelSection = () => {
     { name: "Supersim", logo: supersimLogo },
     { name: "Tivita", logo: tivitaLogo },
     { name: "Neon", logo: neonLogo },
+    { name: "Asaas", logo: asaasLogo },
+    { name: "Starkbank", logo: starkbankLogo },
+    { name: "Klavi", logo: klaviLogo },
+    { name: "QiTech", logo: qitechLogo },
+    { name: "Zigfun", logo: zigfunLogo },
   ];
   return <section id="flywheel" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Background Elements */}
