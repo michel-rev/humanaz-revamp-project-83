@@ -83,7 +83,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-8 w-auto grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="h-6 w-auto grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                       />
                     </div>
                   ))}
@@ -94,7 +94,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-8 w-auto grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="h-6 w-auto grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                       />
                     </div>
                   ))}
@@ -121,7 +121,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-6 w-auto grayscale opacity-85"
+                        className="h-5 w-auto grayscale opacity-85"
                       />
                     </div>
                   ))}
@@ -132,7 +132,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-6 w-auto grayscale opacity-85"
+                        className="h-5 w-auto grayscale opacity-85"
                       />
                     </div>
                   ))}
