@@ -14,7 +14,7 @@ const ProcessSection = () => {
     {
       icon: Zap,
       title: "IA + Curadoria",
-      description: "Prompt engineering e análise humanizada para mapear candidatos ideais",
+      description: "Através da plataforma da HumanAZ (SaaS), conectada as principais redes sociais (LinkedIn, X, Facebook, Instagram), divulgamos a vaga para +30 mil profissionais de tecnologia no Brasil e atraímos apenas aqueles profissionais alinhados com os parâmetros da vaga.",
       duration: "Dia 3-8",
       color: "from-purple-500 to-pink-500"
     },
