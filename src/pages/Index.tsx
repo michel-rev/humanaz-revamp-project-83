@@ -21,7 +21,6 @@ const Index = () => {
       <PricingSection />
       <ClientsSection />
       <CTASection />
-      <BrandsLoop />
       <Footer />
     </div>
   );
