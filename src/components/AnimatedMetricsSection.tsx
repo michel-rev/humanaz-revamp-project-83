@@ -9,9 +9,9 @@ const AnimatedMetricsSection = () => {
     <div className="grid grid-cols-3 gap-8 pt-8">
       <div ref={daysRef} className="animate-fade-in">
         <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-          {daysCount}
+          {daysCount} DIAS
         </div>
-        <div className="text-white">Dias para entrega</div>
+        <div className="text-white">para entrega</div>
       </div>
       <div ref={candidatesRef} className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
         <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
