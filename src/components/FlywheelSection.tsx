@@ -1,33 +1,18 @@
 
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
-import asaasLogo from "@/assets/logos/asaas-logo.png";
-import starkbankLogo from "@/assets/logos/starkbank-logo.png";
-import klaviLogo from "@/assets/logos/klavi-logo.png";
-import qitechLogo from "@/assets/logos/qitech-logo.png";
-import zigfunLogo from "@/assets/logos/zigfun-logo.png";
-import nuviaLogo from "@/assets/logos/nuvia-logo.png";
-import celcoinLogo from "@/assets/logos/celcoin-logo.png";
-import supersimLogo from "@/assets/logos/supersim-logo.png";
-import tivitaLogo from "@/assets/logos/tivita-logo.png";
-import neonLogo from "@/assets/logos/neon-logo.svg";
 
 const FlywheelSection = () => {
   const brands = [
-    { name: "Asaas", logo: asaasLogo },
-    { name: "Starkbank", logo: starkbankLogo },
-    { name: "Klavi", logo: klaviLogo },
-    { name: "QiTech", logo: qitechLogo },
-    { name: "Zigfun", logo: zigfunLogo },
-    { name: "Nuvia", logo: nuviaLogo },
-    { name: "Celcoin", logo: celcoinLogo },
-    { name: "Supersim", logo: supersimLogo },
-    { name: "Tivita", logo: tivitaLogo },
-    { name: "Neon", logo: neonLogo },
-    { name: "Asaas", logo: asaasLogo },
-    { name: "Starkbank", logo: starkbankLogo },
-    { name: "Klavi", logo: klaviLogo },
-    { name: "QiTech", logo: qitechLogo },
-    { name: "Zigfun", logo: zigfunLogo },
+    { name: "Asaas", logo: "/lovable-uploads/d1d1a753-8572-4782-9a2c-8cce976eccae.png" },
+    { name: "Starkbank", logo: "/lovable-uploads/4170a859-68a5-4a85-aea9-d9a5e8b19187.png" },
+    { name: "Klavi", logo: "/lovable-uploads/bb5a3fe7-fec2-4000-9e34-9dbcf99e4aa2.png" },
+    { name: "QiTech", logo: "/lovable-uploads/6b5d9406-1c56-4935-a4ef-4732cb3c7615.png" },
+    { name: "Zig", logo: "/lovable-uploads/745616a5-ed53-464c-b541-214d7fa8eb5f.png" },
+    { name: "Nuvia", logo: "/lovable-uploads/ced770ac-2b86-41ee-8c90-b38a3e6c717d.png" },
+    { name: "Bee Vale", logo: "/lovable-uploads/94460819-eca8-4aa0-b736-3aff3dc14de1.png" },
+    { name: "SmartPay", logo: "/lovable-uploads/830b2565-b46b-4697-97a6-fa1def776d22.png" },
+    { name: "Neon", logo: "/lovable-uploads/5d34ebe8-63b7-4027-94fe-940c48effa4c.png" },
+    { name: "NFE", logo: "/lovable-uploads/0cea912f-e21c-4e8b-9786-524c2d390341.png" },
   ];
   return <section id="flywheel" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Background Elements */}
@@ -69,27 +54,38 @@ const FlywheelSection = () => {
                 <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
                 
                 {/* Marquee Track */}
-                <div className="group flex gap-12 animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]">
+                <div className="group flex animate-marquee motion-reduce:animate-none hover:[animation-play-state:paused]">
                   {/* First set */}
                   {brands.map((brand, index) => (
-                    <div key={`first-${index}`} className="flex-shrink-0">
+                    <figure key={`first-${index}`} className="brand">
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-8 w-auto grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                       />
-                    </div>
+                    </figure>
                   ))}
                   
                   {/* Duplicate set for seamless loop */}
                   {brands.map((brand, index) => (
-                    <div key={`second-${index}`} className="flex-shrink-0">
+                    <figure key={`second-${index}`} className="brand">
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-8 w-auto grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                       />
-                    </div>
+                    </figure>
+                  ))}
+                  
+                  {/* Third set for longer loop */}
+                  {brands.map((brand, index) => (
+                    <figure key={`third-${index}`} className="brand">
+                      <img
+                        src={brand.logo}
+                        alt={`${brand.name} logo`}
+                        className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                      />
+                    </figure>
                   ))}
                 </div>
               </div>
@@ -107,27 +103,38 @@ const FlywheelSection = () => {
                 <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
                 
                 {/* Mobile Marquee Track */}
-                <div className="flex gap-8 animate-marquee motion-reduce:animate-none">
+                <div className="flex animate-marquee motion-reduce:animate-none">
                   {/* First set */}
                   {brands.map((brand, index) => (
-                    <div key={`mobile-first-${index}`} className="flex-shrink-0">
+                    <figure key={`mobile-first-${index}`} className="brand">
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-6 w-auto grayscale opacity-85"
+                        className="grayscale opacity-85"
                       />
-                    </div>
+                    </figure>
                   ))}
                   
                   {/* Duplicate set for seamless loop */}
                   {brands.map((brand, index) => (
-                    <div key={`mobile-second-${index}`} className="flex-shrink-0">
+                    <figure key={`mobile-second-${index}`} className="brand">
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="h-6 w-auto grayscale opacity-85"
+                        className="grayscale opacity-85"
                       />
-                    </div>
+                    </figure>
+                  ))}
+                  
+                  {/* Third set for longer loop */}
+                  {brands.map((brand, index) => (
+                    <figure key={`mobile-third-${index}`} className="brand">
+                      <img
+                        src={brand.logo}
+                        alt={`${brand.name} logo`}
+                        className="grayscale opacity-85"
+                      />
+                    </figure>
                   ))}
                 </div>
               </div>
