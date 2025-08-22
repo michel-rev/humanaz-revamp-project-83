@@ -20,7 +20,7 @@ const ProcessSection = () => {
     },
     {
       icon: Users,
-      title: "Validação Cultural",
+      title: "Engajamento de candidatos",
       description: "Verificamos alinhamento através de parâmetros e dados comportamentais",
       duration: "Dia 9-12",
       color: "from-pink-500 to-red-500"
