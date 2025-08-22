@@ -128,11 +128,11 @@ All colors MUST be HSL.
 
 /* Brand logos styles */
 .brand {
-  width: clamp(110px, 13vw, 180px);
-  height: clamp(36px, 6vw, 48px);
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(32px, 5vw, 40px);
   display: grid;
   place-items: center;
-  padding: 8px 16px;
+  padding: 6px 12px;
   flex-shrink: 0;
 }
 
