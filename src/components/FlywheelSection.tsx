@@ -46,7 +46,7 @@ const FlywheelSection = () => {
           <img 
             src="/lovable-uploads/3c5464fe-9e1b-4b84-a2f8-b161271aa845.png" 
             alt="Flywheel de Recrutamento - 4 peças: Quem Somos, Por Que Fazemos, Como Fazemos, Valor Agregado" 
-            className="w-full h-auto max-w-[1200px] rounded-2xl"
+            className="w-full h-auto max-w-[800px] rounded-2xl"
             style={{ filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.15))' }}
           />
         </div>
