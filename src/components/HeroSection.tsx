@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button";
 import AnimatedMetricsSection from "@/components/AnimatedMetricsSection";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 import FormBasicoModal from "@/components/FormBasicoModal";
+
 const HeroSection = () => {
   const [basicModalOpen, setBasicModalOpen] = useState(false);
+
   const handleModalSuccess = () => {
     // Redireciona para a página de agendamento após sucesso no formulário
     window.location.href = '/agendamento';
   };
+
   return <section id="hero" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Background Pattern */}
       <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={80} className="hover:opacity-50" />
@@ -65,10 +68,8 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <div className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl space-y-2">
-              <p>• Contexto e precisão na contratação do seu time de tecnologia.</p>
-              <p>• Profissional e empresa alinhados em cultura e competências com o negócio.</p>
-              <p>• Reduzimos custo de preenchimento de vagas e aumentamos a retenção do time de tecnologia. </p>
+            <div className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+              <p>Vamos além da vaga. Um processo inteligente que conecta vivências e experiências do profissional em resolver problemas reais de negócio, com a atitude que o crescimento da sua empresa precisa.</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -95,4 +96,5 @@ const HeroSection = () => {
       <FormBasicoModal open={basicModalOpen} onOpenChange={setBasicModalOpen} onSuccess={handleModalSuccess} />
     </section>;
 };
+
 export default HeroSection;
