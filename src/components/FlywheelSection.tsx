@@ -1,31 +1,6 @@
-import { ArrowRight, Users, Brain, Target, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 const FlywheelSection = () => {
-  const steps = [{
-    icon: Users,
-    title: "Quem Somos",
-    description: "Startup de recrutamento tech especializada em crescimento de times de tecnologia.",
-    details: "Neon Pagamentos, SuperSim, Nuvia, Klavi, ZigFun, NFE.io, StarkBank, Asaas, QITech, BeeVale, SmartPay e outras empresas líderes do mercado.",
-    color: "from-purple-500 to-pink-500"
-  }, {
-    icon: Brain,
-    title: "Por Que Fazemos",
-    description: "Customizamos fluxos de recrutamento para conferir assertividade e agilidade",
-    details: "Acreditamos que o match perfeito entre talento e empresa acelera o crescimento de ambos, criando impacto real no ecossistema tech.",
-    color: "from-blue-500 to-purple-500"
-  }, {
-    icon: Target,
-    title: "Como Fazemos",
-    description: "Flywheel de 15 dias com IA, prompt engineering e curadoria humanizada",
-    details: "Cruzamos cenários reais de negócios, produto, tecnologia e pessoas às vivências e experiências do profissional, validando sua contribuição ao negócio.",
-    color: "from-green-500 to-blue-500"
-  }, {
-    icon: TrendingUp,
-    title: "Valor Agregado",
-    description: "Redução de custos de preenchimento e aumento da retenção",
-    details: "Vamos além da vaga. Conectamos 04 profissionais, alinhados com a cultura da empresa e as competências que o negócio precisa para crescer.",
-    color: "from-orange-500 to-red-500"
-  }];
   return <section id="flywheel" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <AnimatedDottedBackground opacity={0.2} color="%23e2e8f0" size={3} spacing={80} className="hover:opacity-40" />
