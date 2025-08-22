@@ -132,7 +132,7 @@ All colors MUST be HSL.
   height: clamp(32px, 5vw, 40px);
   display: grid;
   place-items: center;
-  padding: 6px 12px;
+  padding: 4px 8px;
   flex-shrink: 0;
 }
 
