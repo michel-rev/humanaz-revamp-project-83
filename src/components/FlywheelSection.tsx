@@ -39,57 +39,12 @@ const FlywheelSection = () => {
         </div>
 
         {/* Flywheel Visual */}
-        <div className="relative max-w-6xl mx-auto">
-          {/* Central Hub */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="relative w-48 h-48">
-              {/* Gradient Border */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-purple-500 p-1">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                  <span className="font-bold text-4xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                    15 Dias
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Steps in circular arrangement */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {steps.map((step, index) => {
-            const Icon = step.icon;
-            const positions = ["sm:translate-x-0 sm:-translate-y-4 md:-translate-y-8",
-            // Top left
-            "sm:translate-x-0 sm:-translate-y-4 md:-translate-y-8",
-            // Top right  
-            "sm:translate-x-0 sm:translate-y-4 md:translate-y-8",
-            // Bottom left
-            "sm:translate-x-0 sm:translate-y-4 md:translate-y-8" // Bottom right
-            ];
-            return <div key={index} className={`relative p-4 sm:p-6 rounded-2xl bg-white shadow-xl border border-slate-200 hover:shadow-2xl transition-all duration-300 group ${positions[index]} animate-fade-in text-center`} style={{
-              animationDelay: `${index * 200}ms`
-            }}>
-                  {/* Icon */}
-                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r ${step.color} p-3 sm:p-4 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                    <Icon className="w-full h-full text-white" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">
-                    {step.title}
-                  </h3>
-                  
-                  <p className="text-base sm:text-lg text-slate-600 mb-3 sm:mb-4 font-medium">
-                    {step.description}
-                  </p>
-                  
-                  <p className="text-slate-500 leading-relaxed">
-                    {step.details}
-                  </p>
-
-                </div>;
-          })}
-          </div>
+        <div className="relative max-w-4xl mx-auto">
+          <img 
+            src="/lovable-uploads/3f77d22f-38e3-426d-bd28-79c0e6d18fda.png" 
+            alt="Flywheel de Recrutamento - Processo de 15 dias com IA e curadoria humanizada" 
+            className="w-full h-auto rounded-lg shadow-2xl"
+          />
         </div>
 
         {/* Call to Action */}
