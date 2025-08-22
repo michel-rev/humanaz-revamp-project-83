@@ -46,7 +46,7 @@ const ProcessSection = () => {
             Como Funciona Nosso <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Processo</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Um fluxo otimizado que combina tecnologia avançada com curadoria humanizada para entregar resultados excepcionais em apenas 15 dias.
+            Plug'n'Play. Nos adaptamos ao seu processo seletivo.
           </p>
         </div>
 
