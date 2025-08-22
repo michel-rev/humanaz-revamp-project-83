@@ -13,6 +13,15 @@ const FlywheelSection = () => {
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">Vamos além da vaga. Um processo inteligente que conecta vivências e experiências do profissional em resolver problemas reais de negócio, com a atitude que o crescimento da sua empresa precisa.</p>
         </div>
 
+        {/* Flywheel Visual */}
+        <div className="w-full grid place-items-center">
+          <img 
+            src="/lovable-uploads/3c5464fe-9e1b-4b84-a2f8-b161271aa845.png" 
+            alt="Flywheel de Recrutamento - 4 peças: Quem Somos, Por Que Fazemos, Como Fazemos, Valor Agregado" 
+            className="w-full h-auto max-w-[1200px] rounded-2xl"
+            style={{ filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.15))' }}
+          />
+        </div>
 
         {/* Call to Action */}
         <div className="text-center mt-24">
