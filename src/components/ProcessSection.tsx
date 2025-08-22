@@ -22,7 +22,7 @@ const ProcessSection = () => {
       icon: Users,
       title: "Engajamento de candidatos",
       description: "Verificamos alinhamento através de parâmetros e dados comportamentais",
-      duration: "Dia 9-12",
+      duration: "30 minutos de duração",
       color: "from-pink-500 to-red-500"
     },
     {
