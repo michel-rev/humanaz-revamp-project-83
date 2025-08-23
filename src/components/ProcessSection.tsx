@@ -7,7 +7,7 @@ const ProcessSection = () => {
     {
       icon: Clock,
       title: "Onboarding do perfil a ser recrutado",
-      description: "Guiada pela nossa curadoria humanizada, aplicamos engenharia de prompt para parametrizar cultura e competências em problemas reais de negócios, produto e tecnologia, customizando e personalizando a comunicação da vaga ao candidato.",
+      description: "Mapeamos cultura, competências e desafios reais do seu negócio usando curadoria humanizada + IA. Personalizamos toda comunicação para atrair apenas profissionais alinhados ao seu contexto.",
       duration: "Dia 1-2",
       color: "from-blue-500 to-purple-500"
     },
