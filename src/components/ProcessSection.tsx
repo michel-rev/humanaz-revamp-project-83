@@ -8,21 +8,21 @@ const ProcessSection = () => {
       icon: Clock,
       title: "Onboarding do Perfil",
       description: "Mapeamos cultura, competências e desafios reais do seu negócio usando curadoria humanizada + IA. Personalizamos toda comunicação para atrair apenas profissionais alinhados ao seu contexto.",
-      duration: "Dia 1-2",
+      duration: "30 min",
       color: "from-blue-500 to-purple-500"
     },
     {
       icon: Zap,
       title: "Atração Inteligente",
       description: "Nossa plataforma SaaS conecta LinkedIn, X, Facebook e Instagram, alcançando +30 mil profissionais tech no Brasil. Atraímos apenas candidatos que fazem sentido para sua vaga.",
-      duration: "Dia 3-8",
+      duration: "até 15 dias",
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: Users,
       title: "Relacionamento Exclusivo",
       description: "Somos seu único ponto de contato com candidatos, construindo confiança e mantendo alta qualidade de experiência até a contratação.",
-      duration: "30 minutos de duração",
+      duration: "durante todo processo",
       color: "from-pink-500 to-red-500"
     },
     {
