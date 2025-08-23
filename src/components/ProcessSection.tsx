@@ -14,7 +14,7 @@ const ProcessSection = () => {
     {
       icon: Zap,
       title: "Atração Inteligente",
-      description: "Através da plataforma da HumanAZ (SaaS), conectada as principais redes sociais (LinkedIn, X, Facebook, Instagram), divulgamos a vaga para +30 mil profissionais de tecnologia no Brasil e atraímos apenas aqueles profissionais alinhados com os parâmetros da vaga.",
+      description: "Nossa plataforma SaaS conecta LinkedIn, X, Facebook e Instagram, alcançando +30 mil profissionais tech no Brasil. Atraímos apenas candidatos que fazem sentido para sua vaga.",
       duration: "Dia 3-8",
       color: "from-purple-500 to-pink-500"
     },
