@@ -18,28 +18,24 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       icon: User,
-      name: "Plano Essencial",
+      name: "Básico",
       price: "R$ 16.486",
       period: "por profissional",
-      description: "Ideal para empresas que buscam talentos específicos",
+      description: "Ideal para quem: precisa preencher uma vaga crítica sem erro de contratação.",
       features: [
-        "1 profissional selecionado",
-        "Análise de cultura organizacional",
-        "Mapeamento via IA",
-        "Validação técnica completa",
-        "Apresentação de 4 candidatos",
-        "Garantia de 90 dias",
-        "Suporte pós-contratação"
+        "Reposição garantida por 3 meses",
+        "Pagamento dividido: 50% no contrato + 50% na contratação",
+        "Valide a experiência HumanAZ com profissionais que aceleram resultados.",
       ],
       buttonText: "Começar Agora",
       popular: false
     },
     {
       icon: Users,
-      name: "Profissional",
+      name: "Plano de Escala",
       price: "R$ 14.106",
       period: "por profissional",
-      description: "Perfeito para times em crescimento e múltiplas vagas",
+      description: "4 a 5 vagas. Para quem precisa montar time com agilidade.",
       features: [
         "4+ profissionais selecionados",
         "Tudo do plano Básico",
