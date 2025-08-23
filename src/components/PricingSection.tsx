@@ -18,7 +18,7 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       icon: User,
-      name: "Básico",
+      name: "Plano Essencial",
       price: "R$ 16.486",
       period: "por profissional",
       description: "Ideal para empresas que buscam talentos específicos",
