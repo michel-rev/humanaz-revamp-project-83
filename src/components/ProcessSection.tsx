@@ -27,7 +27,7 @@ const ProcessSection = () => {
     },
     {
       icon: CheckCircle,
-      title: "Apresentação Final",
+      title: "Relacionamento Exclusivo",
       description: "Entregamos 4 profissionais perfeitamente alinhados à sua vaga",
       duration: "até 15 dias corridos",
       color: "from-green-500 to-blue-500"
