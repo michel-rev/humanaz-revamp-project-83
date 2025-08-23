@@ -21,7 +21,7 @@ const ProcessSection = () => {
     {
       icon: Users,
       title: "Relacionamento Exclusivo",
-      description: "Verificamos alinhamento através de parâmetros e dados comportamentais",
+      description: "Somos seu único ponto de contato com candidatos, construindo confiança e mantendo alta qualidade de experiência até a contratação.",
       duration: "30 minutos de duração",
       color: "from-pink-500 to-red-500"
     },
