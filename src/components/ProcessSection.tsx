@@ -20,7 +20,7 @@ const ProcessSection = () => {
     },
     {
       icon: Users,
-      title: "Engajamento de candidatos",
+      title: "Relacionamento Exclusivo",
       description: "Verificamos alinhamento através de parâmetros e dados comportamentais",
       duration: "30 minutos de duração",
       color: "from-pink-500 to-red-500"
