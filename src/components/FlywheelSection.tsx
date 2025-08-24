@@ -14,7 +14,7 @@ const FlywheelSection = () => {
     { name: "Neon", logo: "/lovable-uploads/5d34ebe8-63b7-4027-94fe-940c48effa4c.png" },
     { name: "NFE", logo: "/lovable-uploads/0cea912f-e21c-4e8b-9786-524c2d390341.png" },
   ];
-  return <section id="flywheel" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+  return <section id="flywheel" className="py-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <AnimatedDottedBackground opacity={0.2} color="%23e2e8f0" size={3} spacing={80} className="hover:opacity-40" />
       
