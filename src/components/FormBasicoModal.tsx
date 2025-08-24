@@ -23,10 +23,45 @@ const FormBasicoModal = ({ open, onOpenChange, onSuccess }: FormBasicoModalProps
 
     const formData = new FormData(e.currentTarget);
     
+    // Validação básica
+    const nome = formData.get('nome') as string;
+    const telefone = formData.get('telefone') as string;
+    const email = formData.get('email') as string;
+    const empresa = formData.get('empresa') as string;
+    const setor = formData.get('setor') as string;
+    const mensagem = formData.get('mensagem') as string;
+
+    if (!nome || !telefone || !email || !empresa || !setor || !mensagem) {
+      toast.error("Por favor, preencha todos os campos obrigatórios.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validação de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Por favor, insira um email válido.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const payload = {
+      plan_id: "basico",
+      nome,
+      telefone,
+      email,
+      empresa,
+      setor,
+      mensagem
+    };
+    
     try {
       const response = await fetch("https://services.leadconnectorhq.com/hooks/wnuqW06oEeR1y8xNjFPE/webhook-trigger/fdc08095-fcb0-4861-90f6-30e15adfc7b9", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
@@ -59,7 +94,6 @@ const FormBasicoModal = ({ open, onOpenChange, onSuccess }: FormBasicoModalProps
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-6">
-          <input type="hidden" name="plano" value="Básico" />
           
           {/* Nome e Telefone na mesma linha */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
