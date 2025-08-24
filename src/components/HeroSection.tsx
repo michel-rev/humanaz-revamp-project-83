@@ -17,7 +17,7 @@ const HeroSection = () => {
       {/* Background Pattern */}
       <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={80} className="hover:opacity-50" />
       
-      <div className="relative container mx-auto px-4 pt-8 pb-32">
+      <div className="relative container mx-auto px-4 sm:px-6 pt-8 pb-20 sm:pb-32">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen">
           {/* Visual Element - Moved to top on mobile */}
           <div className="lg:w-1/2 mb-8 lg:mb-0 lg:mt-0 relative order-1 lg:order-2">
@@ -56,7 +56,7 @@ const HeroSection = () => {
               Recrutamento Tech Especializado
             </div>
             
-            <h1 className="text-2xl sm:text-3xl md:text-[3.45rem] md:leading-[3.8rem] font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-[3.45rem] md:leading-[3.8rem] font-bold leading-tight">
               Seu{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
                 time de tecnologia
@@ -68,7 +68,7 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <div className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+            <div className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl px-4 sm:px-0">
               <p>Vamos além da vaga. Um processo inteligente que conecta vivências e experiências do profissional em resolver problemas reais de negócio, com a atitude que o crescimento da sua empresa precisa.</p>
             </div>
             

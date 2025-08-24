@@ -75,8 +75,8 @@ const PricingSection = () => {
       
       <div className="container mx-auto px-4 relative">
         {/* Section Header */}
-        <div className="flex items-center justify-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white">
+        <div className="flex items-center justify-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white px-4 text-center">
             Investimento
           </h2>
         </div>
@@ -104,30 +104,30 @@ const PricingSection = () => {
                   </div>
                 )}
                 
-                <CardContent className="p-8 md:p-10">
+                <CardContent className="p-6 sm:p-8 md:p-10">
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4 mb-6 mx-auto">
                     <Icon className="w-full h-full text-white" />
                   </div>
                   
                   {/* Plan Name */}
-                  <h3 className="text-2xl font-bold text-gray-900 text-center mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-3">
                     {plan.name}
                   </h3>
                   
                   {/* Price */}
                   <div className="text-center mb-5">
-                    <span className="text-3xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{plan.price}</span>
+                    <span className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{plan.price}</span>
                     <span className="block md:inline text-gray-500 text-sm md:text-base ml-0 md:ml-2 align-baseline">{plan.period}</span>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-gray-700 text-center mb-8 leading-relaxed text-base md:text-lg">
+                  <p className="text-gray-700 text-center mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base md:text-lg">
                     {plan.description}
                   </p>
                   
                   {/* Features List */}
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-3">
                         <div className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -135,7 +135,7 @@ const PricingSection = () => {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <p className="text-gray-600 text-base leading-relaxed">
+                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                           {feature}
                         </p>
                       </div>
