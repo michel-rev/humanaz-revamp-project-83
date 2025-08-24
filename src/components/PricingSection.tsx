@@ -147,7 +147,7 @@ const PricingSection = () => {
                     onClick={() => {
                       if (plan.name === 'Básico') {
                         setBasicModalOpen(true);
-                      } else if (plan.name === 'Profissional') {
+                      } else if (plan.name === 'Plano de Escala') {
                         setProfessionalModalOpen(true);
                       } else if (plan.name === 'Enterprise') {
                         setEnterpriseModalOpen(true);

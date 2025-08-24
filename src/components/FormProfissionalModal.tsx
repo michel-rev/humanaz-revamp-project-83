@@ -86,7 +86,7 @@ const FormProfissionalModal = ({ open, onOpenChange, onSuccess }: FormProfission
             <Users className="w-full h-full text-white" />
           </div>
           <DialogTitle className="text-3xl font-bold text-gray-900 mb-2">
-            Plano Profissional
+            Plano de Escala
           </DialogTitle>
           <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-3">
             Mais Popular
