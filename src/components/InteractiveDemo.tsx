@@ -197,7 +197,7 @@ const InteractiveDemo = () => {
         </div>
 
         {/* Filter Chips */}
-        <div className="flex justify-center mb-8 sm:mb-12 px-4">
+        <div className="flex justify-center mb-8 sm:mb-12 sm:px-4">
           <div className="flex flex-wrap gap-2 sm:gap-3 bg-white rounded-lg p-2 border border-gray-200 w-full sm:max-w-full">
             {[{
             id: 'competencies',
