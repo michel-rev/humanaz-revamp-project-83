@@ -6,31 +6,24 @@ const AnimatedMetricsSection = () => {
   const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 97, duration: 2400 });
 
   return (
-    <div className="pt-6 space-y-4">
-      {/* Primeira linha - 2 itens */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-        <div ref={daysRef} className="animate-fade-in text-center sm:text-left">
-          <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-            {daysCount} DIAS
-          </div>
-          <div className="text-white text-sm sm:text-base">Corridos para entrega</div>
+    <div className="grid grid-cols-3 gap-8 pt-8">
+      <div ref={daysRef} className="animate-fade-in">
+        <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+          {daysCount} DIAS
         </div>
-        <div ref={candidatesRef} className="animate-fade-in text-center sm:text-left" style={{ animationDelay: '0.2s' }}>
-          <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-            {candidatesCount}
-          </div>
-          <div className="text-white text-sm sm:text-base">Candidatos qualificados</div>
-        </div>
+        <div className="text-white">Corridos para entrega</div>
       </div>
-      
-      {/* Segunda linha - 1 item centralizado */}
-      <div className="flex justify-center">
-        <div ref={approvalRef} className="animate-fade-in text-center" style={{ animationDelay: '0.4s' }}>
-          <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-            {approvalCount}%
-          </div>
-          <div className="text-white text-sm sm:text-base">Taxa de aprovação</div>
+      <div ref={candidatesRef} className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+          {candidatesCount}
         </div>
+        <div className="text-white">Candidatos qualificados</div>
+      </div>
+      <div ref={approvalRef} className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+          {approvalCount}%
+        </div>
+        <div className="text-white">Taxa de aprovação</div>
       </div>
     </div>
   );
