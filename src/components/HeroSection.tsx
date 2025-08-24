@@ -68,7 +68,7 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <div className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl px-4 sm:px-0">
+            <div className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
               <p>Vamos além da vaga. Um processo inteligente que conecta vivências e experiências do profissional em resolver problemas reais de negócio, com a atitude que o crescimento da sua empresa precisa.</p>
             </div>
             
