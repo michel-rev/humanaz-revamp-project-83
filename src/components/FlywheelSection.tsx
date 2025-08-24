@@ -19,8 +19,8 @@ const FlywheelSection = () => {
       <AnimatedDottedBackground opacity={0.2} color="%23e2e8f0" size={3} spacing={80} className="hover:opacity-40" />
       
       <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-2 sm:mb-4">
             Nosso <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Flywheel</span> de Sucesso
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">Solução Plug&apos;n&apos;Play para o seu recrutamento de tecnologia. Adicione inteligência ao seu recrutamento com a HumanAZ conferindo assertividade e agilidade as suas contratações.</p>
@@ -38,7 +38,7 @@ const FlywheelSection = () => {
 
 
         {/* Brands Loop Section */}
-        <section id="brands-loop" className="mt-16 py-8">
+        <section id="brands-loop" className="mt-8 sm:mt-12 py-4 sm:py-6">
           <div className="container mx-auto px-4">
             {/* Desktop Layout */}
             <div className="hidden md:grid grid-cols-[220px_1fr] gap-12 items-center">
