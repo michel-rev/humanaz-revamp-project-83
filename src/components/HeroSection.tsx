@@ -18,9 +18,9 @@ const HeroSection = () => {
       <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={80} className="hover:opacity-50" />
       
       <div className="relative container mx-auto px-4 sm:px-6 pt-8 pb-20 sm:pb-32">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen">
-          {/* Visual Element - Moved to top on mobile */}
-          <div className="lg:w-1/2 mb-8 lg:mb-0 lg:mt-0 relative order-1 lg:order-2">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen">
+          {/* Visual Element - Hidden on mobile */}
+          <div className="hidden lg:block lg:w-1/2 relative">
             <div className="relative w-full max-w-lg mx-auto">
               {/* Floating Cards */}
               <div className="absolute inset-0">
@@ -50,7 +50,7 @@ const HeroSection = () => {
           </div>
 
           {/* Content - Moved to bottom on mobile */}
-          <div className="lg:w-1/2 text-white space-y-4 animate-fade-in order-2 lg:order-1">
+          <div className="w-full lg:w-1/2 text-white space-y-4 animate-fade-in text-center lg:text-left">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-sm">
               <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
               Recrutamento Tech Especializado
