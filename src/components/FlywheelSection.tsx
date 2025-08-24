@@ -61,7 +61,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="transition-all duration-300 hover:scale-105"
                       />
                     </figure>
                   ))}
@@ -72,7 +72,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="transition-all duration-300 hover:scale-105"
                       />
                     </figure>
                   ))}
@@ -83,7 +83,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="transition-all duration-300 hover:scale-105"
                       />
                     </figure>
                   ))}
@@ -110,7 +110,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="grayscale opacity-85"
+                        className=""
                       />
                     </figure>
                   ))}
@@ -121,7 +121,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="grayscale opacity-85"
+                        className=""
                       />
                     </figure>
                   ))}
@@ -132,7 +132,7 @@ const FlywheelSection = () => {
                       <img
                         src={brand.logo}
                         alt={`${brand.name} logo`}
-                        className="grayscale opacity-85"
+                        className=""
                       />
                     </figure>
                   ))}
