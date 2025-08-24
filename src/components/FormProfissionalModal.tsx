@@ -46,13 +46,15 @@ const FormProfissionalModal = ({ open, onOpenChange, onSuccess }: FormProfission
 
     const payload = {
       plan_id: "escala",
-      nome,
-      telefone,
-      email,
-      empresa,
-      setor,
-      mensagem
+      nome: nome,
+      email: email,
+      empresa: empresa,
+      setor: setor,
+      mensagem: mensagem,
+      telefone: telefone
     };
+    
+    console.log('Enviando dados para webhook:', payload);
     
     try {
       const response = await fetch("https://services.leadconnectorhq.com/hooks/wnuqW06oEeR1y8xNjFPE/webhook-trigger/fdc08095-fcb0-4861-90f6-30e15adfc7b9", {
