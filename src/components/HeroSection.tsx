@@ -56,7 +56,7 @@ const HeroSection = () => {
               Recrutamento Tech Especializado
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-[3.45rem] md:leading-[3.8rem] font-bold leading-tight">
+            <h1 className="text-4xl sm:text-4xl md:text-[3.45rem] md:leading-[3.8rem] font-bold leading-tight">
               Seu{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient-x">
                 time de tecnologia
@@ -68,20 +68,20 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <div className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+            <div className="text-lg sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
               <p>Vamos além da vaga. Um processo inteligente que conecta vivências e experiências do profissional em resolver problemas reais de negócio, com a atitude que o crescimento da sua empresa precisa.</p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a href="#investimento">
-                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-base sm:text-lg px-6 sm:px-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:gap-4">
+              <a href="#investimento" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 text-lg sm:text-lg px-8">
                   Começar Agora
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
               
-              <Button size="lg" variant="gradient-outline" className="text-base sm:text-lg px-6 sm:px-8">
-                <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+              <Button size="lg" variant="gradient-outline" className="w-full sm:w-auto text-lg px-8">
+                <Play className="mr-2 h-5 w-5" />
                 Ver Como Funciona
               </Button>
             </div>
