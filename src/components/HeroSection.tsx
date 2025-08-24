@@ -17,7 +17,7 @@ const HeroSection = () => {
       {/* Background Pattern */}
       <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={80} className="hover:opacity-50" />
       
-      <div className="relative container mx-auto px-4 sm:px-6 pt-8 pb-20 sm:pb-32">
+      <div className="relative container mx-auto px-4 sm:px-6 pt-12 pb-32 sm:pb-40 lg:pb-48">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen">
           {/* Visual Element - Moved to top on mobile */}
           <div className="lg:w-1/2 mb-8 lg:mb-0 lg:mt-0 relative order-1 lg:order-2">
