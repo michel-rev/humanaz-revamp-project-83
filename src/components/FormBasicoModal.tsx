@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { User } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -82,9 +81,6 @@ const FormBasicoModal = ({ open, onOpenChange, onSuccess }: FormBasicoModalProps
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader className="text-center pb-4">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4 mb-4 mx-auto">
-            <User className="w-full h-full text-white" />
-          </div>
           <DialogTitle className="text-3xl font-bold text-gray-900 mb-2">
             Plano Básico
           </DialogTitle>
