@@ -18,14 +18,18 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       icon: User,
-      name: "Básico",
+      name: "Plano Essencial",
       price: "R$ 16.486",
       period: "por profissional",
-      description: "Ideal para quem: precisa preencher uma vaga crítica sem erro de contratação.",
+      description: "1 vaga estratégica. Para quem quer começar com o pé direito.",
+      subtitle: "Ideal para quem: precisa preencher uma vaga crítica sem erro de contratação.",
       features: [
+        "4 profissionais com mentalidade de ownership entregues em até 15 dias corridos",
+        "Talentos que pensam negócio e executam com autonomia",
+        "Profissionais alinhados aos seus desafios reais de crescimento",
         "Reposição garantida por 3 meses",
         "Pagamento dividido: 50% no contrato + 50% na contratação",
-        "Valide a experiência HumanAZ com profissionais que aceleram resultados.",
+        "Valide a experiência HumanAZ com profissionais que aceleram resultados"
       ],
       buttonText: "Começar Agora",
       popular: false
@@ -36,32 +40,32 @@ const PricingSection = () => {
       price: "R$ 14.106",
       period: "por profissional",
       description: "4 a 5 vagas. Para quem precisa montar time com agilidade.",
+      subtitle: "Ideal para quem: está escalando e precisa de múltiplas contratações consistentes e estratégicas.",
       features: [
-        "4+ profissionais selecionados",
-        "Tudo do plano Básico",
-        "Desconto por volume",
-        "Gestão de múltiplas posições",
-        "Account Manager dedicado",
-        "Relatórios personalizados",
-        "Suporte prioritário"
+        "4 profissionais por vaga com SLA de 15 dias corridos cada",
+        "Talentos com visão estratégica e atitude de crescimento",
+        "Profissionais conectados aos problemas que realmente importam",
+        "Reposição garantida por 3 meses",
+        "Pagamento dividido: 50% no contrato + 50% na contratação",
+        "Escale com velocidade entregando profissionais que transformam desafios em oportunidades"
       ],
       buttonText: "Mais Popular",
       popular: true
     },
     {
       icon: Building2,
-      name: "Enterprise",
+      name: "Plano de Crescimento",
       price: "R$ 11.726",
       period: "por profissional",
-      description: "Solução completa para grandes operações de recrutamento",
+      description: "6 ou mais vagas. Para quem precisa acelerar de verdade.",
+      subtitle: "Ideal para quem: está em rodada, expansão ou pivot tecnológico — e precisa de múltiplos game-changers simultaneamente.",
       features: [
-        "6+ profissionais selecionados",
-        "Máximo desconto por volume",
-        "Tudo dos planos anteriores",
-        "Integração com seu ATS",
-        "Consultoria estratégica",
-        "SLA personalizado",
-        "Treinamento da equipe"
+        "Time de especialistas atuando em paralelo nas suas posições",
+        "SLA mantido: 15 dias corridos por vaga",
+        "Talentos preparados para resolver seus desafios de negócio e tecnologia",
+        "Reposição garantida por 3 meses",
+        "Pagamento dividido: 50% no contrato + 50% na contratação",
+        "O plano mais vantajoso em custo por vaga para quem quer acelerar forte com talentos que fazem acontecer"
       ],
       buttonText: "Falar com Vendas",
       popular: false
@@ -122,8 +126,13 @@ const PricingSection = () => {
                   </div>
                   
                   {/* Description */}
-                  <p className="text-gray-700 text-center mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base md:text-lg">
+                  <p className="text-gray-700 text-center mb-3 leading-relaxed text-sm sm:text-base md:text-lg">
                     {plan.description}
+                  </p>
+                  
+                  {/* Subtitle */}
+                  <p className="text-gray-600 text-center mb-6 sm:mb-8 leading-relaxed text-xs sm:text-sm md:text-base font-medium">
+                    {plan.subtitle}
                   </p>
                   
                   {/* Features List */}
@@ -145,11 +154,11 @@ const PricingSection = () => {
                   {/* CTA Button */}
                   <button 
                     onClick={() => {
-                      if (plan.name === 'Básico') {
+                      if (plan.name === 'Plano Essencial') {
                         setBasicModalOpen(true);
                       } else if (plan.name === 'Plano de Escala') {
                         setProfessionalModalOpen(true);
-                      } else if (plan.name === 'Enterprise') {
+                      } else if (plan.name === 'Plano de Crescimento') {
                         setEnterpriseModalOpen(true);
                       }
                     }}

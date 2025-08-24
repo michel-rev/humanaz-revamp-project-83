@@ -45,7 +45,7 @@ const FormProfissionalModal = ({ open, onOpenChange, onSuccess }: FormProfission
     }
 
     const payload = {
-      plan_id: "profissional",
+      plan_id: "escala",
       nome,
       telefone,
       email,

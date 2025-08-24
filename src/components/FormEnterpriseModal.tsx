@@ -45,7 +45,7 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
     }
 
     const payload = {
-      plan_id: "enterprise",
+      plan_id: "crescimento",
       nome,
       telefone,
       email,
@@ -82,7 +82,7 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader className="text-center pb-4">
           <DialogTitle className="text-3xl font-bold text-gray-900 mb-2">
-            Plano Enterprise
+            Plano de Crescimento
           </DialogTitle>
           <p className="text-gray-600 text-lg">
             Preencha os dados abaixo para começarmos sua jornada
