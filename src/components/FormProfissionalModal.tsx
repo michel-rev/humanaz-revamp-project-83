@@ -46,12 +46,12 @@ const FormProfissionalModal = ({ open, onOpenChange, onSuccess }: FormProfission
 
     const payload = {
       plan_id: "escala",
-      nome: nome,
+      first_name: nome,
       email: email,
-      empresa: empresa,
-      setor: setor,
-      mensagem: mensagem,
-      telefone: telefone
+      phone: telefone,
+      company_name: empresa,
+      setor_da_empresa: setor,
+      mensagem: mensagem
     };
     
     console.log('Enviando dados para webhook:', payload);

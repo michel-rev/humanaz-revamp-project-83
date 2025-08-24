@@ -46,12 +46,12 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
 
     const payload = {
       plan_id: "crescimento",
-      nome: nome,
+      first_name: nome,
       email: email,
-      empresa: empresa,
-      setor: setor,
-      mensagem: mensagem,
-      telefone: telefone
+      phone: telefone,
+      company_name: empresa,
+      setor_da_empresa: setor,
+      mensagem: mensagem
     };
     
     console.log('Enviando dados para webhook:', payload);
