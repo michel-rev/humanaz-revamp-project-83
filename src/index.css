@@ -110,6 +110,44 @@ All colors MUST be HSL.
   }
 }
 
+/* Responsive Typography System - Mobile First */
+@layer utilities {
+  /* Heading Scales - Mobile optimized, desktop preserved */
+  .text-hero-mobile {
+    @apply text-3xl sm:text-4xl md:text-[3.45rem] md:leading-[3.8rem];
+  }
+  
+  .text-section-title-mobile {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+  
+  .text-card-title-mobile {
+    @apply text-lg sm:text-xl lg:text-2xl;
+  }
+  
+  .text-body-mobile {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+  
+  .text-body-small-mobile {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-caption-mobile {
+    @apply text-xs sm:text-sm;
+  }
+  
+  /* Button Text */
+  .text-button-mobile {
+    @apply text-base sm:text-lg;
+  }
+  
+  /* Metrics and Numbers */
+  .text-metric-mobile {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+}
+
 /* Custom animations */
 @keyframes gentle-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -124,7 +162,6 @@ All colors MUST be HSL.
   .animate-fade-in {
     animation: fade-in 0.6s ease-out;
   }
-}
 
 /* Brand logos styles */
 .brand {

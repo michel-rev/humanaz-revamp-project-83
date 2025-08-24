@@ -8,22 +8,22 @@ const AnimatedMetricsSection = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-8">
       <div ref={daysRef} className="animate-fade-in text-center sm:text-left">
-        <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+        <div className="text-metric-mobile font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
           {daysCount} DIAS
         </div>
-        <div className="text-white text-sm sm:text-base">Corridos para entrega</div>
+        <div className="text-white text-body-small-mobile">Corridos para entrega</div>
       </div>
       <div ref={candidatesRef} className="animate-fade-in text-center sm:text-left" style={{ animationDelay: '0.2s' }}>
-        <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+        <div className="text-metric-mobile font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
           {candidatesCount}
         </div>
-        <div className="text-white text-sm sm:text-base">Candidatos qualificados</div>
+        <div className="text-white text-body-small-mobile">Candidatos qualificados</div>
       </div>
       <div ref={approvalRef} className="animate-fade-in text-center sm:text-left" style={{ animationDelay: '0.4s' }}>
-        <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+        <div className="text-metric-mobile font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
           {approvalCount}%
         </div>
-        <div className="text-white text-sm sm:text-base">Taxa de aprovação</div>
+        <div className="text-white text-body-small-mobile">Taxa de aprovação</div>
       </div>
     </div>
   );
