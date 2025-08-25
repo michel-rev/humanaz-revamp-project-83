@@ -13,7 +13,7 @@ const ProcessSection = () => {
     },
     {
       icon: Zap,
-      title: "Atração Inteligente",
+      title: "Atração de candidatos",
       description: "Nossa plataforma SaaS conecta LinkedIn, X, Facebook e Instagram, alcançando +30 mil profissionais tech no Brasil. Atraímos apenas candidatos que fazem sentido para sua vaga.",
       duration: "até 15 dias",
       color: "from-purple-500 to-pink-500"
