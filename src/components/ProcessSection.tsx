@@ -28,7 +28,7 @@ const ProcessSection = () => {
     {
       icon: CheckCircle,
       title: "Pré-seleção de candidatos",
-      description: "Validamos fit entre profissional e empresa através de IA + curadoria humana, analisando vivências, competências e capacidade de resolver seus problemas reais. Resultado: 4 profissionais qualificados prontos para contratação.",
+      description: "Guiada pela nossa curadoria humanizada, aplicamos engenharia de prompt para parametrizar vivências e experiências, competências do profissional em problemas reais de negócios, produto e tecnologia da empresa e vaga, verificando e validando o alinhamento entre profissional e empresa.",
       duration: "até 15 dias corridos",
       color: "from-green-500 to-blue-500"
     }
