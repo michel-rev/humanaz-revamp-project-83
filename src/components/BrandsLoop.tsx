@@ -21,6 +21,7 @@ const BrandsLoop = () => {
     { name: "Supersim", logo: supersimLogo },
     { name: "Tivita", logo: tivitaLogo },
     { name: "Neon", logo: neonLogo },
+    { name: "Celcoin Growth", logo: "/lovable-uploads/f8ebba56-6060-48e7-8bb0-4b782e96f4dc.png" },
   ];
 
   return (
