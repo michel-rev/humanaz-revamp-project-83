@@ -9,7 +9,7 @@ const AnimatedMetricsSection = () => {
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-8">
       <div ref={daysRef} className="animate-fade-in text-center sm:text-left">
         <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-          {daysCount} DIAS
+          {daysCount} dias
         </div>
         <div className="text-white text-sm sm:text-base">Corridos para entrega</div>
       </div>
