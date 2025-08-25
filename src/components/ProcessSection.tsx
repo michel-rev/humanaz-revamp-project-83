@@ -20,7 +20,7 @@ const ProcessSection = () => {
     },
     {
       icon: Users,
-      title: "Relacionamento Exclusivo",
+      title: "Engajamento de candidatos",
       description: "Somos seu único ponto de contato com candidatos, construindo confiança e mantendo alta qualidade de experiência até a contratação.",
       duration: "durante todo processo",
       color: "from-pink-500 to-red-500"
