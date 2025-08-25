@@ -27,7 +27,7 @@ const ProcessSection = () => {
     },
     {
       icon: CheckCircle,
-      title: "Pré-seleção Estratégica",
+      title: "Pré-seleção de candidatos",
       description: "Validamos fit entre profissional e empresa através de IA + curadoria humana, analisando vivências, competências e capacidade de resolver seus problemas reais. Resultado: 4 profissionais qualificados prontos para contratação.",
       duration: "até 15 dias corridos",
       color: "from-green-500 to-blue-500"
