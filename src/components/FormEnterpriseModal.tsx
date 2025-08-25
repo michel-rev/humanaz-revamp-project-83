@@ -26,11 +26,12 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
     const nome = formData.get('nome') as string;
     const telefone = formData.get('telefone') as string;
     const email = formData.get('email') as string;
+    const cargo = formData.get('cargo') as string;
     const empresa = formData.get('empresa') as string;
     const setor = formData.get('setor') as string;
     const mensagem = formData.get('mensagem') as string;
 
-    if (!nome || !telefone || !email || !empresa || !setor || !mensagem) {
+    if (!nome || !telefone || !email || !cargo || !empresa || !setor || !mensagem) {
       toast.error("Por favor, preencha todos os campos obrigatórios.");
       setIsSubmitting(false);
       return;
@@ -49,6 +50,7 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
       first_name: nome,
       email: email,
       phone: telefone,
+      cargo: cargo,
       company_name: empresa,
       setor_da_empresa: setor,
       mensagem: mensagem
@@ -135,6 +137,20 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
               required
               className="h-12"
               placeholder="seu@email.com"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="cargo" className="text-gray-700 font-medium">
+              Cargo *
+            </Label>
+            <Input
+              id="cargo"
+              name="cargo"
+              type="text"
+              required
+              className="h-12"
+              placeholder="Seu cargo atual"
             />
           </div>
 
