@@ -21,7 +21,7 @@ const ProcessSection = () => {
     {
       icon: Users,
       title: "Engajamento de candidatos",
-      description: "Somos seu único ponto de contato com candidatos, construindo confiança e mantendo alta qualidade de experiência até a contratação.",
+      description: "Durante todo o processo de recrutamento, somos o único canal de interação com o candidato, construindo uma relação de confiança com o candidato.",
       duration: "durante todo processo",
       color: "from-pink-500 to-red-500"
     },
