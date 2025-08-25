@@ -6,7 +6,7 @@ const ProcessSection = () => {
   const processSteps = [
     {
       icon: Clock,
-      title: "Onboarding do Perfil",
+      title: "Onboarding do perfil a ser recrutado",
       description: "Mapeamos cultura, competências e desafios reais do seu negócio usando curadoria humanizada + IA. Personalizamos toda comunicação para atrair apenas profissionais alinhados ao seu contexto.",
       duration: "30 min",
       color: "from-blue-500 to-purple-500"
