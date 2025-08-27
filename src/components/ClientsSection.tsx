@@ -105,8 +105,8 @@ const ClientsSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-slate-700">
           <div className="text-center">
-            <div className="text-4xl font-bold text-purple-400 mb-2">21+</div>
-            <div className="text-slate-400">Empresas Parceiras</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2">+150</div>
+            <div className="text-slate-400">Empresas parceiras</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-purple-400 mb-2">500+</div>
