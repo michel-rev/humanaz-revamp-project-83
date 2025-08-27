@@ -16,7 +16,7 @@ const CTASection = () => {
 
   const { count: daysCount, elementRef: daysRef } = useCounterAnimation({ target: 15, duration: 2000 });
   const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 97, duration: 2200 });
-  const { count: candidatesCount, elementRef: candidatesRef } = useCounterAnimation({ target: 4, duration: 2400 });
+  const { count: candidatesCount, elementRef: candidatesRef } = useCounterAnimation({ target: 1000, duration: 2400 });
   const { count: companiesCount, elementRef: companiesRef } = useCounterAnimation({ target: 10, duration: 2600 });
   return (
     <section id="cta" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
@@ -107,7 +107,7 @@ const CTASection = () => {
               </div>
               <div ref={candidatesRef} className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <div className="text-[2rem] font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-1">
-                  {candidatesCount}
+                  +{candidatesCount}
                 </div>
                 <div className="text-white text-sm">Candidatos Qualificados</div>
               </div>
