@@ -17,7 +17,7 @@ const CTASection = () => {
   const { count: daysCount, elementRef: daysRef } = useCounterAnimation({ target: 15, duration: 2000 });
   const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 97, duration: 2200 });
   const { count: candidatesCount, elementRef: candidatesRef } = useCounterAnimation({ target: 1000, duration: 2400 });
-  const { count: companiesCount, elementRef: companiesRef } = useCounterAnimation({ target: 10, duration: 2600 });
+  const { count: companiesCount, elementRef: companiesRef } = useCounterAnimation({ target: 150, duration: 2600 });
   return (
     <section id="cta" className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Background Elements */}
