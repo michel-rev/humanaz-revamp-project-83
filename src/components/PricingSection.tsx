@@ -179,7 +179,7 @@ const PricingSection = () => {
         {/* Bottom Note */}
         <div className="text-center mt-16">
           <p className="text-slate-400 text-base md:text-lg max-w-3xl mx-auto">
-            Valores por profissional contratado. Inclui todo o processo de atração, seleção, validação técnicas e cultural. Garantia de 90 dias sem custo adicional.
+            Valores por profissional contratado. Inclui todo o processo de atração, seleção, validação técnicas e cultural. <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent font-semibold">Garantia de 90 dias sem custos adicional.</span>
           </p>
         </div>
       </div>
