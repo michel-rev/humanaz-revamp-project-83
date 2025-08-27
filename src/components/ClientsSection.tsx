@@ -117,7 +117,7 @@ const ClientsSection = () => {
             <div className="text-slate-400">Taxa de Aprovação</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-purple-400 mb-2">85%</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2">97%</div>
             <div className="text-slate-400">Retenção 12 meses</div>
           </div>
         </div>
