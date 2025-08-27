@@ -17,7 +17,7 @@ const Footer = () => {
             </div>
             
             <p className="text-slate-400 leading-relaxed mb-6 max-w-md">
-              Conectamos talentos tech excepcionais às empresas certas através de IA, curadoria humanizada e um processo otimizado de 15 dias.
+              Vamos além da vaga. Um processo inteligente que conecta vivências e experiências do profissional em resolver problemas reais de negócio, com a atitude que o crescimento da sua empresa precisa.
             </p>
             
             <div className="flex space-x-4">
