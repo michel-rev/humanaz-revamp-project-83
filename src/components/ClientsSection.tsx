@@ -109,8 +109,8 @@ const ClientsSection = () => {
             <div className="text-slate-400">Empresas parceiras</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-purple-400 mb-2">500+</div>
-            <div className="text-slate-400">Profissionais Contratados</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2">+1000</div>
+            <div className="text-slate-400">Profissionais contratados</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-purple-400 mb-2">95%</div>
