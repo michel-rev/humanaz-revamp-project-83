@@ -15,7 +15,7 @@ const CTASection = () => {
   };
 
   const { count: daysCount, elementRef: daysRef } = useCounterAnimation({ target: 15, duration: 2000 });
-  const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 95, duration: 2200 });
+  const { count: approvalCount, elementRef: approvalRef } = useCounterAnimation({ target: 97, duration: 2200 });
   const { count: candidatesCount, elementRef: candidatesRef } = useCounterAnimation({ target: 4, duration: 2400 });
   const { count: companiesCount, elementRef: companiesRef } = useCounterAnimation({ target: 10, duration: 2600 });
   return (
