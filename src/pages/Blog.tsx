@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
 import { WordPressService, WordPressPost } from "@/services/wordpressService";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -146,13 +147,12 @@ const Blog = () => {
                     ))}
                   </div>
                   
-                  <Button 
-                    className="bg-purple-600 hover:bg-purple-700 text-white"
-                    onClick={() => window.open(featuredPost.link, '_blank')}
-                  >
-                    Ler mais
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>
+                  <Link to={`/blog/${featuredPost.slug}`}>
+                    <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                      Ler mais
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -209,14 +209,12 @@ const Blog = () => {
                       {post.readTime}
                     </div>
                     
-                    <Button 
-                      size="sm" 
-                      className="bg-purple-600 hover:bg-purple-700 text-white"
-                      onClick={() => window.open(post.link, '_blank')}
-                    >
-                      Ler mais
-                      <ExternalLink className="ml-2 w-4 h-4" />
-                    </Button>
+                    <Link to={`/blog/${post.slug}`}>
+                      <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white">
+                        Ler mais
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
                   </div>
 
                   <div className="flex flex-wrap gap-1 mt-4">
