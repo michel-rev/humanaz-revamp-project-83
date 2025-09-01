@@ -154,12 +154,12 @@ const BlogPost = () => {
               <div 
                 className="prose prose-invert prose-lg max-w-none
                   prose-headings:text-white prose-headings:font-bold
-                  prose-p:text-slate-300 prose-p:leading-relaxed
+                  prose-p:text-white prose-p:leading-relaxed
                   prose-a:text-purple-400 prose-a:no-underline hover:prose-a:underline
-                  prose-strong:text-white prose-em:text-slate-300
-                  prose-ul:text-slate-300 prose-ol:text-slate-300
-                  prose-li:text-slate-300 prose-li:my-1
-                  prose-blockquote:border-l-purple-400 prose-blockquote:text-slate-300
+                  prose-strong:text-white prose-em:text-white
+                  prose-ul:text-white prose-ol:text-white
+                  prose-li:text-white prose-li:my-1
+                  prose-blockquote:border-l-purple-400 prose-blockquote:text-white
                   prose-code:text-purple-300 prose-code:bg-slate-800 prose-code:px-1 prose-code:rounded
                 "
                 dangerouslySetInnerHTML={{ __html: post.content }}
