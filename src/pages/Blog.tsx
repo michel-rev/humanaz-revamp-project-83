@@ -10,28 +10,19 @@ import { WordPressService, WordPressPost } from "@/services/wordpressService";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [blogPosts, setBlogPosts] = useState<any[]>([]);
-  const [categories, setCategories] = useState<string[]>(["Todos"]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchWordPressData = async () => {
       setLoading(true);
       try {
-        // Fetch posts and categories in parallel
-        const [posts, wpCategories] = await Promise.all([
-          WordPressService.fetchPosts(1, 20),
-          WordPressService.fetchCategories()
-        ]);
+        // Fetch posts from WordPress
+        const posts = await WordPressService.fetchPosts(1, 20);
 
         // Format posts
         const formattedPosts = posts.map(post => WordPressService.formatPost(post));
         setBlogPosts(formattedPosts);
-
-        // Format categories
-        const categoryNames = ["Todos", ...wpCategories.map(cat => cat.name)];
-        setCategories(categoryNames);
       } catch (error) {
         console.error('Erro ao carregar dados do WordPress:', error);
         // Keep empty arrays if failed
@@ -46,8 +37,7 @@ const Blog = () => {
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "Todos" || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    return matchesSearch;
   });
 
   const featuredPost = filteredPosts[0];
@@ -90,8 +80,8 @@ const Blog = () => {
               Descubra as últimas tendências, estratégias e insights do mercado de recrutamento de tecnologia no Brasil.
             </p>
 
-            {/* Search and Filter */}
-            <div className="max-w-2xl mx-auto space-y-4">
+            {/* Search */}
+            <div className="max-w-2xl mx-auto">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
                 <Input
@@ -101,23 +91,6 @@ const Blog = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10 bg-slate-800/50 border-slate-700 text-white placeholder-slate-400 focus:border-purple-400"
                 />
-              </div>
-
-              <div className="flex flex-wrap gap-2 justify-center">
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category)}
-                    className={selectedCategory === category 
-                      ? "bg-purple-600 hover:bg-purple-700 text-white border-0" 
-                      : "border-slate-700 text-slate-400 hover:text-white hover:border-purple-400/50 bg-transparent"
-                    }
-                  >
-                    {category}
-                  </Button>
-                ))}
               </div>
             </div>
           </div>
