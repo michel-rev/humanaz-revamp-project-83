@@ -1,100 +1,47 @@
-import { useState } from "react";
-import { Search, Calendar, User, ArrowRight, Tag, Filter } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, Calendar, User, ArrowRight, Tag, Filter, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
+import { WordPressService, WordPressPost } from "@/services/wordpressService";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [blogPosts, setBlogPosts] = useState<any[]>([]);
+  const [categories, setCategories] = useState<string[]>(["Todos"]);
+  const [loading, setLoading] = useState(true);
 
-  const categories = [
-    "Todos",
-    "Recrutamento Tech",
-    "Tendências RH", 
-    "Startups",
-    "Fintechs",
-    "Mercado de Trabalho",
-    "Carreira"
-  ];
+  useEffect(() => {
+    const fetchWordPressData = async () => {
+      setLoading(true);
+      try {
+        // Fetch posts and categories in parallel
+        const [posts, wpCategories] = await Promise.all([
+          WordPressService.fetchPosts(1, 20),
+          WordPressService.fetchCategories()
+        ]);
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Como Construir Times de Tecnologia de Alto Performance em 2024",
-      excerpt: "Descubra as estratégias mais eficazes para formar equipes tech que impulsionam o crescimento das startups brasileiras.",
-      content: "O mercado de tecnologia brasileiro está em constante evolução...",
-      category: "Recrutamento Tech",
-      author: "HumanAZ",
-      date: "2024-01-15",
-      readTime: "8 min",
-      image: "/lovable-uploads/bf08bbb3-71ef-422a-9b7a-284d46696b7b.png",
-      tags: ["Tech", "Liderança", "Performance"]
-    },
-    {
-      id: 2,
-      title: "O Futuro do Recrutamento Tech: Tendências para 2024",
-      excerpt: "Exploramos as principais tendências que estão transformando o processo de contratação de profissionais de tecnologia.",
-      content: "A inteligência artificial está revolucionando o recrutamento...",
-      category: "Tendências RH",
-      author: "HumanAZ",
-      date: "2024-01-10",
-      readTime: "6 min",
-      image: "/lovable-uploads/ea0d4845-0c02-41b4-82cc-961d720f19c9.png",
-      tags: ["Futuro", "AI", "Tendências"]
-    },
-    {
-      id: 3,
-      title: "Fintechs em Alta: Como Atrair os Melhores Talentos",
-      excerpt: "As fintechs brasileiras estão crescendo rapidamente. Saiba como atrair e reter os profissionais mais qualificados do mercado.",
-      content: "O setor de fintechs no Brasil apresenta um crescimento exponencial...",
-      category: "Fintechs",
-      author: "HumanAZ",
-      date: "2024-01-08",
-      readTime: "10 min",
-      image: "/lovable-uploads/c214c201-c292-47ad-be06-fae231a17ebf.png",
-      tags: ["Fintech", "Talentos", "Mercado"]
-    },
-    {
-      id: 4,
-      title: "Startup Unicórnio: O Papel do RH Estratégico no Sucesso",
-      excerpt: "Analisamos como empresas que se tornaram unicórnios estruturaram seus processos de pessoas desde o início.",
-      content: "Empresas unicórnio têm uma característica em comum...",
-      category: "Startups",
-      author: "HumanAZ",
-      date: "2024-01-05",
-      readTime: "12 min",
-      image: "/lovable-uploads/ed6a6a6d-9131-41d0-96f4-9af0ed67736a.png",
-      tags: ["Unicórnio", "RH", "Estratégia"]
-    },
-    {
-      id: 5,
-      title: "Mercado Aquecido: Salários Tech em 2024",
-      excerpt: "Um panorama completo sobre a evolução salarial dos profissionais de tecnologia no mercado brasileiro.",
-      content: "O mercado de tecnologia apresenta uma valorização constante...",
-      category: "Mercado de Trabalho",
-      author: "HumanAZ", 
-      date: "2024-01-03",
-      readTime: "7 min",
-      image: "/lovable-uploads/1ca6efa9-3c24-4bd7-ba87-c9c5cb76d832.png",
-      tags: ["Salários", "Mercado", "Tech"]
-    },
-    {
-      id: 6,
-      title: "Carreira Tech: Do Junior ao Senior em 3 Anos",
-      excerpt: "Estratégias comprovadas para acelerar o crescimento profissional na área de tecnologia.",
-      content: "A progressão de carreira em tecnologia pode ser muito rápida...",
-      category: "Carreira",
-      author: "HumanAZ",
-      date: "2024-01-01",
-      readTime: "9 min",
-      image: "/lovable-uploads/6e13cf7c-9c7b-4c9f-8bd8-3b96824d359a.png",
-      tags: ["Carreira", "Crescimento", "Desenvolvimento"]
-    }
-  ];
+        // Format posts
+        const formattedPosts = posts.map(post => WordPressService.formatPost(post));
+        setBlogPosts(formattedPosts);
+
+        // Format categories
+        const categoryNames = ["Todos", ...wpCategories.map(cat => cat.name)];
+        setCategories(categoryNames);
+      } catch (error) {
+        console.error('Erro ao carregar dados do WordPress:', error);
+        // Keep empty arrays if failed
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchWordPressData();
+  }, []);
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -103,8 +50,23 @@ const Blog = () => {
     return matchesSearch && matchesCategory;
   });
 
-  const featuredPost = blogPosts[0];
+  const featuredPost = filteredPosts[0];
   const otherPosts = filteredPosts.slice(1);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900">
+        <Header />
+        <div className="flex items-center justify-center h-screen">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-400 mx-auto mb-4"></div>
+            <p className="text-slate-400">Carregando posts do blog...</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -186,7 +148,7 @@ const Blog = () => {
                   </Badge>
                   <div className="flex items-center text-slate-400 text-sm">
                     <Calendar className="w-4 h-4 mr-1" />
-                    {new Date(featuredPost.date).toLocaleDateString('pt-BR')}
+                    {featuredPost.displayDate || new Date(featuredPost.date).toLocaleDateString('pt-BR')}
                   </div>
                   <div className="flex items-center text-slate-400 text-sm">
                     <User className="w-4 h-4 mr-1" />
@@ -211,9 +173,12 @@ const Blog = () => {
                     ))}
                   </div>
                   
-                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                  <Button 
+                    className="bg-purple-600 hover:bg-purple-700 text-white"
+                    onClick={() => window.open(featuredPost.link, '_blank')}
+                  >
                     Ler mais
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <ExternalLink className="ml-2 w-4 h-4" />
                   </Button>
                 </div>
               </div>
@@ -253,7 +218,7 @@ const Blog = () => {
                     </Badge>
                     <div className="flex items-center text-slate-400 text-sm">
                       <Calendar className="w-4 h-4 mr-1" />
-                      {new Date(post.date).toLocaleDateString('pt-BR')}
+                      {post.displayDate || new Date(post.date).toLocaleDateString('pt-BR')}
                     </div>
                   </div>
                   
@@ -271,9 +236,13 @@ const Blog = () => {
                       {post.readTime}
                     </div>
                     
-                    <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white">
+                    <Button 
+                      size="sm" 
+                      className="bg-purple-600 hover:bg-purple-700 text-white"
+                      onClick={() => window.open(post.link, '_blank')}
+                    >
                       Ler mais
-                      <ArrowRight className="ml-2 w-4 h-4" />
+                      <ExternalLink className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
 
