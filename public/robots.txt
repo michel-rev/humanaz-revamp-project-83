@@ -1,3 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://humanaz.io/sitemap.xml
+
+# Specific bot permissions
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +17,10 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Disallow admin areas (if any in future)
+Disallow: /admin/
+Disallow: /*.json$
+
+# Crawl-delay for aggressive bots
 User-agent: *
-Allow: /
+Crawl-delay: 1

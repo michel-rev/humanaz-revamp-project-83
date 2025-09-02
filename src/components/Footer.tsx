@@ -1,5 +1,6 @@
 
 import { ArrowRight, Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,10 +22,10 @@ const Footer = () => {
             </p>
             
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
+              <a href="https://linkedin.com/company/humanaz" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
+              <a href="https://instagram.com/humanaz_io" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
@@ -35,24 +36,24 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-6">Links Rápidos</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
+                <a href="#processo" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
                   Como Funciona
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
+                <a href="#clientes" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
                   Nossos Clientes
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
-                  Sobre Nós
-                </a>
+                <Link to="/contato" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
+                  Contato
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
+                <Link to="/blog" className="text-slate-400 hover:text-purple-400 transition-colors duration-200">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -105,12 +106,12 @@ const Footer = () => {
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-slate-400 hover:text-purple-400 text-sm transition-colors duration-200">
+            <Link to="/privacidade" className="text-slate-400 hover:text-purple-400 text-sm transition-colors duration-200">
               Política de Privacidade
-            </a>
-            <a href="#" className="text-slate-400 hover:text-purple-400 text-sm transition-colors duration-200">
+            </Link>
+            <Link to="/termos" className="text-slate-400 hover:text-purple-400 text-sm transition-colors duration-200">
               Termos de Uso
-            </a>
+            </Link>
           </div>
         </div>
       </div>
