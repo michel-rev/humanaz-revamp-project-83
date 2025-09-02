@@ -191,8 +191,7 @@ const InteractiveDemo = () => {
             Subjetividade → <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">Parâmetros Mensuráveis</span>
           </h2>
           <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4">
-            Nossa engenharia de prompt transforma aspectos subjetivos do recrutamento em parâmetros objetivos,
-            <br />criando cenários reais de <strong className="text-white">negócios, produtos, tecnologia e pessoas</strong> para validação precisa
+            Vamos além da vaga. Um processo inteligente que conecta vivências e experiências do profissional em resolver problemas reais de negócio, com a atitude que o crescimento da sua empresa contextual e precisa.
           </p>
         </div>
 
