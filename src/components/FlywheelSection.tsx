@@ -29,7 +29,7 @@ const FlywheelSection = () => {
         {/* Flywheel Visual */}
         <div className="w-full grid place-items-center">
           <img 
-            src="/lovable-uploads/c922fb5b-a18f-4d53-a356-9816951de420.png" 
+            src="/lovable-uploads/dac4972f-3e76-4b83-9b9f-7f4d6fb83d8d.png" 
             alt="Flywheel HumanAZ - Por que fazemos, Como fazemos, Valor Agregado, processo de +15 dias corridos" 
             className="w-full h-auto max-w-[1200px] rounded-2xl"
             style={{ filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.15))' }}
