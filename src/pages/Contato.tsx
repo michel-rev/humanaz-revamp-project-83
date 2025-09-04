@@ -106,7 +106,7 @@ const Contato = () => {
                   <CardContent className="p-6 text-center">
                     <Phone className="h-8 w-8 mx-auto mb-3" />
                     <h4 className="font-semibold mb-2">Telefone</h4>
-                    <p className="text-blue-100">(21) 99999-9999</p>
+                    <p className="text-blue-100">(11) 5026-6963</p>
                   </CardContent>
                 </Card>
               </div>
