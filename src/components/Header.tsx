@@ -25,7 +25,7 @@ const Header = () => {
   const navigation = [
     { name: "Flywheel", href: "#flywheel" },
     { name: "Como Funciona", href: "#processo" },
-    { name: "Oportunidade", href: "#clientes" },
+    { name: "Oportunidade", href: "https://app.humanaz.io/" },
     { name: "Blog", href: "/blog" },
     { name: "Contato", href: "/contato" }
   ];
