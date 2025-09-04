@@ -49,7 +49,7 @@ const CTASection = () => {
               }}
             >
               <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Agendar Demonstração
+              Falar com Especialista
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
             
