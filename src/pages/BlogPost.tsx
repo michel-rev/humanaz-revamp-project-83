@@ -47,12 +47,12 @@ const BlogPost = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-900">
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-400 mx-auto mb-4"></div>
-            <p className="text-slate-400">Carregando post...</p>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Carregando post...</p>
           </div>
         </div>
         <Footer />
@@ -62,14 +62,14 @@ const BlogPost = () => {
 
   if (error || !post) {
     return (
-      <div className="min-h-screen bg-slate-900">
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-white mb-4">Post não encontrado</h1>
-            <p className="text-slate-400 mb-6">{error}</p>
+            <h1 className="text-3xl font-bold text-foreground mb-4">Post não encontrado</h1>
+            <p className="text-muted-foreground mb-6">{error}</p>
             <Link to="/blog">
-              <Button className="bg-purple-600 hover:bg-purple-700">
+              <Button>
                 <ArrowLeft className="mr-2 w-4 h-4" />
                 Voltar ao Blog
               </Button>
@@ -82,44 +82,43 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-12 relative overflow-hidden">
-        <AnimatedDottedBackground opacity={0.3} color="%23a855f7" size={3} spacing={90} />
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Back Button */}
-            <Link to="/blog" className="inline-flex items-center text-slate-400 hover:text-purple-400 mb-8 transition-colors">
+            <Link to="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors">
               <ArrowLeft className="mr-2 w-4 h-4" />
               Voltar ao Blog
             </Link>
 
             {/* Post Meta */}
             <div className="flex items-center gap-4 mb-6">
-              <Badge className="bg-purple-400/10 text-purple-300 border-purple-400/30">
+              <Badge variant="secondary">
                 {post.category}
               </Badge>
-              <div className="flex items-center text-slate-400 text-sm">
+              <div className="flex items-center text-muted-foreground text-sm">
                 <Calendar className="w-4 h-4 mr-1" />
                 {post.displayDate || new Date(post.date).toLocaleDateString('pt-BR')}
               </div>
-              <div className="flex items-center text-slate-400 text-sm">
+              <div className="flex items-center text-muted-foreground text-sm">
                 <User className="w-4 h-4 mr-1" />
                 {post.readTime}
               </div>
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               {post.title}
             </h1>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-8">
               {post.tags.map((tag: string) => (
-                <span key={tag} className="flex items-center text-sm px-3 py-1 bg-slate-800 text-slate-300 rounded-full">
+                <span key={tag} className="flex items-center text-sm px-3 py-1 bg-secondary text-secondary-foreground rounded-full">
                   <Tag className="w-3 h-3 mr-1" />
                   {tag}
                 </span>
@@ -150,17 +149,21 @@ const BlogPost = () => {
       <section className="pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-slate-800/30 rounded-2xl border border-slate-700 p-8 md:p-12">
+            <div className="bg-card rounded-2xl border border-border p-8 md:p-12 shadow-sm">
               <div 
-                className="prose prose-invert prose-lg max-w-none
-                  prose-headings:text-white prose-headings:font-bold
-                  prose-p:text-white prose-p:leading-relaxed
-                  prose-a:text-purple-400 prose-a:no-underline hover:prose-a:underline
-                  prose-strong:text-white prose-em:text-white
-                  prose-ul:text-white prose-ol:text-white
-                  prose-li:text-white prose-li:my-1
-                  prose-blockquote:border-l-purple-400 prose-blockquote:text-white
-                  prose-code:text-purple-300 prose-code:bg-slate-800 prose-code:px-1 prose-code:rounded
+                className="prose prose-lg max-w-none
+                  prose-headings:text-foreground prose-headings:font-bold
+                  prose-p:text-foreground prose-p:leading-relaxed prose-p:mb-4
+                  prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                  prose-strong:text-foreground prose-em:text-foreground
+                  prose-ul:text-foreground prose-ol:text-foreground
+                  prose-li:text-foreground prose-li:my-1
+                  prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground prose-blockquote:bg-muted prose-blockquote:p-4 prose-blockquote:rounded-r-lg
+                  prose-code:text-primary prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded
+                  prose-pre:bg-muted prose-pre:border prose-pre:border-border
+                  prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-8
+                  prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-6
+                  prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-5
                 "
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
@@ -170,18 +173,18 @@ const BlogPost = () => {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="py-20 bg-slate-800/30">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Gostou do Conteúdo?
             </h2>
-            <p className="text-slate-400 mb-8">
+            <p className="text-muted-foreground mb-8">
               Receba os melhores insights sobre recrutamento tech diretamente no seu e-mail.
             </p>
             
             <Link to="/blog">
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+              <Button>
                 Ver Mais Posts
               </Button>
             </Link>
