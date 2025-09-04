@@ -43,7 +43,7 @@ const ClientsSection = () => {
           </h2>
           
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-            Trabalhamos com as principais fintechs e startups do mercado brasileiro, conectando talentos excepcionais às empresas mais inovadoras.
+            Somos parceiros das principais fintechs e startups do mercado brasileiro, conectando gente com atitude e capacidade para resolver problemas reais de negócios.
           </p>
         </div>
 
