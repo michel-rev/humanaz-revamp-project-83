@@ -148,7 +148,7 @@ const Contato = () => {
                       value={formData.celular}
                       onChange={handleChange}
                       className="mt-2"
-                      placeholder="(11) 99999-9999"
+                      placeholder="(11) 5026-6963"
                     />
                   </div>
                   

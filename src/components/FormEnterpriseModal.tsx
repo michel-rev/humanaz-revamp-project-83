@@ -121,7 +121,7 @@ const FormEnterpriseModal = ({ open, onOpenChange, onSuccess }: FormEnterpriseMo
                 type="tel"
                 required
                 className="h-12"
-                placeholder="(11) 99999-9999"
+                placeholder="(11) 5026-6963"
               />
             </div>
           </div>
